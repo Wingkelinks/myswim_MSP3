@@ -59,7 +59,7 @@ Back to [README.md](README.md)
 
   2. To be able to edit or remove content submitted by users.
 
-<div align="right"><a style="text-align:right" href="#top">Go to index :arrow_double_up:</a></div>
+<div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
 --
 <span id="testing-manual"></span>
@@ -68,7 +68,7 @@ Back to [README.md](README.md)
 
 ### Manual Testing
 
-## <div align="right"><a style="text-align:right" href="#top">Go to index :arrow_double_up:</a></div>
+<div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
 <span id="testing-auto"></span>
 
@@ -84,7 +84,7 @@ Back to [README.md](README.md)
 
 - ## [JavaScript Validator](https://jshint.com/)
 
-<div align="right"><a style="text-align:right" href="#top">Go to index :arrow_double_up:</a></div>
+<div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
 ## <span id="testing-responsive"></span>
 
@@ -131,7 +131,7 @@ Real world testing on:
 - Asus ZenBook
 - Dell XPS 7590 -->
 
-## <div align="right"><a style="text-align:right" href="#top">Go to index :arrow_double_up:</a></div>
+<div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
 <span id="testing-resolved"></span>
 

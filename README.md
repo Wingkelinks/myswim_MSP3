@@ -12,10 +12,10 @@
   - <a href="#ux-stories">User stories</a>
   - <a href="#ux-wireframes">Wireframes</a>
   - <a href="#ux-design">Design</a>
-- <a href="#database-model">Database model</a>
+- <a href="#database-model">Database Model</a>
 - <a href="#features">Features</a>
-  - <a href="#features-current">Current</a>
-  - <a href="#features-future">Future</a>
+  - <a href="#features-current">Existing</a>
+  - <a href="#features-future">Desirable/Future</a>
 - <a href="#technologies">Technologies Used</a>
 - <a href="#testing">Testing</a>
 - <a href="#deployment">Deployment</a>
@@ -29,7 +29,7 @@ Are you a swimmer looking for a convenient way to store and access your swim set
 
 MySwim allows you to create a free account where you can add and save as many of your own swim sets, that are then shared with the MySwim community. You can save some of your favourite sets to your profile for convenient access. You can also print sets straight from the website.
 
-<h2 align="center"><img src="https://i.ibb.co/TYvTXz1/Example-CI.png"></h2>
+<h2 align="center"><img src=""></h2>
 
 --
 
@@ -81,7 +81,7 @@ As a swimmer, this site will provide personal value as a convenient means to sto
 
   - Wireframes can be viewed [here]()
 
-<div align="right"><a style="text-align:right" href="#top">Go to index :arrow_double_up:</a></div>
+<div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
 <span id="database-model"></span>
 
@@ -108,10 +108,13 @@ As a swimmer, this site will provide personal value as a convenient means to sto
 
 ### Frameworks and Libraries
 
-1. [Materialize](https://materializecss.com/)
-1. ## [Google Fonts:](https://fonts.google.com/)
-1. ## [Font Awesome:](https://fontawesome.com/)
-1. ## [jQuery:](https://jquery.com/)
+- [Materialize](https://materializecss.com/)
+- [Google Fonts:](https://fonts.google.com/)
+- [Font Awesome:](https://fontawesome.com/)
+- [jQuery:](https://jquery.com/)
+- [Icons8](https://icons8.com/) - for custom icons used on map.
+- [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/): used to create responsive layouts.
+- [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/): used to create responsive layouts.
 
 ### Extensions and kits
 
@@ -120,12 +123,12 @@ As a swimmer, this site will provide personal value as a convenient means to sto
 
 ### Project Management
 
-1. ## [Git](https://git-scm.com/)
-1. ## [GitHub:](https://github.com/)
-1. [MongoDB](https://www.mongodb.com/)
-1. [Heroku](https://www.heroku.com/about)
-1. [Balsamiq:](https://balsamiq.com/)
-   - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
+- [Git](https://git-scm.com/)
+- [GitHub:](https://github.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [Heroku](https://www.heroku.com/about)
+- [Balsamiq:](https://balsamiq.com/)
+  - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
 
 --
 <span id="testing"></span>
@@ -170,7 +173,7 @@ To clone this project from its [GitHub repository]():
 
 To deploy the app to Heroku from its [GitHub repository](), the following steps were taken:
 
-<div align="right"><a style="text-align:right" href="#top">Go to index :arrow_double_up:</a></div>
+<div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
 ### Forking the GitHub Repository
 
@@ -210,4 +213,4 @@ To deploy the app to Heroku from its [GitHub repository](), the following steps 
 
 - Thank you to the Code Institue Slack community - a great place to check in and learn from others.
 
-<div align="right"><a style="text-align:right" href="#top">Go to index :arrow_double_up:</a></div>
+<div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
