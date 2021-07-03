@@ -4,6 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Tourney&display=swap"
+			rel="stylesheet"
+		/>
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -17,16 +23,49 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
 			type="text/css"
 		/>
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
-		{% block styles %}
-		{% endblock %}
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/style.css')}}"
+			type="text/css"
+		/>
+		{% block styles %} {% endblock %}
+
 		<title>MySwim</title>
 	</head>
 	<body>
+		<header>
+			<!-- Main Navigation -->
+			<nav class="nav-extended">
+				<div class="nav-wrapper st-patricks-blue">
+					<a href="{{ url_for('get_sets')}}" class="brand-logo tourney-text">MySwim</a>
+					<a href="#" data-target="mobile-demo" class="sidenav-trigger right"
+						><i class="fas fa-bars"></i
+					></a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="{{ url_for('get_sets')}}">Home</a></li>
+						<li><a href="#">Profile</a></li>
+						<li><a href="#">New Swim</a></li>
+						<li><a href="#">Manage Categories</a></li>
+						<li><a href="#">Log Out</a></li>
+						<li><a href="#">Log In</a></li>
+						<li><a href="#">Register</a></li>
+					</ul>
+				</div>
+			</nav>
+			<!-- Mobile Navigation -->
+			<ul class="sidenav" id="mobile-demo">
+				<li><h4 class="center-align tourney-text">MySwim</h4></li>
+				<li><a href="{{ url_for('get_sets')}}">Home</a></li>
+				<li><a href="#">Profile</a></li>
+				<li><a href="#">New Swim</a></li>
+				<li><a href="#">Manage Categories</a></li>
+				<li><a href="#">Log Out</a></li>
+				<li><a href="#">Log In</a></li>
+				<li><a href="#">Register</a></li>
+			</ul>
+		</header>
 
-		{% block content %} 
-		
-		{% endblock %}
+		{% block content %} {% endblock %}
 
 		<!-- JQuery -->
 		<script
@@ -38,7 +77,6 @@
 		<!-- JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-		{% block scripts %}
-		{% endblock %}
+		{% block scripts %} {% endblock %}
 	</body>
 </html>

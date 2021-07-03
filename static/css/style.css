@@ -1,0 +1,52 @@
+/* UTILITY CLASSES */
+
+/* Background Colors */
+
+.ruby-red {
+	background-color: #9a031e;
+}
+.sinopia {
+	background-color: #cb4721;
+}
+.princeton-orange {
+	background-color: #ef781c;
+}
+.st-patricks-blue {
+	background-color: #302a74;
+}
+.robin-egg-blue {
+	background-color: #29caca;
+}
+.turquoise-blue {
+	background-color: #26ffe6;
+}
+
+/* Text Colors */
+.ruby-red-text {
+	color: #9a031e;
+}
+.sinopia-text {
+	color: #cb4721;
+}
+.princeton-orange-text {
+	color: #ef781c;
+}
+.st-patricks-blue-text {
+	color: #302a74;
+}
+.robin-egg-blue-text {
+	color: #29caca;
+}
+.turquoise-blue-text {
+	color: #26ffe6;
+}
+
+/* Google Fonts */
+
+.roboto-text {
+    font-family: 'Roboto', sans-serif;
+}
+
+.tourney-text{
+    font-family: 'Tourney', cursive;
+}
