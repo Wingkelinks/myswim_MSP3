@@ -62,9 +62,13 @@ body {
     font-family: 'Tourney', cursive;
 }
 
-/* FLASHES */
+/* FLASH MESSAGES */
 
 .flashes h4 {
     line-height: 2;
 }
+
+
+
+
 
