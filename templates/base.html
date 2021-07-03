@@ -18,8 +18,11 @@
 			referrerpolicy="no-referrer"
 			type="text/css"
 		/>
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      		rel="stylesheet" type="text/css">
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+			type="text/css"
+		/>
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -40,81 +43,99 @@
 			<!-- Main Navigation -->
 			<nav class="nav-extended">
 				<div class="nav-wrapper st-patricks-blue">
-					<a href="{{ url_for('get_sets')}}" class="brand-logo tourney-text">MySwim</a>
+					<a href="{{ url_for('get_sets')}}" class="brand-logo tourney-text"
+						>MySwim</a
+					>
 					<a href="#" data-target="mobile-demo" class="sidenav-trigger right"
 						><i class="fas fa-bars"></i
 					></a>
 					<ul class="right hide-on-med-and-down">
+
 						<li><a href="{{ url_for('get_sets') }}">Home</a></li>
-						<li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-						<li><a href="#">New Swim</a></li>
-						<li><a href="#">Manage Categories</a></li>
-						<li><a href="#">Log Out</a></li>
-						<li><a href="{{ url_for('login') }}">Log In</a></li>
-						<li><a href="{{ url_for('register') }}">Register</a></li>
+						<!-- If logged in show below links -->
+						{% if session.user %}
+							<li>
+								<a href="{{ url_for('profile', username=session['user']) }}"
+									>Profile</a
+								>
+							</li>
+							<li><a href="#">New Swim</a></li>					
+							<li><a href="{{ url_for('logout') }}">Log Out</a></li>
+
+						<!-- Else, show Log In and Register -->
+						{% else %}
+							<li><a href="{{ url_for('login') }}">Log In</a></li>
+							<li><a href="{{ url_for('register') }}">Register</a></li>
+							<li><a href="#">Manage Content</a></li>
+						{% endif %}
 					</ul>
 				</div>
 			</nav>
 			<!-- Mobile Navigation -->
 			<ul class="sidenav" id="mobile-demo">
 				<li><h4 class="center-align tourney-text">MySwim</h4></li>
-				<li><a href="{{ url_for('get_sets') }}">Home</a></li>
-				<li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-				<li><a href="#">New Swim</a></li>
-				<li><a href="#">Manage Categories</a></li>
-				<li><a href="#">Log Out</a></li>
-				<li><a href="{{ url_for('login') }}">Log In</a></li>
-				<li><a href="{{ url_for('register') }}">Register</a></li>
+				
+						<li><a href="{{ url_for('get_sets') }}">Home</a></li>	<!-- If logged in show below links -->
+						{% if session.user %}
+							<li>
+								<a href="{{ url_for('profile', username=session['user']) }}"
+									>Profile</a
+								>
+							</li>
+							<li><a href="#">New Swim</a></li>					
+							<li><a href="{{ url_for('logout') }}">Log Out</a></li>
+
+						<!-- Else, show Log In and Register -->
+						{% else %}
+							<li><a href="{{ url_for('login') }}">Log In</a></li>
+							<li><a href="{{ url_for('register') }}">Register</a></li>
+							<li><a href="#">Manage Content</a></li>
+						{% endif %}			
 			</ul>
 		</header>
 
 		<section>
-
 			<!-- Flash Messages -->
 
-			{% with messages = get_flashed_messages() %}
-				{% if messages %}
-					{% for message in messages %}
-						<div class="row flashes">
-							<h4 class="center-align">{{ message }}</h4>
-						</div>
-					{% endfor %}
-				{% endif %}
-			{% endwith %}
+			{% with messages = get_flashed_messages() %} {% if messages %} {% for
+			message in messages %}
+			<div class="row flashes">
+				<h4 class="center-align">{{ message }}</h4>
+			</div>
+			{% endfor %} {% endif %} {% endwith %}
 		</section>
 
-		<main class="container">
-			{% block content %} 
-			{% endblock %}
-		</main>
+		<main class="container">{% block content %} {% endblock %}</main>
 
 		<!-- Footer -->
 
 		<footer class="page-footer">
 			<div class="container">
-			  <div class="row">
-				<div class="col l6 s12">
-				  <h5 class="white-text">Footer Content</h5>
-				  <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+				<div class="row">
+					<div class="col l6 s12">
+						<h5 class="white-text">Footer Content</h5>
+						<p class="grey-text text-lighten-4">
+							You can use rows and columns here to organize your footer content.
+						</p>
+					</div>
+					<div class="col l4 offset-l2 s12">
+						<h5 class="white-text">Links</h5>
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+						</ul>
+					</div>
 				</div>
-				<div class="col l4 offset-l2 s12">
-				  <h5 class="white-text">Links</h5>
-				  <ul>
-					<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-					<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-					<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-					<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-				  </ul>
-				</div>
-			  </div>
 			</div>
 			<div class="footer-copyright">
-			  <div class="container">
-			  © 2021 Wingkelinks
-			  <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-			  </div>
+				<div class="container">
+					© 2021 Wingkelinks
+					<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+				</div>
 			</div>
-		  </footer>
+		</footer>
 
 		<!-- JQuery -->
 		<script

@@ -1,5 +1,4 @@
-{% extends "base.html" %} 
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <h3 class="center-align">Log In</h3>
 
@@ -22,15 +21,14 @@
 						type="text"
 						minlength="5"
 						maxlength="15"
-						data-length="5-15"
 						pattern="^[a-zA-Z0-9]{5,15}$"
 						class="validate"
 						required
 					/>
 					<label for="username">USERNAME</label>
-					<span class="helper-text" data-error="wrong" data-success="right"
-						>Username must be 5-15 characters long, containing numbers and
-						letters only</span
+					<span
+						class="helper-text"
+						>Must be 5-15 characters long, using numbers and letters only</span
 					>
 				</div>
 			</div>
@@ -50,9 +48,8 @@
 						required
 					/>
 					<label for="password">PASSWORD</label>
-					<span class="helper-text" data-error="wrong" data-success="right"
-						>Password must be 5-15 characters long, containing numbers and
-						letters only</span
+					<span class="helper-text"
+						>Must be 5-15 characters long, using numbers and letters only</span
 					>
 				</div>
 			</div>
@@ -63,7 +60,7 @@
 				</button>
 			</div>
 		</div>
-	</form> 
+	</form>
 </div>
 
 <div class="row">
@@ -75,5 +72,4 @@
 	</div>
 </div>
 
-	{% endblock %}
-</div>
+{% endblock %}
