@@ -1,5 +1,16 @@
 /* UTILITY CLASSES */
 
+body {    
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
 /* Background Colors */
 
 .ruby-red {
@@ -50,3 +61,6 @@
 .tourney-text{
     font-family: 'Tourney', cursive;
 }
+
+/* FOOTER */
+
