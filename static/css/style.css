@@ -62,5 +62,9 @@ body {
     font-family: 'Tourney', cursive;
 }
 
-/* FOOTER */
+/* FLASHES */
+
+.flashes h4 {
+    line-height: 2;
+}
 

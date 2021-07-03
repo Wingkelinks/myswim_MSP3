@@ -9,26 +9,35 @@
           <!-- Username -->
         <div class="row">
             <div class="input-field col s12">
-                    <i class="prefix material-icons-outlined material-icons">
+                <i class="prefix material-icons-outlined material-icons">
                     account_circle
-                    </i>
-                <input id="username" name="username" type="text" class="validate"></input>
-                <label for="username">Username</label>
+                </i>
+                <input id="username" 
+                name="username" 
+                type="text" minlength="5" maxlength="15" data-length="5-15" 
+                pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                <label for="username">USERNAME</label>
+                <span class="helper-text" data-error="wrong" data-success="right">Username must be 5-15 characters long, containing numbers and letters only</span>
             </div>
         </div>
         <!-- Password -->
         <div class="row">
             <div class="input-field col s12">                    
-                    <i class="prefix material-icons-outlined material-icons">
-                        lock
-                    </i>
-              <input id="password" name="password" type="password" class="validate">
-              <label for="password">Password</label>
+                <i class="prefix material-icons-outlined material-icons">
+                    lock
+                </i>
+                <input 
+                id="password" name="password" type="password" 
+                minlength="5" maxlength="15" data-length="5-15"
+                pattern="^[a-zA-Z0-9]{5,15}$"
+                class="validate" required>
+                <label for="password">PASSWORD</label>
+                <span class="helper-text" data-error="wrong" data-success="right">Password must be 5-15 characters long, containing numbers and letters only</span>
             </div>
         </div>
         <!-- Register Button -->
         <div class="row">
-            <button class="waves-effect waves-light btn-large col s12">REGISTER<i class="material-icons right">login</i></button>
+                <button class="waves-effect waves-light btn-large col s12">REGISTER<i class="material-icons right">login</i></button>
         </div>
       </div>
     </form>
