@@ -43,6 +43,18 @@ main {
 	background-color: #ff006e;
 }
 
+.neon-green{
+	background-color: #4dec38;
+}
+
+.mango {
+	background-color: #FFBE0B;
+}
+
+.orange-pantone {
+	background-color: #FB5607;
+}
+
 /* Text Colors */
 .ruby-red-text {
 	color: #9a031e;
@@ -69,6 +81,10 @@ main {
 
 .winter-sky-text {
 	color: #ff006e;
+}
+
+.neon-green-text{
+	color: #4dec38;
 }
 
 /* Google Fonts */

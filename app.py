@@ -104,8 +104,22 @@ def logout():
 
 
 # ADD NEW SWIM SET
-@app.route("/add_set")
+@app.route("/add_set", methods=["GET", "POST"])
 def add_set():
+    if request.method == "POST":
+        set = {
+            "category_name": request.form.get("category_name"),
+            "set_name": request.form.get("set_name"),
+            "warm_up": request.form.get("warm_up"),
+            "pre_set": request.form.getlist("pre_set"),
+            "main_set": request.form.getlist("main_set"),
+            "cool_down": request.form.get("cool_down"),
+            "total_km": request.form.get("total_km"),
+            "created_by": session["user"]
+        }
+        mongo.db.sets.insert_one(set)
+        flash("Sucess! Your set has been added.")
+        return redirect(url_for("get_sets"))
     #find categories in db and sort a-z
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_set.html", categories=categories)
