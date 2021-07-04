@@ -68,7 +68,11 @@ body {
     line-height: 2;
 }
 
+/* ICONS */
 
+.material-icons .md-48 {
+	font-size: 60px !important;
+}
 
 
 

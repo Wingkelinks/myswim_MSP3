@@ -23,7 +23,7 @@ mongo = PyMongo(app) ## CREATE INSTANCE OF PYMONGO AND ADD FLASK APP OBJECT
 @app.route("/")
 @app.route("/get_sets")
 def get_sets():
-    sets = mongo.db.sets.find()
+    sets = list(mongo.db.sets.find()) #wrap 'find' method inside python list
     return render_template("sets.html", sets=sets)
 
 # REGISTRATION 

@@ -1,33 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-
-		{% for set in sets %} 	
-			{{ set.set_name }}<br />
-			{{ set.category_name }}<br />
-			{{ set.warm_up }}<br />
-			{{ set.pre_set }}<br />
-			{{ set.main_set }}<br />
-			{{ set.cool_down }}<br />
-			{{ set.total_km }}<br />
-		{% endfor %}
-
-		<ul class="collapsible popout">
-			<li>
-			  <div class="active collapsible-header turquoise-blue"><i class="material-icons">expand_circle_down</i>Fast Freestyle</div>
-			  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			</li>
-			<li>
-			  <div class="collapsible-header st-patricks-blue white-text"><i class="material-icons">expand_circle_down</i>Threshold Thrasher</div>
-			  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			</li>
-			<li>
-			  <div class="collapsible-header turquoise-blue"><i class="material-icons">expand_circle_down</i>Killer Cardio</div>
-			  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			</li>
-			<li>
-				<div class="collapsible-header st-patricks-blue white-text"><i class="material-icons">expand_circle_down</i>Aerobic Power</div>
-				<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			  </li>
-		  </ul>
+		<h3 class="center-align">Dive Right In and Pick a Set</h3>
+		  <!-- Card -->
+		  <div class="row">
+			{% for set in sets %}
+			<div class="col s12 m6">
+			  <div class="card">
+				<div class="card-image">
+				  <img src="static/images/freestyle-unsplash.jpg">
+				  <span class="card-title ttu tracked">{{ set.category_name }}</span>	  
+				</div>
+				<div class="card-content">
+					<h5>{{ set.set_name }}</h5>
+					<p>{{ set.warm_up }}</p>
+					<p>{{ set.pre_set }}</p>
+					<p>{{ set.main_set }}</p>
+					<p>{{ set.cool_down }}</p>
+					<p>{{ set.total_km }}</p>
+				</div>
+				<div class="right-align pa2">
+					<a class="btn-floating waves-effect waves-light red tooltipped" data-position="left" data-tooltip="Favourite me!"><i class="material-icons">favorite</i></a>
+					<a class="btn-floating waves-effect waves-light blue tooltipped" data-position="top" data-tooltip="Add me to your collection!"><i class="material-icons">add</i></a>
+					<a class="btn-floating waves-effect waves-light green tooltipped" data-position="right" data-tooltip="Print me out."><i class="material-icons">print</i></a>
+				</div>
+			  </div>
+			</div>
+			{% endfor %}
+		  </div>
+					
 
 {% endblock %}		
