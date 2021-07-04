@@ -1,15 +1,15 @@
 /* UTILITY CLASSES */
 
-body {    
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+body {
+	font-family: "Roboto", sans-serif;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+	flex: 1 0 auto;
+}
 
 /* Background Colors */
 
@@ -30,6 +30,17 @@ body {
 }
 .turquoise-blue {
 	background-color: #26ffe6;
+}
+.turquoise-blue-light {
+	background-color: #6bffee;
+}
+
+.azure {
+	background-color: #3a86ff;
+}
+
+.winter-sky {
+	background-color: #ff006e;
 }
 
 /* Text Colors */
@@ -52,20 +63,28 @@ body {
 	color: #26ffe6;
 }
 
+.azure-text {
+	color: #3a86ff;
+}
+
+.winter-sky-text {
+	color: #ff006e;
+}
+
 /* Google Fonts */
 
 .roboto-text {
-    font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 
-.tourney-text{
-    font-family: 'Tourney', cursive;
+.tourney-text {
+	font-family: "Tourney", cursive;
 }
 
 /* FLASH MESSAGES */
 
 .flashes h4 {
-    line-height: 2;
+	line-height: 2;
 }
 
 /* ICONS */
@@ -74,5 +93,23 @@ body {
 	font-size: 60px !important;
 }
 
+/* Customise Materialize default input settings */
+/* label color */
+.input-field label {
+	color: #000;
+}
+/* label focus color */
+.input-field input[type="text"]:focus + label {
+	color: #ff006e;
+}
+/* label underline focus color */
+.input-field input[type="text"]:focus {
+	border-bottom: 1px solid #444;
+	box-shadow: 0 1px 0 0 #444;
+}
 
 
+/* icon prefix focus color */
+.input-field .prefix.active {
+	color: #2d2e83;
+}

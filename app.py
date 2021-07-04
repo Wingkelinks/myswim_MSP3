@@ -106,7 +106,9 @@ def logout():
 # ADD NEW SWIM SET
 @app.route("/add_set")
 def add_set():
-    return render_template("add_set.html")
+    #find categories in db and sort a-z
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_set.html", categories=categories)
 
 
 if __name__ == "__main__":
