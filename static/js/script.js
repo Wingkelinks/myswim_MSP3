@@ -4,4 +4,5 @@ $(document).ready(function () {
   $('.collapsible').collapsible();
   $('.fixed-action-btn').floatingActionButton({ direction: 'left' });
   $('.tooltipped').tooltip();
+  $('select').formSelect();
   });

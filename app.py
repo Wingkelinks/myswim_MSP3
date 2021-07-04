@@ -103,6 +103,12 @@ def logout():
     return redirect(url_for("login"))
 
 
+# ADD NEW SWIM SET
+@app.route("/add_set")
+def add_set():
+    return render_template("add_set.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),
