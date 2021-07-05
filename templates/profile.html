@@ -4,34 +4,61 @@
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <div class="card-panel">
-                <h3 class="center-align">
+                <h3 class="center-align ttu">
                     {{ username }}'s Profile
                 </h3>
             </div>
         </div>
     </div>
 
-    
-
-    <div class="row section-heading center valign-wrapper">
-        <div class="col s8 offset-s2">
-            <h3>My Sets</h3>
-        </div>
-        <div class="col s2">
+    <div class="flow-text center-align">
+        <p></p>
+        <p>Click <a href="{{ url_for('add_set') }}">here</a> to add a new set</p>
+        <div class="col">
             <div class="add-item-button-container">
                 <a href="{{ url_for('add_set') }}"
-                class="btn-floating orange accent-4 pulse" aria-label="add new set button">
+                class="btn-floating neon-green pulse" aria-label="add new set button">
                 <i class="fas fa-plus"></i>
                 </a>
             </div>
         </div>
     </div>
 
-    
-        <div class="flow-text indigo-text text-darken-4 center-align">
-            <p></p>
-            <p>Click <a href="{{ url_for('add_set') }}">here</a> to add a new set</p>
-        </div>
-    
+    <div class="row center">
+        <div class="col s12 m8 offset-m2">
+            <h3>My Sets</h3>
+        </div>      
+        <!-- Card -->
+		  <div class="row">
+			{% for set in sets if session.user|lower == set.created_by|lower %}
+			<div class="col s12 m6">
+			  <div class="card">
+				<div class="card-image">
+				  <img src="">
+				  <span class="card-title ttu tracked">{{ set.category_name }}</span>	  
+				</div>
+				<div class="card-content">
+					<h5>{{ set.set_name }}</h5>
+					<p>{{ set.warm_up }}</p>
+					<p>{{ set.pre_set }}</p>
+					<p>{{ set.main_set }}</p>
+					<p>{{ set.cool_down }}</p>
+					<p>{{ set.total_km }}</p>
+					<p><em>by: {{set.created_by }}</em></p>
+				</div>
 
+				<!-- EDIT DELETE BUTTONS -->
+				<!-- Tooltips on buttons in cards -->
+				<div class="right-align pa2">
+					<a href="{{ url_for('edit_set', set_id=set._id) }}" class="btn-floating waves-effect waves-light purple tooltipped" data-position="left" data-tooltip="EDIT"><i class="material-icons">edit</i>
+					</a>
+					<a href="" class="btn-floating waves-effect waves-light red tooltipped" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
+					</a>
+				</div>
+
+			  </div>
+			</div>
+			{% endfor %}
+		  </div>
+    </div>
 {% endblock %}

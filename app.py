@@ -19,10 +19,11 @@ app.secret_key = os.environ.get("SECRET_KEY") ## SECRET KEY FOR FLASK FUNCTIONS
 
 mongo = PyMongo(app) ## CREATE INSTANCE OF PYMONGO AND ADD FLASK APP OBJECT 
 
+# GET SETS PAGE
 @app.route("/")
 @app.route("/get_sets")
 def get_sets():
-    sets = list(mongo.db.sets.find()) #wrap 'find' method inside python list
+    sets = list(mongo.db.sets.find()) # wrap 'find' method inside python list
     return render_template("sets.html", sets=sets)
 
 # REGISTRATION 
@@ -85,8 +86,8 @@ def profile(username):
     # get the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    sets = list(mongo.db.activities.find(
-        {"created_by": session["user"]}).sort("_id", -1))
+    sets = list(mongo.db.sets.find(
+        {"created_by": session["user"]}).sort("_id", 1))
     categories = list(mongo.db.categories.find())
 
     if session["user"]:
