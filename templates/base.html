@@ -44,8 +44,24 @@
 	</head>
 	<body>
 		<header>
+
+			<!-- Dropdown Menu for Profile (Logged in users) -->
+
+			<ul id="dropdown1" class="dropdown-content">
+				<li><a href="{{ url_for('profile', username=session['user']) }}">View</a></li>
+				<li><a href="{{ url_for('add_set') }}">New Swim</a></li>
+	
+				<!-- If admin, show Manage Content -->
+				{% if session.user|lower == "admin"|lower %}
+				<li><a href="#">Manage Content</a></li>
+				{% endif %}
+				<li class="divider"></li>
+				<li><a href="{{ url_for('logout') }}">Log Out</a></li>
+			</ul>
+	
+
 			<!-- Main Navigation -->
-			<nav class="nav-extended">
+			<nav class="">
 				<div class="nav-wrapper azure">
 					<a href="{{ url_for('get_sets')}}" class="brand-logo tourney-text ml3"
 						>MySwim</a
@@ -57,23 +73,21 @@
 						<li><a href="{{ url_for('get_sets') }}">Home</a></li>
 						<!-- If logged in show below links -->
 						{% if session.user %}
-						<li>
-							<a href="{{ url_for('profile', username=session['user']) }}"
-								>Profile</a
-							>
-						</li>
-						<li><a href="{{ url_for('add_set') }}">New Swim</a></li>
-						<li><a href="{{ url_for('logout') }}">Log Out</a></li>
+							<li>
+								<a class="dropdown-trigger" href="{{ url_for('profile', username=session['user']) }}" data-target="dropdown1"
+									>Profile<i class="material-icons right">arrow_drop_down</i></a
+								>
+							</li>
 
 						<!-- Else, show Log In and Register -->
 						{% else %}
-						<li><a href="{{ url_for('login') }}">Log In</a></li>
-						<li><a href="{{ url_for('register') }}">Register</a></li>
-						<li><a href="#">Manage Content</a></li>
+							<li><a href="{{ url_for('login') }}">Log In</a></li>
+							<li><a href="{{ url_for('register') }}">Register</a></li>
 						{% endif %}
 					</ul>
 				</div>
 			</nav>
+
 			<!-- Mobile Navigation -->
 			<ul class="sidenav" id="mobile-demo">
 				<li><h4 class="center-align tourney-text">MySwim</h4></li>
@@ -81,26 +95,26 @@
 				<li><a href="{{ url_for('get_sets') }}">Home</a></li>
 				<!-- If logged in show below links -->
 				{% if session.user %}
-				<li>
-					<a href="{{ url_for('profile', username=session['user']) }}"
-						>Profile</a
-					>
-				</li>
-				<li><a href="{{ url_for('add_set') }}">New Swim</a></li>
-				<li><a href="{{ url_for('logout') }}">Log Out</a></li>
+					<li>
+						<a href="{{ url_for('profile', username=session['user']) }}"
+							>Profile</a
+						>
+					</li>
+					<li><a href="{{ url_for('add_set') }}">New Swim</a></li>
+					<li><a href="{{ url_for('logout') }}">Log Out</a></li>
 
 				<!-- Else, show Log In and Register -->
 				{% else %}
-				<li><a href="{{ url_for('login') }}">Log In</a></li>
-				<li><a href="{{ url_for('register') }}">Register</a></li>
-				<li><a href="#">Manage Content</a></li>
+					<li><a href="{{ url_for('login') }}">Log In</a></li>
+					<li><a href="{{ url_for('register') }}">Register</a></li>
+					<li><a href="#">Manage Content</a></li>
 				{% endif %}
 			</ul>
 		</header>
 
-		<section>
-			<!-- Flash Messages -->
+		<!-- Flash Messages -->
 
+		<section>
 			{% with messages = get_flashed_messages() %} {% if messages %} {% for
 			message in messages %}
 			<div class="row flashes">
@@ -108,6 +122,8 @@
 			</div>
 			{% endfor %} {% endif %} {% endwith %}
 		</section>
+
+		<!-- Main container for content on all templates -->
 
 		<main class="container">{% block content %} {% endblock %}</main>
 
