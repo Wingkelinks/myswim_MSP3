@@ -1,5 +1,4 @@
 import os
-import re
 from flask import (
     Flask, flash, render_template, 
     redirect, request,  session, url_for)
@@ -86,9 +85,12 @@ def profile(username):
     # get the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    sets = list(mongo.db.activities.find(
+        {"created_by": session["user"]}).sort("_id", -1))
+    categories = list(mongo.db.categories.find())
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, sets=sets, categories=categories)
 
     return redirect(url_for("login"))
 
@@ -123,6 +125,37 @@ def add_set():
     #find categories in db and sort a-z
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_set.html", categories=categories)
+
+
+
+# EDIT SWIM SET
+@app.route("/edit_set/<set_id>", methods=["GET", "POST"])
+def edit_set(set_id):
+    set = mongo.db.sets.find_one({"_id": ObjectId(set_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_set.html", set=set, categories=categories)
+
+
+# VIEW SETS IN USER PROFILE
+@app.route("/view_set/<set_id>")
+def view_set(set_id):
+    set = mongo.db.sets.find_one({"_id": ObjectId(set_id)})
+    user = mongo.db.users.find_one({"username": set["created_by"]})
+    categories = list(mongo.db.categories.find())
+
+    return render_template("view_set.html", set=set,
+                           categories=categories, user=user)
+
+
+
+# FAVOURITE AND ADD SET TO USER PROFILE 
+
+
+# GET CATEGORIES FOR MANAGE CONTENT PAGE BY ADMIN
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("manage_content.html", categories=categories)
 
 
 if __name__ == "__main__":

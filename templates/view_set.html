@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
 		<h3 class="center-align">Dive Right In and Pick a Set</h3>
 		  <!-- Card -->
 		  <div class="row">
@@ -21,14 +20,12 @@
 					<p><em>by: {{set.created_by }}</em></p>
 				</div>
 
-				<!-- FAVOURITE ADD PRINT BUTTONS -->
+				<!-- EDIT DELETE BUTTONS -->
 				<!-- Tooltips on buttons in cards -->
 				<div class="right-align pa2">
-					<a class="btn-floating waves-effect waves-light red tooltipped" data-position="left" data-tooltip="Favourite me!"><i class="material-icons">favorite</i>
+					<a href="{{ url_for('edit_set', set_id=set._id) }}" class="btn-floating waves-effect waves-light purple tooltipped" data-position="left" data-tooltip="EDIT"><i class="material-icons">edit</i>
 					</a>
-					<a class="btn-floating waves-effect waves-light blue tooltipped" data-position="top" data-tooltip="Add me to your collection!"><i class="material-icons">add</i>
-					</a>
-					<a class="btn-floating waves-effect waves-light green tooltipped" data-position="right" data-tooltip="Print me out."><i class="material-icons">print</i>
+					<a class="btn-floating waves-effect waves-light red tooltipped" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
 					</a>
 				</div>
 
@@ -36,4 +33,5 @@
 			</div>
 			{% endfor %}
 		  </div>
-{% endblock %}
+					
+{% endblock %}		

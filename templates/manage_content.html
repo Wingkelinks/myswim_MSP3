@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align pa4 ">Manage Content</h3>
+
+<div class="row">
+    {% for category in categories %}
+    <div class="col s12 m3">
+      <div class="card little-boy-blue darken-1">
+        <div class="card-content white-text ttu">
+          <span class="card-title">{{ category.category_name }}</span>
+          <p></p>
+        </div>
+        <div class="card-action">
+          <!-- EDIT DELETE BUTTONS -->
+          <!-- Tooltips on buttons in cards -->
+          <div class="center-align pa3">           
+              <a href="" class="btn-floating waves-effect waves-light neon-green tooltipped" data-position="left" data-tooltip="EDIT"><i class="material-icons">edit</i>
+              </a>            
+              <a class="btn-floating waves-effect waves-light winter-sky  tooltipped" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
+              </a>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}
