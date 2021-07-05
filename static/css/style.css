@@ -43,16 +43,16 @@ main {
 	background-color: #ff006e;
 }
 
-.neon-green{
+.neon-green {
 	background-color: #4dec38;
 }
 
 .mango {
-	background-color: #FFBE0B;
+	background-color: #ffbe0b;
 }
 
 .orange-pantone {
-	background-color: #FB5607;
+	background-color: #fb5607;
 }
 
 /* Text Colors */
@@ -83,8 +83,12 @@ main {
 	color: #ff006e;
 }
 
-.neon-green-text{
+.neon-green-text {
 	color: #4dec38;
+}
+
+.mango-text {
+	color: #ffbe0b;
 }
 
 /* Google Fonts */
@@ -109,23 +113,76 @@ main {
 	font-size: 60px !important;
 }
 
-/* Customise Materialize default input settings */
+/* CUSTOM DEFAULT FORM INPUT SETTINGS */
+
 /* label color */
 .input-field label {
 	color: #000;
+	font-size: 16px;
 }
-/* label focus color */
-.input-field input[type="text"]:focus + label {
-	color: #ff006e;
-}
-/* label underline focus color */
-.input-field input[type="text"]:focus {
-	border-bottom: 1px solid #444;
-	box-shadow: 0 1px 0 0 #444;
-}
-
 
 /* icon prefix focus color */
 .input-field .prefix.active {
 	color: #2d2e83;
+}
+
+
+/* Code Snippet: https://github.com/Dogfalo/materialize/issues/192 */
+textarea:focus {
+	border-bottom: 1px solid #444 !important;
+	-webkit-box-shadow: 0 1px 0 0 #444 !important;
+	-moz-box-shadow: 0 1px 0 0 #444 !important;
+	box-shadow: 0 1px 0 0 #444 !important;
+  }
+
+  textarea:valid {
+	border-bottom: 1px solid #4dec38 !important;
+	-webkit-box-shadow: 0 1px 0 0 #4dec38 !important;
+	-moz-box-shadow: 0 1px 0 0 #4dec38 !important;
+	box-shadow: 0 1px 0 0 #4dec38 !important;
+  }
+
+  textarea:invalid {
+	border-bottom: 1.5px solid #ff006e !important;
+	-webkit-box-shadow: 0 1.5px 0 0 #ff006e !important;
+	-moz-box-shadow: 0 1.5px 0 0 #ff006e !important;
+	box-shadow: 0 1.5px 0 0 #ff006e !important;
+  }
+
+  input:focus {
+	border-bottom: 1px solid #444 !important;
+	-webkit-box-shadow: 0 1px 0 0 #444 !important;
+	-moz-box-shadow: 0 1px 0 0 #444 !important;
+	box-shadow: 0 1px 0 0 #444 !important;
+  }
+
+  input:valid {
+	border-bottom: 1px solid #4dec38 !important;
+	-webkit-box-shadow: 0 1px 0 0 #4dec38 !important;
+	-moz-box-shadow: 0 1px 0 0 #4dec38 !important;
+	box-shadow: 0 1px 0 0 #4dec38 !important;
+  }
+
+  input:invalid {
+	border-bottom: 1.5px solid #ff006e  !important;
+	-webkit-box-shadow: 0 1.5px 0 0 #ff006e  !important;
+	-moz-box-shadow: 0 1.5px 0 0 #ff006e  !important;
+	box-shadow: 0 1.5px 0 0 #ff006e  !important;
+  }
+/* // Code Snippet: https://github.com/Dogfalo/materialize/issues/192 */
+
+
+/* CUSTOM STYLING DROPDOWN IN FORM */
+/* Style 'Select Category' black */
+#select-options-5e212ba4-8769-773c-e484-23cad7144ed40 > span {
+	color: #000 !important;
+}
+
+/* Style all other categories  */
+.dropdown-content li > a,
+.dropdown-content li > span {
+	color: #4dec38;
+	text-transform: capitalize;
+	font-weight: 900;
+	font-size: 18px;
 }
