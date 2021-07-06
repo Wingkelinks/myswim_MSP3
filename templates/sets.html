@@ -12,13 +12,32 @@
 				  <span class="card-title ttu tracked">{{ set.category_name }}</span>	  
 				</div>
 				<div class="card-content">
-					<h5>{{ set.set_name }}</h5>
-					<p>{{ set.warm_up }}</p>
-					<p>{{ set.pre_set }}</p>
-					<p>{{ set.main_set }}</p>
-					<p>{{ set.cool_down }}</p>
-					<p>{{ set.total_km }}</p>
-					<p><em>by: {{set.created_by }}</em></p>
+					<table>
+                        <h5>{{ set.set_name }}</h5>
+                        <tbody>
+                          <tr>
+                            <td>Warm Up</td>
+                            <td>{{ set.warm_up }}</td>
+                          </tr>
+                          <tr>
+                            <td>Pre Set</td>
+                            <td>{{ set.pre_set }}</td>
+                          </tr>
+                          <tr>
+                            <td>Main Set</td>
+                            <td>{{ set.main_set }}</td>
+                          </tr>
+                          <tr>
+                            <td>Cool Down</td>
+                            <td>{{ set.cool_down }}</td>
+                          </tr>
+                          <tr>
+                            <td>Total Distance</td>
+                            <td>{{ set.total_km }}</td>
+                          </tr>
+                          <p><em>by: {{set.created_by }}</em></p>
+                        </tbody>
+                      </table>			
 				</div>
 
 				<!-- FAVOURITE ADD PRINT BUTTONS -->
