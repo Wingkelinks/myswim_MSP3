@@ -128,12 +128,10 @@ def add_set():
     return render_template("add_set.html", categories=categories)
 
 
-
 # EDIT SWIM SET
 @app.route("/edit_set/<set_id>", methods=["GET", "POST"])
 def edit_set(set_id):
     set = mongo.db.sets.find_one({"_id": ObjectId(set_id)})
-    
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_set.html", set=set, categories=categories)
 
@@ -159,7 +157,7 @@ def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("manage_content.html", categories=categories)
 
-
+# ADD CATEGORY FUNCTION FOR ADMIN
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
