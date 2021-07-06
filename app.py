@@ -131,9 +131,25 @@ def add_set():
 # EDIT SWIM SET
 @app.route("/edit_set/<set_id>", methods=["GET", "POST"])
 def edit_set(set_id):
+    if request.method == "POST":
+        edit = {
+            "category_name": request.form.get("category_name"),
+            "set_name": request.form.get("set_name"),
+            "warm_up": request.form.get("warm_up"),
+            "pre_set": request.form.getlist("pre_set"),
+            "main_set": request.form.getlist("main_set"),
+            "cool_down": request.form.get("cool_down"),
+            "total_km": request.form.get("total_km"),
+            "created_by": session["user"]
+        }
+        mongo.db.sets.update({"_id": ObjectId(set_id)}, edit)
+        flash("Sucess! Your set has been updated.")   
+
     set = mongo.db.sets.find_one({"_id": ObjectId(set_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_set.html", set=set, categories=categories)
+
+
 
 
 # VIEW SETS IN USER PROFILE
