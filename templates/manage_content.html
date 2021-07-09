@@ -1,42 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align pa4 ">Manage Content</h3>
+<div class="container">
+  <h3 class="center-align pa4 ">Manage Content</h3>
 
-<!-- ADD CONTENT BUTTON FOR ADMIN  -->
+  <!-- ADD CONTENT BUTTON FOR ADMIN  -->
 
   <div class="row">
-    <!-- Call add_category function -->
-    <div class="card panel center-align col s12 m6">
-      <h4 class="">Add Category</h4><a href="{{ url_for('add_category') }}"  class="btn-floating btn-large waves-effect waves-light blue pulse"><i class="fas fa-plus"></i></a>
-    </div>
-    <div class="card panel center-align col s12 m6">
-      <h4 class="">Add Set</h4><a href="{{ url_for('add_category') }}"  class="btn-floating btn-large waves-effect waves-light blue pulse"><i class="fas fa-plus"></i></a>
-    </div>
+      <!-- Call add_category function -->
+      <div class="card panel center-align col s12 m6">
+        <h4 class="">Add Category</h4><a href="{{ url_for('add_category') }}"  class="btn-floating btn-large waves-effect waves-light blue pulse"><i class="fas fa-plus"></i></a>
+      </div>
+      <div class="card panel center-align col s12 m6">
+        <h4 class="">Add Set</h4><a href="{{ url_for('add_category') }}"  class="btn-floating btn-large waves-effect waves-light blue pulse"><i class="fas fa-plus"></i></a>
+      </div>
   </div>
-  
-<div class="row">
-    {% for category in categories %}
-    <div class="col s12 m3">
-      <div class="card little-boy-blue darken-1">
-        <div class="card-content white-text ttu">
-          <span class="card-title">{{ category.category_name }}</span>
-          <p></p>
-        </div>
-        <div class="card-action">
-          <!-- EDIT DELETE BUTTONS -->
-          <!-- Tooltips on buttons in cards -->
-          <div class="center-align pa3">           
-              <a href="" class="btn-floating waves-effect waves-light neon-green tooltipped" data-position="left" data-tooltip="EDIT"><i class="material-icons">edit</i>
-              </a>            
-              <a class="btn-floating waves-effect waves-light winter-sky  tooltipped" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
-              </a>
-          
+    
+  <div class="row">
+      {% for category in categories %}
+      <div class="col s12 m3">
+        <div class="card little-boy-blue darken-1">
+          <div class="card-content white-text ttu">
+            <span class="card-title">{{ category.category_name }}</span>
+            <p></p>
+          </div>
+          <div class="card-action">
+            <!-- EDIT DELETE BUTTONS -->
+            <!-- Tooltips on buttons in cards -->
+            <div class="center-align pa3">           
+                <a href="" class="btn-floating waves-effect waves-light neon-green tooltipped" data-position="left" data-tooltip="EDIT"><i class="material-icons">edit</i>
+                </a>            
+                <a class="btn-floating waves-effect waves-light winter-sky  tooltipped" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
+                </a>
+            
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    {% endfor %}
+      {% endfor %}
   </div>
-
+</div>
 {% endblock %}
