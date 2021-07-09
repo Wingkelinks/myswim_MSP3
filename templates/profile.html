@@ -67,14 +67,14 @@
                       </table>					
 				</div>
 
-				<!-- EDIT DELETE BUTTONS -->
-				<!-- Tooltips on buttons in cards -->
-				<div class="right-align pa2">
-					<a href="{{ url_for('edit_set', set_id=set._id) }}" class="btn-floating waves-effect waves-light purple tooltipped" data-position="left" data-tooltip="EDIT"><i class="material-icons">edit</i>
-					</a>
-					<a href="" class="btn-floating waves-effect waves-light red tooltipped" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
-					</a>
-				</div>
+          <!-- EDIT DELETE BUTTONS -->
+          <!-- Tooltips on buttons in cards -->
+          <div class="right-align pa2">
+            <a href="{{ url_for('edit_set', set_id=set._id) }}" class="btn-floating waves-effect waves-light purple tooltipped" data-position="left" data-tooltip="EDIT"><i class="material-icons">edit</i>
+            </a>
+            <a href="{{ url_for('delete_set', set_id=set._id) }}" class="btn-floating waves-effect waves-light red tooltipped" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
+            </a>
+          </div>
 
 			  </div>
 			</div>

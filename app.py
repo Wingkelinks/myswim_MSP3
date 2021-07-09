@@ -158,9 +158,13 @@ def edit_set(set_id):
 # DELETE SWIM SET
 @app.route("/delete_set/<set_id>")
 def delete_set(set_id):
+    # Find Set
+    set = mongo.db.sets.find_one({"_id": ObjectId(set_id)})
 
-    set = mongo.db.sets.remove({"_id": ObjectId(set_id)})
-    flash("Your Set Has Been Deleted")
+    # Remove set from db
+    mongo.db.sets.remove({"_id": ObjectId(set_id)})
+
+    flash("Set Deleted ({})".format(set["set_name"]))
     return redirect(url_for('profile', username=session['user']))
 
 
@@ -185,6 +189,8 @@ def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("manage_content.html", categories=categories)
 
+
+
 # ADD CATEGORY FUNCTION FOR ADMIN
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
@@ -206,4 +212,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),
     debug=True) ## UPDATE TO FALSE BEFORE DEPLOYMENT
-
