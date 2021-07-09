@@ -48,9 +48,11 @@
 			<!-- Dropdown Menu for Profile (Logged in users) -->
 
 			<ul id="dropdown1" class="dropdown-content">
-				<li><a href="{{ url_for('profile', username=session['user']) }}">View</a></li>
+				<li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
 
 				<li><a href="{{ url_for('add_set') }}">New Swim</a></li>
+
+				<li><a href="{{ url_for('get_sets') }}">Search Sets</a></li>
 
 				<!-- If admin, show Manage Content -->
 				<!-- Call get_categories function -->
@@ -64,36 +66,36 @@
 	
 
 			<!-- Main Navigation -->
-			<nav class="">
-				<div class="nav-wrapper azure">
-					
-					<!-- Call get_sets function -->
-					<a href="{{ url_for('get_sets') }}" class="brand-logo tourney-text ml3"
-						>MySwim</a
-					>
-					<a href="#" data-target="mobile-demo" class="sidenav-trigger right"
-						><i class="fas fa-bars"></i
-					></a>
-					<ul class="right hide-on-med-and-down">
-						<li><a href="{{ url_for('get_sets') }}">Home</a></li>
-						
-						<!-- If logged in show below links -->
-						{% if session.user %}
-							<li>
-								<a class="dropdown-trigger" href="#!" data-target="dropdown1"
-									>Profile<i class="material-icons right">arrow_drop_down</i>
-								</a>
-							</li>
+			<div class="navbar-fixed">
+				<nav>
+					<div class="nav-wrapper azure">	
+										
+						<a href="{{ url_for('home') }}" class="brand-logo tourney-text ml3"
+							>MySwim</a
+						>
+						<a href="#" data-target="mobile-demo" class="sidenav-trigger right"
+							><i class="fas fa-bars"></i
+						></a>
+						<ul class="right hide-on-med-and-down">
+							<li><a href="{{ url_for('home') }}">Home</a></li>
+							
+							<!-- If logged in show below links -->
+							{% if session.user %}
+								<li>
+									<a class="dropdown-trigger" href="#!" data-target="dropdown1"
+										>Profile<i class="material-icons right">arrow_drop_down</i>
+									</a>
+								</li>
 
-						<!-- Else, show Log In and Register -->
-						{% else %}
-							<li><a href="{{ url_for('login') }}">Log In</a></li>
-							<li><a href="{{ url_for('register') }}">Register</a></li>
-						{% endif %}
-					</ul>
-				</div>
-			</nav>
-
+							<!-- Else, show Log In and Register -->
+							{% else %}
+								<li><a href="{{ url_for('login') }}">Log In</a></li>
+								<li><a href="{{ url_for('register') }}">Register</a></li>
+							{% endif %}
+						</ul>
+					</div>
+				</nav>
+			</div>
 			<!-- Mobile Navigation -->
 			<ul class="sidenav" id="mobile-demo">
 				<li><h4 class="center-align tourney-text">MySwim</h4></li>
@@ -138,7 +140,7 @@
 
 		<!-- Main container for content on all templates -->
 
-		<main class="container">
+		<main class="">
 			{% block content %} 
 			{% endblock %}</main>
 

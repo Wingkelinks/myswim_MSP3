@@ -1,114 +1,114 @@
 {% extends "base.html" %} 
 {% block content %}
 
+<div class="container">
+    <h3 class="center-align pa4">Edit a Set</h3>
 
-<h3 class="center-align pa4">Edit a Set</h3>
-
-
-<div class="row">
-    <form class="col s12" method="POST" 
-		action="{{ url_for('edit_set', set_id=set._id) }}">
-        <!-- Set Name -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-pencil-alt fa-3x prefix azure-text"></i>
-                <input id="set_name" name="set_name" value="{{ set.set_name }}" type="text" class="validate" required>
-                <label for="set_name" class="">Set Name</label>
-            </div>
-        </div>
-
-        <!-- Select Category -->
-        <div class="row">
-            <div class="input-field col s12">   
-                <i class="fas fa-folder-open fa-3x prefix azure-text"></i>
-                    <select id="category_name" name="category_name" class="validate" required>
-                        <option value="" selected>Select Category</option>
-                        <!-- Iterate over categories in DB -->
-                        {% for category in categories if not category.category_name == "Unassigned" %}
-                            {% if category.category_name == set.category_name %}
-                                <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                            {% else %}
-                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                            {% endif %}
-                        {% endfor %}
-                        <!-- // Iterate over categories in DB -->
-                    </select>
-                <label for="category_name" class=""></label>
-            </div>
-        </div>
-
-        <!-- Warm Up -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-swimming-pool fa-3x prefix azure-text"></i>
-                <textarea id="warm_up" name="warm_up" 
-                class="materialize-textarea validate" required>
-                {{- set.warm_up -}}
-                </textarea>
-                <label for="warm_up">Warm Up</label>
-            </div>
-        </div>
-
-        <!-- Pre Set -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-swimmer fa-3x prefix azure-text"></i>
-                <textarea id="pre_set" name="pre_set" class="materialize-textarea validate" required>
-                    {{- set.pre_set -}}
-                </textarea>
-                <label for="pre_set">Pre Set</label>
-            </div>
-        </div>
-
-        <!-- Main Set -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-swimmer fa-3x prefix azure-text"></i>
-                <textarea id="main_set" name="main_set" class="materialize-textarea validate" required>
-                    {{- set.main_set -}}
-                </textarea>
-                <label for="main_set">Main Set</label>
-            </div>
-        </div>
-
-        <!-- Cool Down -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="far fa-thumbs-up fa-3x prefix azure-text"></i>
-                <textarea id="cool_down" name="cool_down"  class="materialize-textarea validate" required>
-                    {{- set.cool_down -}}
-                </textarea>
-                <label for="cool_down">Cool Down</label>
-            </div>
-        </div>
-
-        <!-- Total km -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-tachometer-alt fa-3x prefix azure-text"></i>
-                <textarea id="total_km" name="total_km" class="materialize-textarea validate" required>
-                    {{- set.total_km -}}
-                </textarea>
-                <label for="total_km">Distance (km)</label>
-            </div>
-        </div>
-
-        <!-- Edit or Cancel Buttons -->
-        <div class="row center-align">           
-                <div class="col s6">
-                    <!-- <a></a> used in order to call python function directly -->
-                    <a href="{{ url_for('get_sets') }}" class="btn-large winter-sky" aria-label="cancel submit button">
-                        Cancel <i class="fas fa-times-circle right"></i>
-                    </a>
+    <div class="row">
+        <form class="col s12" method="POST" 
+            action="{{ url_for('edit_set', set_id=set._id) }}">
+            <!-- Set Name -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt fa-3x prefix azure-text"></i>
+                    <input id="set_name" name="set_name" value="{{ set.set_name }}" type="text" class="validate" required>
+                    <label for="set_name" class="">Set Name</label>
                 </div>
-                <div class="col s6">
-                    <button type="submit" class="btn-large neon-green" aria-label="submit form button">
-                        Edit <i class="fas fa-edit right"></i>
-                    </button>
-                </div>                              
-        </div>
+            </div>
 
-    </form>
+            <!-- Select Category -->
+            <div class="row">
+                <div class="input-field col s12">   
+                    <i class="fas fa-folder-open fa-3x prefix azure-text"></i>
+                        <select id="category_name" name="category_name" class="validate" required>
+                            <option value="" selected>Select Category</option>
+                            <!-- Iterate over categories in DB -->
+                            {% for category in categories if not category.category_name == "Unassigned" %}
+                                {% if category.category_name == set.category_name %}
+                                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                                {% else %}
+                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endif %}
+                            {% endfor %}
+                            <!-- // Iterate over categories in DB -->
+                        </select>
+                    <label for="category_name" class=""></label>
+                </div>
+            </div>
+
+            <!-- Warm Up -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-swimming-pool fa-3x prefix azure-text"></i>
+                    <textarea id="warm_up" name="warm_up" 
+                    class="materialize-textarea validate" required>
+                    {{- set.warm_up -}}
+                    </textarea>
+                    <label for="warm_up">Warm Up</label>
+                </div>
+            </div>
+
+            <!-- Pre Set -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-swimmer fa-3x prefix azure-text"></i>
+                    <textarea id="pre_set" name="pre_set" class="materialize-textarea validate" required>
+                        {{- set.pre_set -}}
+                    </textarea>
+                    <label for="pre_set">Pre Set</label>
+                </div>
+            </div>
+
+            <!-- Main Set -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-swimmer fa-3x prefix azure-text"></i>
+                    <textarea id="main_set" name="main_set" class="materialize-textarea validate" required>
+                        {{- set.main_set -}}
+                    </textarea>
+                    <label for="main_set">Main Set</label>
+                </div>
+            </div>
+
+            <!-- Cool Down -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="far fa-thumbs-up fa-3x prefix azure-text"></i>
+                    <textarea id="cool_down" name="cool_down"  class="materialize-textarea validate" required>
+                        {{- set.cool_down -}}
+                    </textarea>
+                    <label for="cool_down">Cool Down</label>
+                </div>
+            </div>
+
+            <!-- Total km -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-tachometer-alt fa-3x prefix azure-text"></i>
+                    <textarea id="total_km" name="total_km" class="materialize-textarea validate" required>
+                        {{- set.total_km -}}
+                    </textarea>
+                    <label for="total_km">Distance (km)</label>
+                </div>
+            </div>
+
+            <!-- Edit or Cancel Buttons -->
+            <div class="row center-align">           
+                    <div class="col s6">
+                        <!-- <a></a> used in order to call python function directly -->
+                        <a href="{{ url_for('get_sets') }}" class="btn-large winter-sky" aria-label="cancel submit button">
+                            Cancel <i class="fas fa-times-circle right"></i>
+                        </a>
+                    </div>
+                    <div class="col s6">
+                        <button type="submit" class="btn-large neon-green" aria-label="submit form button">
+                            Edit <i class="fas fa-edit right"></i>
+                        </button>
+                    </div>                              
+            </div>
+
+        </form>
+    </div>
 </div>
 {% endblock %}
 

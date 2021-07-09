@@ -6,6 +6,7 @@ $(document).ready(function () {
 	$(".tooltipped").tooltip();
 	$("select").formSelect();
 	$(".dropdown-trigger").dropdown();
+	$('.parallax').parallax();
 
 	// Customise Materialize Select Validation
 	validateMaterializeSelect();

@@ -21,6 +21,11 @@ mongo = PyMongo(app) ## CREATE INSTANCE OF PYMONGO AND ADD FLASK APP OBJECT
 
 # GET SETS PAGE
 @app.route("/")
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
 @app.route("/get_sets")
 def get_sets():
     sets = list(mongo.db.sets.find()) # wrap 'find' method inside python list
@@ -149,7 +154,14 @@ def edit_set(set_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_set.html", set=set, categories=categories)
 
+# NOT WORKING 
+# DELETE SWIM SET
+@app.route("/delete_set/<set_id>")
+def delete_set(set_id):
 
+    set = mongo.db.sets.remove({"_id": ObjectId(set_id)})
+    flash("Your Set Has Been Deleted")
+    return redirect(url_for('profile', username=session['user']))
 
 
 # VIEW SETS IN USER PROFILE
@@ -185,6 +197,9 @@ def add_category():
         return redirect(url_for("get_categories"))
 
     return render_template("add_content.html")
+
+
+
 
 
 if __name__ == "__main__":
