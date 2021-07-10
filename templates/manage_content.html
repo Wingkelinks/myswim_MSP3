@@ -25,15 +25,20 @@
             <p></p>
           </div>
           <div class="card-action">
+            
             <!-- EDIT DELETE BUTTONS FOR ADMIN -->
             <!-- Tooltips on buttons in cards -->
             <div class="center-align pa3"> 
               {% if session.user|lower == "admin" %}          
                   <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn-floating waves-effect waves-light neon-green tooltipped" data-position="left" data-tooltip="EDIT"><i class="material-icons">edit</i>
-                  </a>            
-                  <a class="btn-floating waves-effect waves-light winter-sky  tooltipped" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
+                  </a>
+              {% endif %}     
+              
+              {% if session.user|lower == "admin" and not category.category_name == "Unassigned" %}
+                  <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn-floating waves-effect waves-light winter-sky  tooltipped" data-target="{{ category._id }}" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
                   </a>
               {% endif %}
+              
             </div>
           </div>
         </div>

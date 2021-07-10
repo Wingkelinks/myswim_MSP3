@@ -228,10 +228,32 @@ def edit_category(category_id):
             "category_name": request.form.get("category_name"),
         }}
 
-        # Update category in the DB
+        # Update category in DB
         mongo.db.categories.update_many(category, edit)
         flash("Category Updated")
         return redirect(url_for("get_categories"))
+
+
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    
+    # If user not logged in
+    if "user" not in session:
+        flash("Please Log In!")
+        return redirect(url_for("login"))
+
+    # If user is not admin
+    elif session["user"].lower() != "admin":
+        flash("Sorry, you are not permitted to do that!")
+        return redirect(url_for("get_categories"))
+
+    else:
+    # Delete category from DB
+        mongo.db.categories.remove(category)
+        flash("Category Deleted")
+        return redirect(url_for('get_categories'))
 
         
 
