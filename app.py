@@ -154,7 +154,7 @@ def edit_set(set_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_set.html", set=set, categories=categories)
 
-# NOT WORKING 
+ 
 # DELETE SWIM SET
 @app.route("/delete_set/<set_id>")
 def delete_set(set_id):
@@ -190,7 +190,6 @@ def get_categories():
     return render_template("manage_content.html", categories=categories)
 
 
-
 # ADD CATEGORY FUNCTION FOR ADMIN
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
@@ -205,8 +204,36 @@ def add_category():
     return render_template("add_content.html")
 
 
+# EDIT AND DELETE CATEGORIES FOR ADMIN
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
 
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
 
+    # If user not logged in
+    if "user" not in session:
+        flash("Please Log In!")
+        return redirect(url_for("login"))
+
+    # If user is not admin
+    elif session["user"].lower() != "admin":
+        flash("Sorry, you are not permitted to do that!")
+        return redirect(url_for("get_categories"))
+
+    else:
+        if request.method != "POST":
+            return render_template("edit_category.html", category=category)
+
+        edit = {"$set": {
+            "category_name": request.form.get("category_name"),
+        }}
+
+        # Update category in the DB
+        mongo.db.categories.update_many(category, edit)
+        flash("Category Updated")
+        return redirect(url_for("get_categories"))
+
+        
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
