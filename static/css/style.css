@@ -51,6 +51,10 @@ main {
 	background-color: #ffbe0b;
 }
 
+.jasmine {
+	background-color: #FFE499;
+}
+
 .orange-pantone {
 	background-color: #fb5607;
 }
@@ -123,7 +127,20 @@ main {
 	line-height: 2;
 }
 
-/* HOME PAGE */
+/* FOOTER */
+ 
+
+
+.footer-menu li{
+	display: inline-block;
+	font-size: 20px;
+	padding: 0px 8px;
+}
+
+.copyright {
+	font-size: 20px;
+	
+}
 
 
 /* CARD TITLES - SEARCH SETS PAGE */
@@ -210,4 +227,15 @@ textarea:focus {
 	text-transform: capitalize;
 	font-weight: 900;
 	font-size: 18px;
+}
+
+/* Override materialize classes to accommodate dynamically added input fields. When added, new input fields throw alignment out */
+
+.col .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.row:not(:last-of-type) {
+	margin-bottom: 10px;
 }
