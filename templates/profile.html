@@ -68,32 +68,34 @@
             </div>
             <!-- CARD REVEAL -->
             <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>			  
-              <table>
-              <h5>{{ set.set_name }}</h5>
-              <tbody>
-                <tr>
-                <td>Warm Up</td>
-                <td>{{ set.warm_up }}</td>
-                </tr>
-                <tr>
-                <td>Pre Set</td>
-                <td>{{ set.pre_set }}</td>
-                </tr>
-                <tr>
-                <td>Main Set</td>
-                <td>{{ set.main_set }}</td>
-                </tr>
-                <tr>
-                <td>Cool Down</td>
-                <td>{{ set.cool_down }}</td>
-                </tr>
-                <tr>
-                <td>Total Distance</td>
-                <td>{{ set.total_km }}</td>
-                </tr>
-              </tbody>
-              </table>
+              <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>	
+              		  
+              <h5 class="center-align">{{ set.set_name|upper}}</h5>
+			  
+                <ul class="collection with-header">
+                  <li class="collection-header"><h5>Warm Up</h5></li>
+                  <li class="collection-item">{{ set.warm_up }}</li>
+                </ul>
+                <ul class="collection with-header">
+                  <li class="collection-header"><h5>Pre Set</h5></li>
+                  {% for pre_set in set.pre_set %}
+                  <li class="collection-item">{{ pre_set }}</li>
+                  {% endfor %}
+                </ul>
+                <ul class="collection with-header">
+                  <li class="collection-header"><h5>Main Set</h5></li>
+                  {% for main_set in set.main_set %}
+                  <li class="collection-item">{{ main_set }}</li>
+                  {% endfor %}
+                </ul>
+                <ul class="collection with-header">
+                  <li class="collection-header"><h5>Cool Down</h5></li>
+                  <li class="collection-item">{{ set.cool_down }}</li>
+                </ul>
+                <ul class="collection with-header">
+                  <li class="collection-header"><h5>Total Distance</h5></li>
+                  <li class="collection-item">{{ set.total_km }}</li>
+                </ul>
             </div>
         </div>
       </div>
