@@ -1,30 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
-						
-    <div class="parallax-container">
-        <div class="parallax responsive-img"><img src="{{ url_for('static', filename='images/dive-unsplash.jpg') }}"></div>   
-    </div>
-    <div class="section orange-crayola">
-        <div class="row container">
-        <h1 class="header brand-logo tourney-text ml3 center white-text">MySwim</h1>
-        </div>
-    </div>
-    <div class="section orange-crayola">
-        <div class="row container">
-        <p class="white-text text-darken-3 lighten-3 f3 lh-copy fw9 tj">Are you a swimmer looking for a convenient way to store and access your swim sets? If so, MySwim is made for you! Other than providing a secure place to store and access your swim sets, it also allows you to search for existing and new sets, that have been uploaded by fellow swimmers.
 
-        MySwim allows you to create a free account where you can add and save as many of your own swim sets, that are then shared with the MySwim community. You can save some of your favourite sets to your profile for convenient access. You can also print sets straight from the website.</p>
-        </div>
-    </div>
-    <div class="parallax-container">
-        <div class="parallax responsive-img"><img src="{{ url_for('static', filename='images/pool1-unsplash.jpg') }}"></div>
-    </div>
-    <div class="section orange-crayola">
-        <div class="row container">
-        <h1 class="header brand-logo tourney-text ml3 center white-text">Register Now!</h1>
-        <div class="center-align">
-        <a href="{{ url_for('register') }}" class="btn-floating btn-large azure pulse"><i class="material-icons">edit</i></a></div>
-        </div>       
-    </div>
+
+<header>
+    <div class="hero-image ">     
+        <div class="tc">       
+          <h1 class="f-subheadline-l lh-title white-text pt7 tourney-text fw4 tracked">Welcome to MySwim</h1>
+          <h3 class="f2 lh-title white-text pt4 fw6 ttu">By Swimmers For All Swimmers</h3>            
+      </div>
+    </div> 
+</header>
+  <article class="orange-pantone white-text">
+    <div class="center measure-wide f3 pv5 ph2">
+        <h1 class="f1 lh-title tourney-text pb2">About MySwim</h1>
+        <p class="lh-copy fw6 tj">
+            Are you a swimmer looking for a convenient way to store and access your swim sets? If so, MySwim is made for you! Other than providing a secure place to store and access your swim sets, it also allows you to search for existing and new sets, that have been uploaded by fellow swimmers.
+        </p>
+        <p class="lh-copy fw6 tj">
+            MySwim allows you to create a free account where you can add and save as many of your own swim sets, that are then shared with the MySwim community. You can save some of your favourite sets to your profile for convenient access. You can also print sets straight from the website.
+        </p>
+      </div>
+
+      {% if session.user %}
+          <div class="row container">
+              <h1 class="f1 tourney-text ml3 center white-text">Check out the collection of Swim Sets now!</h1>
+              <div class="center-align">
+              <a href="{{ url_for('get_sets') }}" class="btn-floating btn-large azure pulse"><i class="fas fa-hand-point-right"></i></a></div>
+              </div> 
+           {% else %}
+          <div class="row container">
+              <h1 class="f1 tourney-text ml3 center white-text">Register Now!</h1>
+              <div class="center-align">
+              <a href="{{ url_for('register') }}" class="btn-floating btn-large azure pulse"><i class="fas fa-user-plus"></i></a></div>
+          </div> 
+          {% endif %}  
+  </article>
 
 {% endblock %}

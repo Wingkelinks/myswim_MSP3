@@ -127,10 +127,30 @@ main {
 	line-height: 2;
 }
 
+/* HOME PAGE */
+
+.hero-image{
+	background: linear-gradient(rgba(3, 47, 77, 0.4), rgba(0, 0, 0, 0.9)), url(/static/images/dive-unsplash.jpg) no-repeat center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	height: 100vh;
+	background-attachment: fixed;
+}
+
+/* Overide Materialize default margin on H1 to help push hero image up */
+header h1  {
+	margin-top: 0;
+}
+
+article {
+	height: 100vh;
+}
+
+
 /* FOOTER */
  
-
-
 .footer-menu li{
 	display: inline-block;
 	font-size: 20px;
