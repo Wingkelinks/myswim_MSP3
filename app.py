@@ -34,7 +34,7 @@ def get_id():
     user_id = str(get_user()['_id'])
     return user_id
 
-# --------------- FUNCTIONS --------------- #    
+# -------------// FUNCTIONS --------------- #    
 
 
 # --------------- ROUTING --------------- #
@@ -50,6 +50,14 @@ def home():
 @app.route("/get_sets")
 def get_sets():
     sets = list(mongo.db.sets.find()) # Wrap 'find' method inside python list
+    return render_template("sets.html", sets=sets)
+
+
+# SEARCH SETS
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    sets = list(mongo.db.sets.find({"$text": {"$search": query}}))
     return render_template("sets.html", sets=sets)
 
 

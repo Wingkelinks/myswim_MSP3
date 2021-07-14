@@ -1,7 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 	<div class="container">
-		<h3 class="center-align">Dive Right In and Pick a Set</h3>
+
+		<h3 class="center-align pa2">Dive Right In and Pick a Set</h3>
+
+		<div class="ma5"></div>
+
+		<div class="row card-panel">
+			<form action="{{ url_for('search') }}" method="post" class="col s12 ">
+				<div class="row valign-wrapper center-align">
+					<div class="input-field col s12 m8">
+						<i class="fas fa-search prefix neon-green-text text-darken-4"></i>
+						<input type="text" name="query" id="query" minlength="3" class="validate" required>
+						<label for="query">Search Sets</label>
+					</div>
+					<div class="col s12 m4">
+						<a href="{{ url_for('get_sets') }}" class="winter-sky btn ">Reset</a>
+						<button type="submit" class="azure btn ">
+							<i class="fas fa-search left"></i> Search
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	<div class="ma5"></div>
 
 		{% for set in sets %}
 		<div class="card medium sticky action">
