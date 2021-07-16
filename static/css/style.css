@@ -127,6 +127,12 @@ main {
 	line-height: 2;
 }
 
+/* NAVIGATION */
+
+nav ul a {
+	font-size: 1.4rem;
+}
+
 /* HOME PAGE */
 
 .hero-image{
@@ -140,6 +146,7 @@ main {
 }
 
 /* Overide Materialize default margin on H1 to help push hero image up */
+
 header h1  {
 	margin-top: 0;
 }
@@ -150,17 +157,30 @@ article {
 
 
 /* FOOTER */
- 
+
+#footer-container {
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	padding: 8px 0;
+}
+
+.footer-icons li{
+	display: inline-block;
+	font-size: 16px;
+	padding: 0px 6px;	
+}
+
 .footer-menu li{
 	display: inline-block;
 	font-size: 20px;
-	padding: 0px 8px;
+	padding: 0px 12px;
 }
 
 .copyright {
-	font-size: 20px;
-	
+	font-size: 16px;
+	margin-top: 4px;		
 }
+
 
 
 /* CARD TITLES - SEARCH SETS PAGE */
@@ -175,7 +195,7 @@ article {
 	font-size: 60px !important;
 }
 
-/* CUSTOM DEFAULT FORM INPUT SETTINGS */
+/* CUSTOMISE DEFAULT FORM INPUT SETTINGS */
 
 /* label color */
 .input-field label {
@@ -236,17 +256,18 @@ textarea:focus {
 
 /* CUSTOM STYLING DROPDOWN IN FORM */
 /* Style 'Select Category' black */
+
 #select-options-5e212ba4-8769-773c-e484-23cad7144ed40 > span {
 	color: #000 !important;
 }
 
-/* Style all other categories  */
+/* Style all other categories in dropdown. The following also gets applied to the NAV DROPDOWN MENU */
+
 .dropdown-content li > a,
 .dropdown-content li > span {
-	color: #4dec38;
-	text-transform: capitalize;
+	color: #ff006e;
 	font-weight: 900;
-	font-size: 18px;
+	font-size: 1.4rem;
 }
 
 /* Override materialize classes to accommodate dynamically added input fields. When added, new input fields throw alignment out */
