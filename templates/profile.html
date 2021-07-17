@@ -42,27 +42,33 @@
       <div class="center-align">
           <h3 class="fw9 pb3">{{ username|title }}'s Sets</h3>
       </div>      
-		  
-		{% for set in sets if session.user|lower == set.created_by|lower %}
-    <div class="row">
-      <div class="col s12 m6">
+    
+    
+
+		{% for set in sets if session.user == set.created_by %}
+      <div class="row">
+        <!-- empty div to center div with content -->
+        <div class="col s12 m4 l2"></div>
+        <div class="col s12 m4 l8">
         <div class="card large sticky action">
             <div class="card-image waves-effect waves-block waves-light">
               <img class="activator responsive-img" src="{{ url_for('static', filename='images/freestyle-unsplash.jpg') }}">
               <h4 class="ttu card-title white-text orange-pantone fw9">{{ set.category_name }}</h4>
             </div>
             <div class="card-content">
-              <span class="card-title activator black-text">{{ set.set_name }}<i class="material-icons right">more_vert</i></span>
-              <p class="black-text i">by: {{set.created_by }}</p>
+              <span class="card-title activator black-text">{{ set.set_name|title }}<i class="material-icons right">more_vert</i></span>
+              <p class="black-text i">by: {{set.created_by|title}}</p>
             </div>
             <!-- CARD FRONT -->
             <div class="card-action">
-              <!-- EDIT DELETE BUTTONS -->
+              <!-- EDIT DELETE PRINT BUTTONS -->
               <!-- Tooltips on buttons in cards -->
               <div class="right-align ">
-                <a href="{{ url_for('edit_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light purple tooltipped" data-position="left" data-tooltip="EDIT"><i class="material-icons">edit</i>
+                <a href="{{ url_for('edit_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light azure tooltipped" data-position="left" data-tooltip="EDIT"><i class="material-icons">edit</i>
                 </a>
-                <a href="{{ url_for('delete_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light red tooltipped" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
+                <a href="{{ url_for('delete_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light winter-sky tooltipped" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
+                </a>
+                <a href="{{ url_for('print_set', set_id=set._id ) }}" class="btn-floating btn-small waves-effect waves-light neon-green tooltipped" data-position="top" data-tooltip="GO TO PRINT PAGE"><i class="material-icons">print</i>
                 </a>
               </div>
             </div>
@@ -96,10 +102,23 @@
                   <li class="collection-header"><h5>Total Distance</h5></li>
                   <li class="collection-item">{{ set.total_km }}</li>
                 </ul>
+                <!-- EDIT DELETE PRINT BUTTONS -->
+                <!-- Tooltips on buttons in cards -->
+              <div class="right-align ">
+                <a href="{{ url_for('edit_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light azure tooltipped" data-position="left" data-tooltip="EDIT"><i class="material-icons">edit</i>
+                </a>
+                <a href="{{ url_for('delete_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light winter-sky tooltipped" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
+                </a>
+                <a href="{{ url_for('print_set', set_id=set._id ) }}" class="btn-floating btn-small waves-effect waves-light neon-green tooltipped" data-position="top" data-tooltip="GO TO PRINT PAGE"><i class="material-icons">print</i>
+                </a>
+              </div>
             </div>
         </div>
+        </div>
+        <!-- 2nd empty div to center div with content -->
+        <div class="col s12 m4 l2"></div>
+
       </div>
-    </div>
 		{% endfor %}
 
 
