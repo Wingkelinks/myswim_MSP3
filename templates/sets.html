@@ -46,7 +46,7 @@
 						<button type="submit"
 						class="btn-floating btn-small waves-effect waves-light winter-sky tooltipped" data-position="left" data-tooltip="Favourite me!"><i class="material-icons">favorite</i>
 						</button>						
-						<a class="mr4 btn-floating btn-small waves-effect waves-light neon-green tooltipped" data-position="right" data-tooltip="Print me!"><i class="material-icons">print</i>
+						<a href="{{ url_for('print_set', set_id=set._id ) }}"  class="mr4 btn-floating btn-small waves-effect waves-light neon-green tooltipped" data-position="right" data-tooltip="Go to PRINT PAGE"><i class="material-icons">print</i>
 						</a>
 					</form>
 					{% endif %}
@@ -104,7 +104,7 @@
 							<button type="submit"
 							class="btn-floating btn-small waves-effect waves-light winter-sky tooltipped" data-position="left" data-tooltip="Favourite me!"><i class="material-icons">favorite</i>
 							</button>						
-							<a class="mr4 btn-floating btn-small waves-effect waves-light neon-green tooltipped" data-position="right" data-tooltip="Print me!"><i class="material-icons">print</i>
+							<a href="{{ url_for('print_set', set_id=set._id ) }}" class="mr4 btn-floating btn-small waves-effect waves-light neon-green tooltipped" data-position="right" data-tooltip="Go to PRINT PAGE"><i class="material-icons">print</i>
 							</a>
 						</form>
 					{% endif %}
