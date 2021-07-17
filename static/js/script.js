@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+	// Materialize Initialization
 	$(".sidenav").sidenav({ edge: "right", draggable: true });
 	$("input#password, input#username").characterCounter();
 	$(".collapsible").collapsible();
@@ -6,9 +8,10 @@ $(document).ready(function () {
 	$(".tooltipped").tooltip();
 	$("select").formSelect();
 	$(".dropdown-trigger").dropdown();
-	$('.parallax').parallax();
+	
 
-	// Customise Materialize Select Validation
+	// Validate Materialize Select Fields
+	// Obtained from Code Institute Course Material
 	validateMaterializeSelect();
 	function validateMaterializeSelect() {
 		let classValid = {
@@ -77,12 +80,12 @@ $(document).ready(function () {
 			});
 	}
 
-	// Dynamically add and delete form input fields
+	// Dynamically Add and Delete Form Input Fields
 	// YouTube tutorial by Cody Mind https://www.youtube.com/watch?v=jSSRMC0F6u8
 
 	// Pre-set
 	$("#add1").click(function (e) {
-		event.preventDefault()
+		e.preventDefault()
 		$("#new-field1").append('<div class="row" id="new-field1"><div class="input-field col s12"><i class="fas fa-swimmer fa-3x prefix azure-text"></i><input type="text" id="pre_set" name="pre_set" class=" validate" required><label for="pre_set">Pre Set</label>' +
 			'<input type="button" value="Delete" id="delete1" class="btn-small winter-sky" aria-label="cancel new entry"></div>');
 	});
@@ -92,7 +95,7 @@ $(document).ready(function () {
 	});
 	// Main-set
 	$("#add2").click(function (e) {
-		event.preventDefault()
+		e.preventDefault()
 		$("#new-field2").append('<div class="row" id="new-field2"><div class="input-field col s12"><i class="fas fa-swimmer fa-3x prefix azure-text"></i><input id="main_set" name="main_set" class="validate" required><label for="main_set">Main Set</label>' +
 			'<input type="button" value="Delete" id="delete2" class="btn-small winter-sky" aria-label="cancel new entry"></div>');
 	});
@@ -101,4 +104,12 @@ $(document).ready(function () {
 		$(this).parent('div').remove();
 	});
 
+
+});
+
+// Print A Set
+// Code snippet obtained from: https://www.geeksforgeeks.org/how-to-print-a-page-using-jquery/
+$("#print").on("click", function () {
+	window.print();
+	return false;
 });

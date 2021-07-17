@@ -203,7 +203,7 @@ def delete_set(set_id):
 @app.route("/add_favourite/<set_id>/<user>", methods=["GET", "POST"])
 def add_favourite(set_id, user):
     # Add favourite set to users favourites
-    user_id= get_id()
+    user_id = get_id()
 
     if request.method == "POST":
         set = mongo.db.sets.find_one({"_id": ObjectId(set_id)})
@@ -232,6 +232,21 @@ def profile_favs(username):
     return render_template("profile_favs.html",
                            favourites=favourites,
                            username=username)
+
+@app.route("/print_set/<set_id>")
+def print_set(set_id):
+    
+    # Extract single set and render template to print
+    set = mongo.db.sets.find_one({"_id": ObjectId(set_id)})
+    
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    sets = list(mongo.db.sets.find(
+        {"created_by": session["user"]}).sort("_id", 1))
+    categories = list(mongo.db.categories.find())
+    
+    
+    return render_template("print_set.html", set=set, sets=sets, username=username, categories=categories)
 
 
 # GET CATEGORIES FOR MANAGE CONTENT PAGE BY ADMIN

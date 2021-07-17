@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+  <!-- User title -->
+    <div class="row mt3">     
+        <div class="col s12 m4 l8 offset-l2 card-panel brilliant-rose ">
+                <h2 class="white-text tourney-text fw5 center-align pa2">
+                  Print Set: {{ set.set_name }}
+                </h2>           
+        </div>     
+    </div>
+    <div class="divider ma3"></div>
+    <!-- Display selected set -->
+      <div class="row">
+        <div class="col s12">
+            <!-- Print Button -->
+            <a id="print" class="mr4 btn-floating btn-large waves-effect waves-light neon-green tooltipped right" data-position="right" data-tooltip="Print me!"><i class="material-icons">print</i>
+            </a>
+            <div class="">
+              {% for category in categories if category.category_name == set.category_name %}
+                <h4 class="ttu card-title white-text orange-pantone fw9">{{ set.category_name }}</h4>
+              {% endfor %}
+              <h5 class="fw9">{{ set.set_name|upper}}</h5>
+              <p class="black-text i">by: {{set.created_by|title }}</p>
+            </div>
+            <div class="">
+                  <ul class="collection with-header">
+                    <li class="collection-header"><h5>Warm Up</h5></li>
+                    <li class="collection-item">{{ set.warm_up }}</li>
+                  </ul>
+                  <ul class="collection with-header">
+                    <li class="collection-header"><h5>Pre Set</h5></li>
+                    {% for pre_set in set.pre_set %}
+                    <li class="collection-item">{{ pre_set|title }}</li>
+                    {% endfor %}
+                  </ul>
+                  <ul class="collection with-header">
+                    <li class="collection-header"><h5>Main Set</h5></li>
+                    {% for main_set in set.main_set %}
+                    <li class="collection-item">{{ main_set|title }}</li>
+                    {% endfor %}
+                  </ul>
+                  <ul class="collection with-header">
+                    <li class="collection-header"><h5>Cool Down</h5></li>
+                    <li class="collection-item">{{ set.cool_down|title }}</li>
+                  </ul>
+                  <ul class="collection with-header">
+                    <li class="collection-header"><h5>Total Distance</h5></li>
+                    <li class="collection-item">{{ set.total_km }}</li>
+                  </ul>
+              </div>  
+          </div>
+        </div>
+</div>
+{% endblock %}
