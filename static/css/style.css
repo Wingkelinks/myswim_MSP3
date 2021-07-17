@@ -195,6 +195,11 @@ article {
 	font-size: 60px !important;
 }
 
+/* Display additional admin icons */
+#admin-icons{
+	display: inline-flex;
+}
+
 /* CUSTOMISE DEFAULT FORM INPUT SETTINGS */
 
 /* label color */

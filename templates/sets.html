@@ -40,26 +40,26 @@
 			<div class="card-action">
 				<!-- FAVOURITE AND PRINT BUTTONS -->
 				<!-- Tooltips on buttons in cards -->
-				<div class="right-align">
+				<div id="admin-icons" class="">
 					{% if session.user %}
-					<form method="POST" action="{{ url_for('add_favourite', 		set_id=set._id, user=session['user']) }}" >
-						<button type="submit"
-						class="btn-floating btn-small waves-effect waves-light winter-sky tooltipped" data-position="left" data-tooltip="Favourite me!"><i class="material-icons">favorite</i>
-						</button>						
-						<a href="{{ url_for('print_set', set_id=set._id ) }}"  class="mr4 btn-floating btn-small waves-effect waves-light neon-green tooltipped" data-position="right" data-tooltip="Go to PRINT PAGE"><i class="material-icons">print</i>
-						</a>
-					</form>
+						<form method="POST" action="{{ url_for('add_favourite', 		set_id=set._id, user=session['user']) }}" >
+							<button type="submit"
+							class="btn-floating btn-small waves-effect waves-light winter-sky tooltipped" data-position="left" data-tooltip="LOVE ME!"><i class="material-icons">favorite</i>
+							</button>						
+							<a href="{{ url_for('print_set', set_id=set._id ) }}"  class="mr4 btn-floating btn-small waves-effect waves-light neon-green tooltipped" data-position="right" data-tooltip="GO TO PRINT PAGE"><i class="material-icons">print</i>
+							</a>
+						</form>
 					{% endif %}
 						
 				<!-- EDIT DELETE BUTTONS FOR ADMIN -->
             	<!-- Tooltips on buttons in cards -->
 					{% if session.user|lower == "admin" %}          
-						<a href="{{ url_for('edit_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light neon-green tooltipped" data-position="bottom" data-tooltip="EDIT"><i class="material-icons">edit</i>
+						<a href="{{ url_for('edit_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light azure tooltipped" data-position="bottom" data-tooltip="ADMIN EDIT"><i class="material-icons">edit</i>
 						</a>
 					{% endif %}     
 				
 					{% if session.user|lower == "admin" and not set.set_name == "Unassigned" %}
-						<a href="{{ url_for('delete_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light winter-sky  tooltipped" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
+						<a href="{{ url_for('delete_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light mango tooltipped" data-position="top" data-tooltip="ADMIN DELETE"><i class="material-icons">delete</i>
 						</a>
 					{% endif %}              
 			  	
@@ -67,44 +67,44 @@
 			</div>
 			<!-- CARD REVEAL -->
 			<div class="card-reveal">
-			  <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>	
-			
-			<h5 class="center-align">{{ set.set_name|upper}}</h5>
-			  
-			<ul class="collection with-header">
-				<li class="collection-header"><h5>Warm Up</h5></li>
-				<li class="collection-item">{{ set.warm_up }}</li>
-			</ul>
-			<ul class="collection with-header">
-				<li class="collection-header"><h5>Pre Set</h5></li>
-				{% for pre_set in set.pre_set %}
-				<li class="collection-item">{{ pre_set }}</li>
-				{% endfor %}
-			</ul>
-			<ul class="collection with-header">
-				<li class="collection-header"><h5>Main Set</h5></li>
-				{% for main_set in set.main_set %}
-				<li class="collection-item">{{ main_set }}</li>
-				{% endfor %}
-			</ul>
-			<ul class="collection with-header">
-				<li class="collection-header"><h5>Cool Down</h5></li>
-				<li class="collection-item">{{ set.cool_down }}</li>
-			</ul>
-			<ul class="collection with-header">
-				<li class="collection-header"><h5>Total Distance</h5></li>
-				<li class="collection-item">{{ set.total_km }}</li>
-			</ul>
+				<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>	
+				
+				<h5 class="center-align">{{ set.set_name|upper}}</h5>
+				
+				<ul class="collection with-header">
+					<li class="collection-header"><h5>Warm Up</h5></li>
+					<li class="collection-item">{{ set.warm_up }}</li>
+				</ul>
+				<ul class="collection with-header">
+					<li class="collection-header"><h5>Pre Set</h5></li>
+					{% for pre_set in set.pre_set %}
+					<li class="collection-item">{{ pre_set }}</li>
+					{% endfor %}
+				</ul>
+				<ul class="collection with-header">
+					<li class="collection-header"><h5>Main Set</h5></li>
+					{% for main_set in set.main_set %}
+					<li class="collection-item">{{ main_set }}</li>
+					{% endfor %}
+				</ul>
+				<ul class="collection with-header">
+					<li class="collection-header"><h5>Cool Down</h5></li>
+					<li class="collection-item">{{ set.cool_down }}</li>
+				</ul>
+				<ul class="collection with-header">
+					<li class="collection-header"><h5>Total Distance</h5></li>
+					<li class="collection-item">{{ set.total_km }}</li>
+				</ul>
 
 			  <!-- FAVOURITE ADD PRINT BUTTONS -->
 				<!-- Tooltips on buttons in cards -->
-				<div class="right-align pt2">
+				<div id="admin-icons" class="pt2">
 					{% if session.user %}
 						<form method="POST" action="{{ url_for('add_favourite', set_id=set._id, user=session['user']) }}" >
 							<button type="submit"
-							class="btn-floating btn-small waves-effect waves-light winter-sky tooltipped" data-position="left" data-tooltip="Favourite me!"><i class="material-icons">favorite</i>
+							class="btn-floating btn-small waves-effect waves-light winter-sky tooltipped" data-position="left" data-tooltip="LOVE ME!"><i class="material-icons">favorite</i>
 							</button>						
-							<a href="{{ url_for('print_set', set_id=set._id ) }}" class="mr4 btn-floating btn-small waves-effect waves-light neon-green tooltipped" data-position="right" data-tooltip="Go to PRINT PAGE"><i class="material-icons">print</i>
+							<a href="{{ url_for('print_set', set_id=set._id ) }}" class="mr4 btn-floating btn-small waves-effect waves-light neon-green tooltipped" data-position="right" data-tooltip="GO TO PRINT PAGE"><i class="material-icons">print</i>
 							</a>
 						</form>
 					{% endif %}
@@ -112,12 +112,12 @@
 				<!-- EDIT DELETE BUTTONS FOR ADMIN -->
             	<!-- Tooltips on buttons in cards -->
 					{% if session.user|lower == "admin" %}          
-						<a href="{{ url_for('edit_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light neon-green tooltipped" data-position="bottom" data-tooltip="EDIT"><i class="material-icons">edit</i>
+						<a href="{{ url_for('edit_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light azure tooltipped" data-position="bottom" data-tooltip="ADMIN EDIT"><i class="material-icons">edit</i>
 						</a>
 					{% endif %}     
 				
 					{% if session.user|lower == "admin" and not set.set_name == "Unassigned" %}
-						<a href="{{ url_for('delete_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light winter-sky  tooltipped" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
+						<a href="{{ url_for('delete_set', set_id=set._id) }}" class="btn-floating btn-small waves-effect waves-light mango tooltipped" data-position="top" data-tooltip="ADMIN DELETE"><i class="material-icons">delete</i>
 						</a>
 					{% endif %}              
 			  	
