@@ -7,7 +7,7 @@
 			</h2>
 		</div>
 	</div>
-	<h4 class="center-align pa2 fw9 flow-text lh-copy">
+	<h4 class="center-align fw9 flow-text lh-copy">
 		Filter results by category or stroke, using the search bar below.
 	</h4>
 
@@ -16,7 +16,7 @@
 	<div id="search-bar" class="row card-panel">
 		<form action="{{ url_for('search') }}" method="post" class="col s12">
 			<div class="row valign-wrapper center-align">
-				<div class="input-field col s12 m8">
+				<div class="input-field col s12">
 					<i class="fas fa-search prefix neon-green-text"></i>
 					<input
 						type="text"
@@ -28,15 +28,19 @@
 					/>
 					<label for="query">Search Sets</label>
 				</div>
-				<div class="col s12 m4">
-					<a href="{{ url_for('get_sets') }}" class="winter-sky btn mb2">
-						<span class="hide-on-med-and-down fw9">Reset</span>
-						<i class="material-icons">restart_alt</i> 
-					</a>
+			</div>
+			<div class="row valign-wrapper center-align">
+				<div class="col s6 right-align">
 					<button type="submit" class="azure btn">
-						<span class="hide-on-med-and-down fw9">Search</span>
+						<span class="fw9 hide-on-med-and-down">Search</span>
 						<i class="material-icons">search</i>
-					</button>	
+					</button>
+				</div>
+				<div class="col s6 left-align">
+					<a href="{{ url_for('get_sets') }}" class="winter-sky btn">
+						<span class="fw9 hide-on-med-and-down">Reset</span>
+						<i class="material-icons">restart_alt</i>
+					</a>
 				</div>
 			</div>
 		</form>

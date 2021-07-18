@@ -196,6 +196,13 @@ header h1  {
 	font-weight: 900;
 }
 
+/* SEARCH BAR */
+
+#search-bar span{
+	font-size: 18px;
+	font-family: "Roboto", sans-serif !important;
+}
+
 /* ICONS */
 
 .material-icons .md-48 {
