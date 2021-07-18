@@ -4,15 +4,15 @@
 	<div class="hero-image">
 		<div class="tc">
 			<h1
-				class="f-subheadline-l lh-title white-text pt7 tourney-text fw4 tracked"
+				class="f-subheadline-l f1 lh-title white-text pt7-l pt6 tourney-text fw4 tracked"
 			>
 				Welcome to MySwim
 			</h1>
-			<h3 class="f2 lh-title white-text pt4 fw6 ttu">
+			<h3 class="f2-l f3 white-text pt4 fw6 ttu">
 				By Swimmers For All Swimmers
 			</h3>
 		</div>
-        <div class="pt7">
+        <div class="pa5 pt7-l">
             <div class="center-align">
                 <a
                     href="#about"
@@ -23,8 +23,8 @@
         </div>
 	</div>
 </header>
-<article id="about" class="orange-pantone white-text flow-text">
-	<div class="center measure-wide f3 pv5 ph2">
+<article id="about" class="orange-pantone white-text flow-text pb4">
+	<div class="center measure-wide-l f3-l f4 pv5-l pv4 pa3">
 		<h1 class="f1 lh-title tourney-text pb2">About MySwim</h1>
 		<p class="lh-copy fw6 tj">
 			Are you a swimmer looking for a convenient way to store and access your
@@ -42,7 +42,7 @@
 
 	{% if session.user %}
         <div class="row container flow-text">
-            <h1 class="f1 tourney-text ml3 center white-text">
+            <h1 class="f1-l f3 tourney-text ml3-l center white-text">
                 Check out the collection of Swim Sets now!
             </h1>
             <div class="center-align">
@@ -55,7 +55,7 @@
         </div>
 	{% else %}
         <div class="row container">
-            <h1 class="f1 tourney-text ml3 center white-text">Register Now!</h1>
+            <h1 class="f1-l f2 tourney-text ml3 center white-text">Register Now!</h1>
             <div class="center-align">
                 <a
                     href="{{ url_for('register') }}"
