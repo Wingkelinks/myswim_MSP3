@@ -34,6 +34,8 @@ def get_id():
     user_id = str(get_user()['_id'])
     return user_id
 
+
+
 # -------------// FUNCTIONS --------------- #    
 
 
@@ -104,12 +106,12 @@ def login():
                             "profile", username=session["user"]))
             else:
                 # Invalid password match
-                flash("Incorrect Username and/or Password.")
+                flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
             # Username doesn't exist
-            flash("Incorrect Username and/or Password.")
+            flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -135,7 +137,7 @@ def profile(username):
 @app.route("/logout")
 def logout():
     # Remove user from session cookies
-    flash("You have been logged out.")
+    flash("'Till Next Time... Happy Swimming!")
     # session.pop specifically removes user cookie
     session.pop("user")
     return redirect(url_for("login"))
@@ -195,7 +197,7 @@ def delete_set(set_id):
     # Remove set from DB
     mongo.db.sets.remove({"_id": ObjectId(set_id)})
 
-    flash("Set Deleted.")
+    flash("Set Deleted")
     return redirect(url_for('profile', username=session['user']))
 
 
@@ -277,7 +279,7 @@ def edit_category(category_id):
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
 
-    # If user not logged in
+    # Confirm admin is logged in
     if "user" not in session:
         flash("Please Log In!")
         return redirect(url_for("login"))
@@ -306,20 +308,15 @@ def delete_category(category_id):
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     
-    # If user not logged in
-    if "user" not in session:
-        flash("Please Log In!")
-        return redirect(url_for("login"))
-
     # If user is not admin
-    elif session["user"].lower() != "admin":
+    if session["user"] != "admin":
         flash("Sorry, you are not permitted to do that!")
         return redirect(url_for("get_categories"))
 
     else:
     # Delete category from DB
         mongo.db.categories.remove(category)
-        flash("Category Deleted.")
+        flash("Category Deleted")
         return redirect(url_for('get_categories'))
 
 
