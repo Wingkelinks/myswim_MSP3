@@ -8,6 +8,8 @@ $(document).ready(function () {
 	$(".tooltipped").tooltip();
 	$("select").formSelect();
 	$(".dropdown-trigger").dropdown();
+	$('.modal').modal();
+	
 	
 
 	// Validate Materialize Select Fields
@@ -113,3 +115,4 @@ $("#print").on("click", function () {
 	window.print();
 	return false;
 });
+
