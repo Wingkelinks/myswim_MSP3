@@ -1,0 +1,10 @@
+/* For widths between 250px and 700px */
+@media screen and (max-width: 700px) and (min-width: 250px) {
+	#footer-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		padding: 4px 0;
+	}
+
+    
+}

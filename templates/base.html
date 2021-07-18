@@ -38,7 +38,13 @@
 			href="{{ url_for('static', filename='css/style.css')}}"
 			type="text/css"
 		/>
-		{% block styles %} {% endblock %}
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/media.css')}}"
+			type="text/css"
+		/>
+{% block styles %} 
+{% endblock %}
 
 		<title>MySwim</title>
 	</head>
@@ -131,15 +137,16 @@
 		</header>
 
 		<!-- Flash Messages -->
-
 		<section>
-			{% with messages = get_flashed_messages() %} {% if messages %} {% for
-			message in messages %}
-			<div class="row flashes">
-				<h4 class="center-align">{{ message }}</h4>
-			</div>
-			{% endfor %} {% endif %} {% endwith %}
+			{% with messages = get_flashed_messages() %} 
+				{% if messages %} 
+					{% for message in messages %}
+						<p id="flashes" class="flash-style center-align" >{{ message }}</p>
+					{% endfor %} 
+				{% endif %} 
+			{% endwith %}
 		</section>
+
 
 		<!-- Main container for content on all templates -->
 
@@ -147,7 +154,7 @@
 
 		<!-- Footer -->
 
-		<footer class="azure">
+		<footer class="azure page-footer">
 			<div id="footer-container" class="center-align">
 				<div class="footer-icons">
 					<ul>
@@ -211,14 +218,16 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		></script>
-		<!-- Render current date - code snippet from Code Institute Flask Framework Walkthrough Project -->
-		<script>
-			$("#copyright").text(new Date().getFullYear());
-		</script>
-		<!-- JavaScript -->
+		<!-- Materialize -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-		{% block scripts %} {% endblock %}
+		<!-- Render Current Date Function - code snippet from Code Institute Flask Framework Walkthrough Project -->
+		<script>
+			$("#copyright").text(new Date().getFullYear());
+		</script>
+
+	{% block scripts %} 
+	{% endblock %}
 	</body>
 </html>
