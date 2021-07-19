@@ -53,6 +53,7 @@
 			
 			<!-- Dropdown Menu for Profile (Logged in users) -->
 			<ul id="dropdown1" class="dropdown-content">
+				
 				<li>
 					<a href="{{ url_for('profile', username=session['user']) }}"
 						>My Profile</a
@@ -105,10 +106,12 @@
 			</div>
 			<!-- Mobile Navigation -->
 			<ul class="sidenav" id="mobile-demo">
-				<li><h4 class="center-align tourney-text">MySwim</h4></li>
+				<li><h4 class="center-align tourney-text azure-text">MySwim</h4></li>
 
 				<!-- Call get_sets function -->
-				<li><a href="{{ url_for('get_sets') }}">Home</a></li>
+				<li ><a href="{{ url_for('home') }}">Home</a></li>
+
+				<li ><a href="{{ url_for('get_sets') }}">Search Sets</a></li>
 
 				<!-- If logged in show below links -->
 				{% if session.user %}
