@@ -2,7 +2,9 @@
 
 <h1 align="center">MySwim</h1>
 
-[View the live project here.](https://)
+![alt text](amiresponsive-img.png "Image generated from Am I Responsive")
+
+[View the live project here.](https://my-swim.herokuapp.com/)
 
 ---
 
@@ -216,3 +218,4 @@ To deploy the app to Heroku from its [GitHub repository](), the following steps 
 - Thank you to the Code Institue Slack community - a great place to check in and learn from others.
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
+
