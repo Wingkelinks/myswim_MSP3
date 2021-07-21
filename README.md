@@ -26,14 +26,13 @@
 - <a href="#credits">Credits</a>
 
 ---
+## Context
 
 <span id="context"></span>
 
 Are you a swimmer looking for a convenient way to store and access your swim sets? If so, MySwim is made for you! Other than providing a secure place to store and access your swim sets, it also allows you to search for existing and new sets, that have been uploaded by fellow swimmers.
 
 MySwim allows you to create a free account where you can add and save as many of your own swim sets, that are then shared with the MySwim community. You can save some of your favourite sets to your profile for convenient access. You can also print sets straight from the website.
-
-<h2 align="center"><img src=""></h2>
 
 --
 
