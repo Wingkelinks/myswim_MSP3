@@ -2,7 +2,7 @@
 
 <h1 align="center">MySwim</h1>
 
-![alt text](amiresponsive-img.png "Image generated from Am I Responsive")
+<img src="static/images/test_images/amiresponsive-img.png" width="800">
 
 [View the live project here.](https://my-swim.herokuapp.com/)
 
