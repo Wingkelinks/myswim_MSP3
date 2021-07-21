@@ -148,17 +148,45 @@ Full testing details can be found [here](TESTING.md)
 
 The deployed version has been created using the master branch.
 
-### Prerequisites
+### Local Deployment 
 
-[Python 3](https://www.python.org/downloads/) - core code
+The following is required to run this project in your local environment:
 
-[PIP](https://pypi.org/project/pip/) - package installation
+[Python 3](https://www.python.org/downloads/) - to run the code
 
-[Git](https://git-scm.com/) - version control
+[PIP](https://pypi.org/project/pip/) - for package installation
 
-[MongoDB](https://www.mongodb.com/)
+[Git](https://git-scm.com/) - used for version control
 
-- MongoDB is the database used by the app to store content uploaded by its users.
+[MongoDB or MongoDB Atlas](https://www.mongodb.com/) - for database development 
+
+[Visual Studio Code](https://code.visualstudio.com/) - or your own choice of IDE 
+
+### Next you need to clone MySwim
+
+To clone this project from its [GitHub repository](https://github.com/Wingkelinks/myswim_MSP3):
+
+1. Click on the **Code** button 
+2. Copy the clone URL for the repository: https://github.com/Wingkelinks/myswim_MSP3.git
+3. From within your IDE, open your integrated terminal
+4. Make sure you are in the correct folder location 
+5. Then type **git clone** and paste the URL: https://github.com/Wingkelinks/myswim_MSP3.git
+6. From there create an env.py file to store your credentials as follows:
+
+      import os
+
+      os.environ.setdefault("IP", "0.0.0.0")
+      os.environ.setdefault("PORT", "5000") 
+      os.environ.setdefault("SECRET_KEY", "") 
+      os.environ.setdefault("MONGO_URI", "mongodb+srv://<username>:<password>@<cluster_name>-ofgqg.mongodb.net/<database_name>?retryWrites=true&w=majority") 
+      os.environ.setdefault("MONGO_DBNAME", "my_swim") 
+
+You can use a random key generator if you wish. 
+
+7. This file MUST be hidden in your .gitignore file to keep credentials from being visibly pushed to the repository
+8. You should be able to run the app by typing **python3 app.py** into the terminal
+
+- In MongoDB you will need to create a database called MySwim.
 - The following collections should be created:
   - sets
   - categories
@@ -169,19 +197,44 @@ The deployed version has been created using the master branch.
 | :------------ | :-------- | :------- |
 | category_name | aerobic   | String   |
 
-### How to clone MySwim
+- The same applies for sets and users, however the sets collection has two fields of arrays:
 
-To clone this project from its [GitHub repository]():
+| **Key**       | **Value** | **Type** |
+| :------------ | :-------- | :------- |
+| pre_set       | []        | Array    |
+| main_set      | []        | Array    |
+
+
 
 ### How to deploy to Heroku
 
-To deploy the app to Heroku from its [GitHub repository](), the following steps were taken:
+MySwim is deployed on Heroku from the master branch. To do this, the following steps were taken:
+
+1. From your terminal, create a **requirements.txt** and **Procfile** using these commands:
+
+```console
+pip3 freeze --local > requirements.txt
+echo web: python app.py > Procfile
+```
+
+2. Sign up and login to Heroku, **create a new app**
+3. Name your app
+3. Go to the **Deploy** tab and then **Deployment Method** and select **Github**
+4. Under **Connect to Github** enter your details and connect your repository 
+5. Next, go to **settings** and select **Config Vars** and then **Reveal Config Vars**
+6. You need to enter the following variables to match what you have stored in your env.py file
+    
+    - **IP** : `0.0.0.0`
+    - **PORT** : `5000`
+    - **MONGO_URI** : `MONGO_URI", "mongodb+srv://<username>:<password>@<cluster_name>-ofgqg. mongodb.net/<database_name>?retryWrites=true&w=majority`
+    - **SECRET_KEY** : `<app secret key>`
+
+7. Under the **Deploy** tab go to **Automatic Deploys** and enable 
+8. Under **Manual Deploy**, choose **Master** and click **Deploy Branch**
+9. Heroku will begin building the app. When it is ready, you can click **Open app** to launch it.  
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
-### Forking the GitHub Repository
-
-### Making a Local Clone
 
 --
 <span id="credits"></span>
@@ -192,6 +245,7 @@ To deploy the app to Heroku from its [GitHub repository](), the following steps 
 
 - Code Institute Task Manager Project ([Tim Nelson](https://github.com/TravelTimN))
 - MS3 Strategy and Tips ([Ed Bradley](https://github.com/Edb83))
+- Fellow Students MS3 Project ([Ed Bradley](https://github.com/Edb83))
 - [Code Institute course material](https://learn.codeinstitute.net/ci_program/diplomainsoftwaredevelopment)
 - Code Institute **Slack** channel
 - [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) - Guide to markdown on .md files.
@@ -199,9 +253,12 @@ To deploy the app to Heroku from its [GitHub repository](), the following steps 
 - [Stack Overflow](https://stackoverflow.com/) - general questions and problem solving.
 - [MDN Web Docs](https://developer.mozilla.org/en-US/) - general questions and problem solving.
 
-### Code
+### Code Referenced/Snippets
 
--
+- [CSS3 Animation Notification](https://codepen.io/sugimo/pen/DgLty) - referenced to create custom flash messages
+- [Print Page JQuery](https://www.geeksforgeeks.org/how-to-print-a-page-using-jquery/) - to initialise my print functionality
+- [Tutorial by Cody Mind](https://www.youtube.com/watch?v=jSSRMC0F6u8) - dynamically add and delete form input fields
+- [Dogfalo](https://github.com/Dogfalo/materialize/issues/192) - to customise the Materialize form input fields 
 
 ### Content
 
@@ -209,12 +266,12 @@ To deploy the app to Heroku from its [GitHub repository](), the following steps 
 
 ### Media
 
--
+- Images obtained from [Unsplash](https://unsplash.com/)
 
 ### Acknowledgements
 
-- Thanks to my Mentor, Sebastian Immel...
-
+- Thanks to my Mentor, Sebastian Immel for his guidance and support.
+- Thank you to Ed Bradley, for his MS3 Tips and Strategies video. 
 - Thank you to the Code Institue Slack community - a great place to check in and learn from others.
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
