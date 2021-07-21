@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block title %}MySwim - Favourites Page{% endblock%} 
+{% block content %}
 
 <div class="container">
 	<!-- Return to profile button -->
@@ -37,7 +39,8 @@
 					<a
 						href="{{ url_for('get_sets', set_id=favourite.set_id) }}"
 						type="button"
-						class="center-align btn winter-sky"
+						class="center-align btn neon-green"
+						aria-label="view favourite set"
 						><i class="fas fa-eye"></i> VIEW
 					</a>
 				</div>

@@ -43,17 +43,14 @@
 			href="{{ url_for('static', filename='css/media.css')}}"
 			type="text/css"
 		/>
-{% block styles %} 
-{% endblock %}
+		{% block styles %} {% endblock %}
 
-		<title>MySwim</title>
+		<title>{% block title %}{% endblock %}MySwim</title>
 	</head>
 	<body>
 		<header>
-			
 			<!-- Dropdown Menu for Profile (Logged in users) -->
 			<ul id="dropdown1" class="dropdown-content">
-				
 				<li>
 					<a href="{{ url_for('profile', username=session['user']) }}"
 						>My Profile</a
@@ -67,7 +64,7 @@
 				<!-- If admin, show Manage Content -->
 				<!-- Call get_categories function -->
 				{% if session.user|lower == "admin"|lower %}
-				<li><a href="{{ url_for('get_categories') }}">Manage Content</a></li>
+					<li><a href="{{ url_for('get_categories') }}">Manage Content</a></li>
 				{% endif %}
 
 				<li class="divider"></li>
@@ -78,7 +75,9 @@
 			<div class="navbar-fixed">
 				<nav>
 					<div class="nav-wrapper azure">
-						<a href="{{ url_for('home') }}" class="brand-logo tourney-text ml3-l"
+						<a
+							href="{{ url_for('home') }}"
+							class="brand-logo tourney-text ml3-l"
 							>MySwim</a
 						>
 						<a href="#" data-target="mobile-demo" class="sidenav-trigger right"
@@ -89,16 +88,16 @@
 
 							<!-- If logged in show below links -->
 							{% if session.user %}
-							<li>
-								<a class="dropdown-trigger" href="#!" data-target="dropdown1"
-									>Profile<i class="material-icons right">arrow_drop_down</i>
-								</a>
-							</li>
+								<li>
+									<a class="dropdown-trigger" href="#!" data-target="dropdown1"
+										>Profile<i class="material-icons right">arrow_drop_down</i>
+									</a>
+								</li>
 
 							<!-- Else, show Log In and Register -->
 							{% else %}
-							<li><a href="{{ url_for('login') }}">Log In</a></li>
-							<li><a href="{{ url_for('register') }}">Register</a></li>
+								<li><a href="{{ url_for('login') }}">Log In</a></li>
+								<li><a href="{{ url_for('register') }}">Register</a></li>
 							{% endif %}
 						</ul>
 					</div>
@@ -109,44 +108,42 @@
 				<li><h4 class="center-align tourney-text azure-text">MySwim</h4></li>
 
 				<!-- Call get_sets function -->
-				<li ><a href="{{ url_for('home') }}">Home</a></li>
+				<li><a href="{{ url_for('home') }}">Home</a></li>
 
 				<!-- If logged in show below links -->
 				{% if session.user %}
-				<li>
-					<a href="{{ url_for('profile', username=session['user']) }}"
-						>Profile</a
-					>
-				</li>
-				<li><a href="{{ url_for('add_set') }}">New Swim</a></li>
+					<li>
+						<a href="{{ url_for('profile', username=session['user']) }}"
+							>Profile</a
+						>
+					</li>
+					<li><a href="{{ url_for('add_set') }}">New Swim</a></li>
 
-				<li ><a href="{{ url_for('get_sets') }}">Search Sets</a></li>
+					<li><a href="{{ url_for('get_sets') }}">Search Sets</a></li>
 
 				<!-- If admin, show Manage Content -->
 				<!-- Call get_categories function -->
 				{% if session.user|lower == "admin"|lower %}
-				<li><a href="{{ url_for('get_categories') }}">Manage Content</a></li>
+					<li><a href="{{ url_for('get_categories') }}">Manage Content</a></li>
 				{% endif %}
 
 				<li><a href="{{ url_for('logout') }}">Log Out</a></li>
 
 				<!-- Else, show Log In and Register -->
 				{% else %}
-				<li><a href="{{ url_for('login') }}">Log In</a></li>
-				<li><a href="{{ url_for('register') }}">Register</a></li>
-
+					<li><a href="{{ url_for('login') }}">Log In</a></li>
+					<li><a href="{{ url_for('register') }}">Register</a></li>
 				{% endif %}
 			</ul>
 		</header>
 
 		<!-- Flash Messages -->
 		<div id="flashes" class="center-align">
-			{% with messages = get_flashed_messages() %} 
-				{% if messages %} 
-					{% for message in messages %}
-					<div>
-						<h4 class="message flash-style tourney-text">{{ message }}</h4>
-					</div>
+			{% with messages = get_flashed_messages() %} {% if messages %} 
+				{% for message in messages %}
+				<div>
+					<h4 class="message flash-style tourney-text">{{ message }}</h4>
+				</div>
 					{% endfor %} 
 				{% endif %} 
 			{% endwith %}
@@ -182,19 +179,16 @@
 								><i class="fab fa-linkedin fa-2x"></i
 							></a>
 						</li>
-					
 					</ul>
 				</div>
 				<div class="footer-menu">
 					<ul class="tourney-text">
-							<li>
-								<a class="white-text" href="{{ url_for('home') }}">Home</a>
-							</li>
+						<li>
+							<a class="white-text" href="{{ url_for('home') }}">Home</a>
+						</li>
 						{% if session.user %}
 							<li class="bl b--white bw1">
-								<a class="white-text" href="{{ url_for('logout') }}"
-									>Log Out</a
-								>
+								<a class="white-text" href="{{ url_for('logout') }}">Log Out</a>
 							</li>
 						{% else %}
 							<li class="bl br b--white bw1">
@@ -234,7 +228,6 @@
 			$("#copyright").text(new Date().getFullYear());
 		</script>
 
-	{% block scripts %} 
-	{% endblock %}
+		{% block scripts %} {% endblock %}
 	</body>
 </html>

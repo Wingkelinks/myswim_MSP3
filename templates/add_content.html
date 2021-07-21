@@ -1,45 +1,59 @@
 {% extends "base.html" %} 
+{% block title %}MySwim - Add Content{% endblock %} 
 {% block content %}
 
 <div class="container">
-        <!-- Page Intro Card -->
-        <div class="row mt3">
-            <div class="col s12 m8 l8 offset-l2 offset-m2 card-panel brilliant-rose">
-                <h2 class="white-text tourney-text fw5 center-align pa2-l f1-l f2-m f3">
-                    Add Category
-                </h2>
-            </div>
-        </div>
+	<!-- Page Intro Card -->
+	<div class="row mt3">
+		<div class="col s12 m8 l8 offset-l2 offset-m2 card-panel brilliant-rose">
+			<h2 class="white-text tourney-text fw5 center-align pa2-l f1-l f2-m f3">
+				Add Category
+			</h2>
+		</div>
+	</div>
 
+	<div class="row pt3 pt6-l">
+		<form class="col s12" method="POST" action="{{ url_for('add_category') }}">
+			<!-- Category Name -->
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="fas fa-folder-open fa-3x prefix azure-text"></i>
+					<input
+						id="category_name"
+						name="category_name"
+						minlength="3"
+						maxlength="25"
+						type="text"
+						class="validate"
+						required
+					/>
+					<label for="category_name" class="">Category Name</label>
+				</div>
+			</div>
 
-    <div class="row pt3 pt6-l">
-        <form class="col s12" method="POST" action="{{ url_for('add_category') }}">
-            <!-- Category Name -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-folder-open fa-3x prefix azure-text"></i>
-                    <input id="category_name" name="category_name" minlength="3" maxlength="25" type="text" class="validate" required>
-                    <label for="category_name" class="">Category Name</label>
-                </div>
-            </div>
-
-            
-            <!-- Add or Cancel Buttons -->
-            <div class="row center-align">           
-                    <div class="col s6 right-align">
-                        <a href="{{ url_for('get_categories') }}" class="btn-large winter-sky" aria-label="cancel submit button">
-                            Cancel <i class="fas fa-times-circle right"></i>
-                        </a>
-                    </div>
-                    <div class="col s6 left-align">
-                        <button type="submit" class="btn-large neon-green" aria-label="submit form button">
-                            Add<i class="fas fa-plus-circle right"></i>
-                        </button>
-                    </div>                              
-            </div>
-
-        </form>
-    </div>
+			<!-- Add or Cancel Buttons -->
+			<div class="row center-align">
+				<div class="col s6 right-align">
+					<a
+						href="{{ url_for('get_categories') }}"
+						class="btn-large winter-sky"
+						aria-label="cancel submit button"
+					>
+						Cancel <i class="fas fa-times-circle right"></i>
+					</a>
+				</div>
+				<div class="col s6 left-align">
+					<button
+						type="submit"
+						class="btn-large neon-green"
+						aria-label="submit form button"
+					>
+						Add<i class="fas fa-plus-circle right"></i>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
 </div>
 
 {% endblock %}

@@ -1,29 +1,28 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block title %}MySwim - Print Set{% endblock %}
+{% block content %}
 
 <div class="container">
-  
 	<!-- Return to profile button -->
 	<div class="row">
 		<div class="col s6 mt4">
-			<a href="{{ url_for('profile', username=session['user']) }}"
+			<a href="{{ url_for('profile', username=session['user']) }}" aria-label="return to profile button"
 				><button class="btn-floating btn neon-green pulse">
 					<i class="fas fa-hand-point-left"></i></button
 			></a>
-			<p class="">Back to Profile</p>
+			<p>Back to Profile</p>
 		</div>
 		<!-- Page Intro Card -->
 		<div class="col s12">
 			<div class="card-panel-clear">
 				<h2 class="winter-sky-text tourney-text fw9 center-align pa2-l f1-l f2">
-          Print Set: {{ set.set_name }}
+					Print Set: {{ set.set_name }}
 				</h2>
 			</div>
 		</div>
 	</div>
 
-
 	<div class="divider ma3"></div>
-
 
 	<!-- Display selected set -->
 	<div class="row">
@@ -41,9 +40,10 @@
 				"
 				data-position="right"
 				data-tooltip="Print me!"
+				aria-label="print button"
 				><i class="material-icons">print</i>
 			</a>
-			<div class="">
+			<div>
 				{% for category in categories if category.category_name ==
 				set.category_name %}
 				<h4 class="ttu card-title white-text orange-pantone fw9">

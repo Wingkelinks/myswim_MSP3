@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
 	// Materialize Initialization
 	$(".sidenav").sidenav({ edge: "right", draggable: true });
 	$("input#password, input#username").characterCounter();
@@ -8,9 +7,7 @@ $(document).ready(function () {
 	$(".tooltipped").tooltip();
 	$("select").formSelect();
 	$(".dropdown-trigger").dropdown();
-	$('.modal').modal();
-	
-	
+	$(".modal").modal();
 
 	// Validate Materialize Select Fields
 	// Obtained from Code Institute Course Material
@@ -87,26 +84,29 @@ $(document).ready(function () {
 
 	// Pre-set
 	$("#add1").click(function (e) {
-		e.preventDefault()
-		$("#new-field1").append('<div class="row" id="new-field1"><div class="input-field col s12"><i class="fas fa-swimmer fa-3x prefix azure-text"></i><input type="text" id="pre_set" name="pre_set" class=" validate" required><label for="pre_set">Pre Set</label>' +
-			'<input type="button" value="Delete" id="delete1" class="btn-small winter-sky" aria-label="cancel new entry"></div>');
+		e.preventDefault();
+		$("#new-field1").append(
+			'<div class="row" id="new-field1"><div class="input-field col s12"><i class="fas fa-swimmer fa-3x prefix azure-text"></i><input type="text" id="pre_set" name="pre_set" class=" validate" required><label for="pre_set">Pre Set</label>' +
+				'<input type="button" value="Delete" id="delete1" class="btn-small winter-sky" aria-label="cancel new entry"></div>'
+		);
 	});
-		
-	$('body').on('click', '#delete1', function (e) {
-		$(this).parent('div').remove();
+
+	$("body").on("click", "#delete1", function (e) {
+		$(this).parent("div").remove();
 	});
+
 	// Main-set
 	$("#add2").click(function (e) {
-		e.preventDefault()
-		$("#new-field2").append('<div class="row" id="new-field2"><div class="input-field col s12"><i class="fas fa-swimmer fa-3x prefix azure-text"></i><input id="main_set" name="main_set" class="validate" required><label for="main_set">Main Set</label>' +
-			'<input type="button" value="Delete" id="delete2" class="btn-small winter-sky" aria-label="cancel new entry"></div>');
-	});
-		
-	$('body').on('click', '#delete2', function (e) {
-		$(this).parent('div').remove();
+		e.preventDefault();
+		$("#new-field2").append(
+			'<div class="row" id="new-field2"><div class="input-field col s12"><i class="fas fa-swimmer fa-3x prefix azure-text"></i><input id="main_set" name="main_set" class="validate" required><label for="main_set">Main Set</label>' +
+				'<input type="button" value="Delete" id="delete2" class="btn-small winter-sky" aria-label="cancel new entry"></div>'
+		);
 	});
 
-
+	$("body").on("click", "#delete2", function (e) {
+		$(this).parent("div").remove();
+	});
 });
 
 // Print A Set
@@ -115,4 +115,3 @@ $("#print").on("click", function () {
 	window.print();
 	return false;
 });
-

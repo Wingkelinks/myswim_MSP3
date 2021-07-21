@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block title %}MySwim - Home{% endblock %}
+{% block content %}
 
 <header>
 	<div class="hero-image">
@@ -25,7 +27,7 @@
 </header>
 <article id="about" class="orange-pantone white-text flow-text pb4">
 	<div class="center measure-wide-l f3-l f4 pv5-l pv4 pa3">
-		<h1 class="f1 lh-title tourney-text pb2">About MySwim</h1>
+		<h3 class="f1 lh-title tourney-text pb2">About MySwim</h3>
 		<p class="lh-copy fw6 tj">
 			Are you a swimmer looking for a convenient way to store and access your
 			swim sets? If so, MySwim is made for you! Other than providing a secure
@@ -34,7 +36,7 @@
 		</p>
 		<p class="lh-copy fw6 tj">
 			MySwim allows you to create a free account where you can add and save as
-			many of your own swim sets, that are then shared with the MySwim
+			many of your own swim sets which are then shared with the MySwim
 			community. You can save some of your favourite sets to your profile for
 			convenient access. You can also print sets straight from the website.
 		</p>
@@ -42,9 +44,9 @@
 
 	{% if session.user %}
         <div class="row container flow-text">
-            <h1 class="f1-l f3 tourney-text ml3-l center white-text">
+            <h4 class="f1-l f3 tourney-text ml3-l center white-text">
                 Check out the collection of Swim Sets now!
-            </h1>
+            </h4>
             <div class="center-align">
                 <a
                     href="{{ url_for('get_sets') }}"
@@ -55,7 +57,7 @@
         </div>
 	{% else %}
         <div class="row container">
-            <h1 class="f1-l f2 tourney-text ml3 center white-text">Register Now!</h1>
+            <h4 class="f1-l f2 tourney-text ml3 center white-text">Register Now!</h4>
             <div class="center-align">
                 <a
                     href="{{ url_for('register') }}"

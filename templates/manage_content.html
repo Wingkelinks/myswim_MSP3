@@ -1,14 +1,17 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block title %}MySwim - Manage Content{% endblock %}
+{% block content %}
 
 <div class="container">
 	<!-- Return to profile button -->
 	<div class="row">
 		<div class="col s6 mt4">
 			<a href="{{ url_for('profile', username=session['user']) }}"
+			aria-label="back to profile button"
 				><button class="btn-floating btn neon-green pulse">
 					<i class="fas fa-hand-point-left"></i></button
 			></a>
-			<p class="">Back to Profile</p>
+			<p>Back to Profile</p>
 		</div>
 		<!-- Page Intro Card -->
 		<div class="row mt3">
@@ -29,6 +32,7 @@
 			<a
 				href="{{ url_for('add_category') }}"
 				class="btn-floating btn-large waves-effect waves-light azure pulse"
+				aria-label="add new category button"
 				><i class="fas fa-plus"></i
 			></a>
 		</div>
@@ -38,6 +42,7 @@
 			<a
 				href="{{ url_for('add_set') }}"
 				class="btn-floating btn-large waves-effect waves-light mango pulse"
+				aria-label="add new set button"
 				><i class="fas fa-plus"></i
 			></a>
 		</div>
@@ -68,9 +73,11 @@
 							"
 							data-position="left"
 							data-tooltip="EDIT"
+							aria-label="edit category button"
 							><i class="material-icons">edit</i>
 						</a>
-						{% endif %} {% if session.user|lower == "admin" and not
+						{% endif %} 
+						{% if session.user|lower == "admin" and not
 						category.category_name == "Unassigned" %}
 						<a
 							href="{{ url_for('delete_category', category_id=category._id) }}"
@@ -79,11 +86,12 @@
 								waves-effect waves-light
 								winter-sky
 								tooltipped
-                modal-trigger
+								modal-trigger
 							"
 							data-target="{{ category._id }}"
 							data-position="top"
 							data-tooltip="DELETE"
+							aria-label="delete category button"
 							><i class="material-icons">delete</i>
 						</a>
 						{% endif %}
