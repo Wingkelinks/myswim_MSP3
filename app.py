@@ -5,7 +5,6 @@ from flask import (
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
 from bson.objectid import ObjectId
-from werkzeug.utils import escape
 if os.path.exists("env.py"):
     import env
 
@@ -16,6 +15,8 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME") ## DB NAME
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI") ## CONNECTION STRING
 app.secret_key = os.environ.get("SECRET_KEY") ## SECRET KEY FOR FLASK FUNCTIONS
+
+
 
 mongo = PyMongo(app) ## CREATE INSTANCE OF PYMONGO AND ADD FLASK APP OBJECT 
 
@@ -34,6 +35,10 @@ def get_id():
     user_id = str(get_user()['_id'])
     return user_id
 
+def get_fav():
+    # Get ObjectId of favourite
+    favourite_id = str(get_id())['_id']
+    return favourite_id
 
 
 # -------------// FUNCTIONS --------------- #    
@@ -197,6 +202,9 @@ def delete_set(set_id):
     # Remove set from DB
     mongo.db.sets.remove({"_id": ObjectId(set_id)})
 
+    # Also remove any favourites connected to set from DB
+    mongo.db.favourites.delete_many({"set_id": set_id})
+
     flash("Set Deleted")
     return redirect(url_for('profile', username=session['user']))
 
@@ -219,7 +227,7 @@ def add_favourite(set_id, user):
         # Add favourites to DB 
         mongo.db.favourites.insert_one(favourite)
         flash("Set Added to Favourites!")
-    return redirect(url_for("profile", set_id=set_id, username=session['user']))
+    return redirect(url_for("profile_favs", set_id=set_id, username=session['user']))
 
 
 # ADD FAVS TO PROFILE 
@@ -233,8 +241,10 @@ def profile_favs(username):
     # Add favourites to profile_favs 
     return render_template("profile_favs.html",
                            favourites=favourites,
-                           username=username)
+                           username=username, set=set)
 
+
+# PRINT SET PAGE 
 @app.route("/print_set/<set_id>")
 def print_set(set_id):
     
@@ -326,7 +336,18 @@ def delete_category(category_id):
 def admin_sets():
     sets = list(mongo.db.sets.find().sort("set_name", 1)) 
     return render_template("manage_content.html", sets=sets)
-        
+
+
+# ERROR HANDLERS
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html', error=error), 404
+
+
+@app.errorhandler(500)
+def internal_server_error(error):
+    return render_template('500.html', error=error), 500
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
