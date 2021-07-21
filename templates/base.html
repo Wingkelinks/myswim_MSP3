@@ -140,21 +140,17 @@
 		</header>
 
 		<!-- Flash Messages -->
-		<div id="flashes" class="row center-align">
+		<div id="flashes" class="center-align">
 			{% with messages = get_flashed_messages() %} 
 				{% if messages %} 
 					{% for message in messages %}
-					<div class="col s12 m8 l8 offset-l2 offset-m2">
+					<div>
 						<h4 class="message flash-style tourney-text">{{ message }}</h4>
 					</div>
 					{% endfor %} 
 				{% endif %} 
 			{% endwith %}
 		</div>
-
-		
-				
-
 
 		<!-- Main container for content on all templates -->
 
