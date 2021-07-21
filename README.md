@@ -34,7 +34,6 @@ Are you a swimmer looking for a convenient way to store and access your swim set
 
 MySwim allows you to create a free account where you can add and save as many of your own swim sets, that are then shared with the MySwim community. You can save some of your favourite sets to your profile for convenient access. You can also print sets straight from the website.
 
---
 
 <span id="ux-overview"></span>
 
@@ -71,12 +70,28 @@ As a swimmer, this site will provide personal value as a convenient means to sto
 <span id="ux-design"></span>
 
 - ### Design
+
   - #### Colour Scheme
-    -
+
+  - [Coolors](https://coolors.co/)
+  - [MySwim Color Scheme 1](https://coolors.co/ffbe0b-fb5607-ff006e-8338ec-3a86ff-4dec38-000000)
+  - [MySwim Color Scheme 2](https://coolors.co/ffbe0b-fb5607-ff006e-8338ec-3a86ff-4c91ff-5c9bff-6ba4ff-78acff-84b4ff)
+
+  <img src="static/images/test_images/color-scheme1.png" width="200">
+  <img src="static/images/test_images/color-scheme2.png" width="200">
+
   - #### Typography
-    -
+
+    - [Google Fonts](https://fonts.google.com/)
+    Tourney is a collaboration of tech and sport. At least, that is where the inspiration came from. Tourney would feel at home on a space ship or in a stadium. 
+    - [Tourney Text](https://fonts.google.com/specimen/Tourney)
+    At the same time, the font features friendly and open curves. While some grotesks distort their letterforms to force a rigid rhythm, Roboto doesn’t compromise, allowing letters to be settled into their natural width. This makes for a more natural reading rhythm more commonly found in humanist and serif types.
+    - [Roboto](https://fonts.google.com/specimen/Roboto)
+
   - #### Imagery
-    -
+
+    - Swimming, swimmers, water. 
+    - Images obtained from [Unsplash](https://unsplash.com/)
 
 <span id="ux-wireframes"></span>
 
@@ -97,7 +112,7 @@ As a swimmer, this site will provide personal value as a convenient means to sto
 
 - Interactive elements -->
 
---
+---
 <span id="technologies"></span>
 
 ## Technologies Used
