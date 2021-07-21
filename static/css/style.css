@@ -57,7 +57,6 @@ main {
 	color: #ff006e;
 }
 
-
 /* Google Fonts */
 
 .roboto-text {
@@ -70,17 +69,48 @@ main {
 /* END UTILITY CLASSES */
 
 /* FLASH MESSAGES */
+/* Code below written with reference to: 
+	https://codepen.io/sugimo/pen/DgLty 
+ 	https://css-tricks.com/snippets/css/keyframe-animation-syntax/ */
+
+
+#flashes {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.message {
+	display: block;
+	font-size: 25px;
+	line-height: 2;
+	position: absolute;
+	padding: 8px;
+	top: 0;
+	left: 60%;
+	margin-left: 100px;
+	box-sizing: border-box;
+	border-radius: 15px;
+	background-color: #ffbe0b;
+	color: #302a74;
+}
 
 .flash-style {
-	border-radius: 50%;
-	width: 200px;
-	height: 200px;
-	background-color: #ffbe0b;
-	font-weight: bolder;
-	font-size: 25px;
-	color: #fff;
-	line-height: 2;
+	animation: flashIn 0.5s, flashOut 0.5s 3.5s;
+	animation-iteration-count: 5s;
+	animation-fill-mode: forwards;
 }
+
+@keyframes flashIn {
+    from {top: 0; opacity: 0;}
+    to {top: 10px; opacity: 1;}
+}
+
+@keyframes flashOut {
+    from {top: 10px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+} 
+
 
 /* NAVIGATION */
 
