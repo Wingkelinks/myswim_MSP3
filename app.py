@@ -1,7 +1,7 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
-    redirect, request,  session, url_for)
+   Flask, flash, render_template,
+   redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
 from bson.objectid import ObjectId
@@ -10,41 +10,36 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-# APP CONFIGURATION 
+# --------------- APP CONFIGURATION --------------- #
 
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME") ## DB NAME
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI") ## CONNECTION STRING
-app.secret_key = os.environ.get("SECRET_KEY") ## SECRET KEY FOR FLASK FUNCTIONS
+# DB Name
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 
+# Connection String
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
+# Secret key for Flask functions
+app.secret_key = os.environ.get("SECRET_KEY")
 
-mongo = PyMongo(app) ## CREATE INSTANCE OF PYMONGO AND ADD FLASK APP OBJECT 
+# Create instance of PyMongo and add Flask App Object
+mongo = PyMongo(app)
 
-# --------------- FUNCTIONS --------------- # 
+# --------------- FUNCTIONS --------------- #
+
 
 def get_user():
-    
     # Gets user in session
     session_user = mongo.db.users.find_one({"username": session["user"]})
     return session_user
 
 
 def get_id():
-
     # Gets ObjectId of user in session
     user_id = str(get_user()['_id'])
     return user_id
 
-def get_fav():
-    # Get ObjectId of favourite
-    favourite_id = str(get_id())['_id']
-    return favourite_id
-
-
-# -------------// FUNCTIONS --------------- #    
-
-
 # --------------- ROUTING --------------- #
+
 
 # HOME PAGE
 @app.route("/")
@@ -56,7 +51,8 @@ def home():
 # GET SETS
 @app.route("/get_sets")
 def get_sets():
-    sets = list(mongo.db.sets.find()) # Wrap 'find' method inside python list
+    # Wrap 'find' method inside python list
+    sets = list(mongo.db.sets.find())
     return render_template("sets.html", sets=sets)
 
 
@@ -68,31 +64,30 @@ def search():
     return render_template("sets.html", sets=sets)
 
 
-# REGISTRATION 
+# REGISTRATION
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
         # Check if username already exists within DB
-        existing_user = mongo.db.users.find_one({"username": request.form.get("username").lower()})
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
 
         if existing_user:
             flash("Username already exists - please try again.")
             return redirect(url_for("register"))
-        
         # If no existing user is found create register dictionary
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
-
         # Put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Success! Welcome to MySwim.")
     return render_template("register.html")
 
 
-# LOG IN 
+# LOG IN
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -133,7 +128,9 @@ def profile(username):
     categories = list(mongo.db.categories.find())
 
     if session["user"]:
-        return render_template("profile.html", username=username, sets=sets, categories=categories)
+        return render_template(
+           "profile.html", username=username, sets=sets,
+           categories=categories)
 
     return redirect(url_for("login"))
 
@@ -186,13 +183,13 @@ def edit_set(set_id):
             "created_by": session["user"]
         }
         mongo.db.sets.update({"_id": ObjectId(set_id)}, edit)
-        flash("Sucess! Your set has been updated.")   
+        flash("Sucess! Your set has been updated.")
 
     set = mongo.db.sets.find_one({"_id": ObjectId(set_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_set.html", set=set, categories=categories)
 
- 
+
 # USER DELETE SWIM SET
 @app.route("/delete_set/<set_id>")
 def delete_set(set_id):
@@ -209,7 +206,7 @@ def delete_set(set_id):
     return redirect(url_for('profile', username=session['user']))
 
 
-# USER ADD FAVOURITE SETS 
+# USER ADD FAVOURITE SETS
 @app.route("/add_favourite/<set_id>/<user>", methods=["GET", "POST"])
 def add_favourite(set_id, user):
     # Add favourite set to users favourites
@@ -224,13 +221,14 @@ def add_favourite(set_id, user):
                 "set_name": set_name,
                 "user": user_id
             }
-        # Add favourites to DB 
+        # Add favourites to DB
         mongo.db.favourites.insert_one(favourite)
         flash("Set Added to Favourites!")
-    return redirect(url_for("profile_favs", set_id=set_id, username=session['user']))
+    return redirect(url_for(
+        "profile_favs", set_id=set_id, username=session['user']))
 
 
-# ADD FAVS TO PROFILE 
+# ADD FAVS TO PROFILE
 @app.route("/profile_favs/<username>")
 def profile_favs(username):
     # Check DB for user favourites
@@ -238,27 +236,26 @@ def profile_favs(username):
 
     # Gets users favourites from DB
     favourites = list(mongo.db.favourites.find({"user": user_id}))
-    # Add favourites to profile_favs 
+    # Add favourites to profile_favs
     return render_template("profile_favs.html",
                            favourites=favourites,
                            username=username, set=set)
 
 
-# PRINT SET PAGE 
+# PRINT SET PAGE
 @app.route("/print_set/<set_id>")
 def print_set(set_id):
-    
     # Extract single set and render template to print
     set = mongo.db.sets.find_one({"_id": ObjectId(set_id)})
-    
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     sets = list(mongo.db.sets.find(
         {"created_by": session["user"]}).sort("_id", 1))
     categories = list(mongo.db.categories.find())
-    
-    
-    return render_template("print_set.html", set=set, sets=sets, username=username, categories=categories)
+
+    return render_template(
+        "print_set.html", set=set, sets=sets,
+        username=username, categories=categories)
 
 
 # GET CATEGORIES FOR MANAGE CONTENT PAGE BY ADMIN
@@ -275,7 +272,7 @@ def add_category():
         category = {
             "category_name": request.form.get("category_name")
         }
-        # Add new CAT to DB 
+        # Add new CAT to DB
         mongo.db.categories.insert_one(category)
         flash("New Category Added.")
         return redirect(url_for("get_categories"))
@@ -317,24 +314,24 @@ def edit_category(category_id):
 def delete_category(category_id):
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    
+
     # If user is not admin
     if session["user"] != "admin":
         flash("Sorry, you are not permitted to do that!")
         return redirect(url_for("get_categories"))
 
     else:
-    # Delete category from DB
+        # Delete category from DB
         mongo.db.categories.remove(category)
         flash("Category Deleted")
         return redirect(url_for('get_categories'))
 
 
-# NOT WORKING 
+# NOT WORKING
 # VIEW SETS IN ADMIN MANAGE CONTENT
 @app.route("/admin_sets")
 def admin_sets():
-    sets = list(mongo.db.sets.find().sort("set_name", 1)) 
+    sets = list(mongo.db.sets.find().sort("set_name", 1))
     return render_template("manage_content.html", sets=sets)
 
 
@@ -348,8 +345,8 @@ def page_not_found(error):
 def internal_server_error(error):
     return render_template('500.html', error=error), 500
 
-
+# UPDATE TO FALSE BEFORE DEPLOYMENT
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-    port=int(os.environ.get("PORT")),
-    debug=True) ## UPDATE TO FALSE BEFORE DEPLOYMENT
+            port=int(os.environ.get("PORT")),
+            debug=True)
