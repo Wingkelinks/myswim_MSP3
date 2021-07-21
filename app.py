@@ -61,7 +61,8 @@ def get_sets():
 def search():
     query = request.form.get("query")
     sets = list(mongo.db.sets.find({"$text": {"$search": query}}))
-    return render_template("sets.html", sets=sets)
+    return render_template("sets.html", sets=sets, 
+                           search_results="{}".format(query))
 
 
 # REGISTRATION

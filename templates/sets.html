@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<h4 class="center-align fw9 flow-text lh-copy">
-		Filter results by category or stroke, using the search bar below.
+		Filter results by category or stroke, using the search bar below
 	</h4>
 
 	<div class="ma5"></div>
@@ -49,6 +49,12 @@
 
 	<div class="ma5"></div>
 
+	<div class="col s12 m8 l8 offset-l2 offset-m2 center-align">
+		<h5 class="fw9 lh-copy">Results returned for <i>{{ search_results }}:</i></h5>
+	</div>
+
+	<div class="ma5"></div>
+
 	{% for set in sets %}
 	<div class="card medium sticky action">
 		<div class="card-image waves-effect waves-block waves-light">
@@ -76,7 +82,7 @@
 				{% if session.user %}
 				<form
 					method="POST"
-					action="{{ url_for('add_favourite', 		set_id=set._id, user=session['user']) }}"
+					action="{{ url_for('add_favourite', set_id=set._id, user=session['user']) }}"
 				>
 					<button
 						type="submit"
