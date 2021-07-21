@@ -111,8 +111,6 @@
 				<!-- Call get_sets function -->
 				<li ><a href="{{ url_for('home') }}">Home</a></li>
 
-				<li ><a href="{{ url_for('get_sets') }}">Search Sets</a></li>
-
 				<!-- If logged in show below links -->
 				{% if session.user %}
 				<li>
@@ -121,6 +119,8 @@
 					>
 				</li>
 				<li><a href="{{ url_for('add_set') }}">New Swim</a></li>
+
+				<li ><a href="{{ url_for('get_sets') }}">Search Sets</a></li>
 
 				<!-- If admin, show Manage Content -->
 				<!-- Call get_categories function -->
@@ -197,7 +197,7 @@
 								>
 							</li>
 						{% else %}
-							<li class="br b--white bw1">
+							<li class="bl br b--white bw1">
 								<a class="white-text" href="{{ url_for('register') }}"
 									>Register</a
 								>
