@@ -306,7 +306,7 @@ def edit_category(category_id):
 
         # Update category in DB
         mongo.db.categories.update_many(category, edit)
-        flash("Category Updated.")
+        flash("Category Updated")
         return redirect(url_for("get_categories"))
 
 
