@@ -2,7 +2,7 @@
 
 body {
 	margin: 0;
-	font-family: "Roboto", sans-serif;
+	font-family: "Roboto", sans-serif !important;
 	box-sizing: border-box;
 	display: flex;
 	min-height: 100vh;
@@ -10,31 +10,13 @@ body {
 }
 
 main {
-    flex: 1 0 auto;
-  }
+	flex: 1 0 auto;
+}
 
 /* Background Colors */
 
-.ruby-red {
-	background-color: #9a031e;
-}
-.sinopia {
-	background-color: #cb4721;
-}
-.princeton-orange {
-	background-color: #ef781c;
-}
 .st-patricks-blue {
 	background-color: #302a74;
-}
-.robin-egg-blue {
-	background-color: #29caca;
-}
-.turquoise-blue {
-	background-color: #26ffe6;
-}
-.turquoise-blue-light {
-	background-color: #6bffee;
 }
 
 .azure {
@@ -53,45 +35,19 @@ main {
 	background-color: #ffbe0b;
 }
 
-.jasmine {
-	background-color: #FFE499;
-}
-
 .orange-pantone {
 	background-color: #fb5607;
 }
 
-.orange-crayola {
-	background-color: #FC7536;
-}
-
 .little-boy-blue {
-	background-color: #6BA4FF;
+	background-color: #6ba4ff;
 }
 
-.brilliant-rose{
-	background-color: #FF5CA3;
+.brilliant-rose {
+	background-color: #ff5ca3;
 }
 
 /* Text Colors */
-.ruby-red-text {
-	color: #9a031e;
-}
-.sinopia-text {
-	color: #cb4721;
-}
-.princeton-orange-text {
-	color: #ef781c;
-}
-.st-patricks-blue-text {
-	color: #302a74;
-}
-.robin-egg-blue-text {
-	color: #29caca;
-}
-.turquoise-blue-text {
-	color: #26ffe6;
-}
 
 .azure-text {
 	color: #3a86ff;
@@ -101,17 +57,6 @@ main {
 	color: #ff006e;
 }
 
-.neon-green-text {
-	color: #4dec38;
-}
-
-.mango-text {
-	color: #ffbe0b;
-}
-
-.orange-pantone-text {
-	color: #fb5607; 
-}
 
 /* Google Fonts */
 
@@ -122,6 +67,7 @@ main {
 .tourney-text {
 	font-family: "Tourney", cursive;
 }
+/* END UTILITY CLASSES */
 
 /* FLASH MESSAGES */
 
@@ -157,8 +103,9 @@ nav ul a {
 
 /* HOME PAGE */
 
-.hero-image{
-	background: linear-gradient(rgba(3, 47, 77, 0.4), rgba(0, 0, 0, 0.9)), url(/static/images/dive-unsplash.jpg) no-repeat center;
+.hero-image {
+	background: linear-gradient(rgba(3, 47, 77, 0.4), rgba(0, 0, 0, 0.9)),
+		url(/static/images/dive-unsplash.jpg) no-repeat center;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -171,10 +118,9 @@ nav ul a {
 
 /* Overide Materialize default margin on H1 to help push hero image up */
 
-header h1  {
+header h1 {
 	margin-top: 0;
 }
-
 
 /* FOOTER */
 
@@ -184,13 +130,13 @@ header h1  {
 	padding: 8px 0;
 }
 
-.footer-icons li{
+.footer-icons li {
 	display: inline-block;
 	font-size: 16px;
-	padding: 0px 6px;	
+	padding: 0px 6px;
 }
 
-.footer-menu li{
+.footer-menu li {
 	display: inline-block;
 	font-size: 20px;
 	padding: 0px 12px;
@@ -198,10 +144,8 @@ header h1  {
 
 .copyright {
 	font-size: 16px;
-	margin-top: 4px;		
+	margin-top: 4px;
 }
-
-
 
 /* CARD TITLES - SEARCH SETS PAGE */
 
@@ -211,7 +155,7 @@ header h1  {
 
 /* SEARCH BAR */
 
-#search-bar span{
+#search-bar span {
 	font-size: 18px;
 	font-family: "Roboto", sans-serif !important;
 }
@@ -223,7 +167,7 @@ header h1  {
 }
 
 /* Display additional admin icons */
-#admin-icons{
+#admin-icons {
 	display: inline-flex;
 }
 
@@ -240,51 +184,49 @@ header h1  {
 	color: #2d2e83;
 }
 
-
 /* Code Snippet: https://github.com/Dogfalo/materialize/issues/192 */
 textarea:focus {
 	border-bottom: 1px solid #444 !important;
 	-webkit-box-shadow: 0 1px 0 0 #444 !important;
 	-moz-box-shadow: 0 1px 0 0 #444 !important;
 	box-shadow: 0 1px 0 0 #444 !important;
-  }
+}
 
-  textarea:valid {
+textarea:valid {
 	border-bottom: 1px solid #4dec38 !important;
 	-webkit-box-shadow: 0 1px 0 0 #4dec38 !important;
 	-moz-box-shadow: 0 1px 0 0 #4dec38 !important;
 	box-shadow: 0 1px 0 0 #4dec38 !important;
-  }
+}
 
-  textarea:invalid {
+textarea:invalid {
 	border-bottom: 1.5px solid #ff006e !important;
 	-webkit-box-shadow: 0 1.5px 0 0 #ff006e !important;
 	-moz-box-shadow: 0 1.5px 0 0 #ff006e !important;
 	box-shadow: 0 1.5px 0 0 #ff006e !important;
-  }
+}
 
-  input:focus {
+input:focus {
 	border-bottom: 1px solid #444 !important;
 	-webkit-box-shadow: 0 1px 0 0 #444 !important;
 	-moz-box-shadow: 0 1px 0 0 #444 !important;
 	box-shadow: 0 1px 0 0 #444 !important;
-  }
+}
 
-  input:valid {
+input:valid {
 	border-bottom: 1px solid #4dec38 !important;
 	-webkit-box-shadow: 0 1px 0 0 #4dec38 !important;
 	-moz-box-shadow: 0 1px 0 0 #4dec38 !important;
 	box-shadow: 0 1px 0 0 #4dec38 !important;
-  }
+}
 
-  input:invalid {
-	border-bottom: 1.5px solid #ff006e  !important;
-	-webkit-box-shadow: 0 1.5px 0 0 #ff006e  !important;
-	-moz-box-shadow: 0 1.5px 0 0 #ff006e  !important;
-	box-shadow: 0 1.5px 0 0 #ff006e  !important;
-  }
+input:invalid {
+	border-bottom: 1.5px solid #ff006e !important;
+	-webkit-box-shadow: 0 1.5px 0 0 #ff006e !important;
+	-moz-box-shadow: 0 1.5px 0 0 #ff006e !important;
+	box-shadow: 0 1.5px 0 0 #ff006e !important;
+}
 /* // Code Snippet: https://github.com/Dogfalo/materialize/issues/192 */
-
 
 /* CUSTOM STYLING DROPDOWN IN FORM */
 /* Style 'Select Category' black */
