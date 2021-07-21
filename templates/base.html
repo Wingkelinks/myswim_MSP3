@@ -195,14 +195,16 @@
 								>Register</a
 							>
 						</li>
-						<li class="br b--white bw1">
+						<li>
 							<a class="white-text" href="{{ url_for('login') }}">Log In</a>
 						</li>
-						<li>
+						{% if session.user %}
+						<li class="bl b--white bw1">
 							<a class="white-text" href="{{ url_for('logout') }}"
 								>Log Out</a
 							>
 						</li>
+						{% endif %}
 					</ul>
 				</div>
 				<div class="copyright fw8">
