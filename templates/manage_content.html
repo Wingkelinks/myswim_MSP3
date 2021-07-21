@@ -1,70 +1,133 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <div class="container">
-
- <!-- Return to profile button -->
- <div class="row">
-  <div class="col s6 mt4">
-    <a href="{{ url_for('profile', username=session['user']) }}"
-      ><button class="btn-floating btn neon-green pulse">
-        <i class="fas fa-hand-point-left"></i></button
-    ></a>
-    <p class="">Back to Profile</p>
-  </div>
-  <!-- Page Intro Card -->
-	<div class="row mt3">
-		<div class="col s12 m8 l8 offset-l2 offset-m2 card-panel brilliant-rose">
-			<h2 class="white-text tourney-text fw5 center-align pa2-l f1-l f2-m f3">
-				Manage Content
-			</h2>
+	<!-- Return to profile button -->
+	<div class="row">
+		<div class="col s6 mt4">
+			<a href="{{ url_for('profile', username=session['user']) }}"
+				><button class="btn-floating btn neon-green pulse">
+					<i class="fas fa-hand-point-left"></i></button
+			></a>
+			<p class="">Back to Profile</p>
+		</div>
+		<!-- Page Intro Card -->
+		<div class="row mt3">
+			<div class="col s12 m8 l8 offset-l2 offset-m2 card-panel brilliant-rose">
+				<h2 class="white-text tourney-text fw5 center-align pa2-l f1-l f2-m f3">
+					Manage Content
+				</h2>
+			</div>
 		</div>
 	</div>
-</div>
 
-  <!-- ADD CONTENT BUTTON FOR ADMIN  -->
+	<!-- ADD CONTENT BUTTON FOR ADMIN  -->
 
-  <div class="row center-align">
-      <!-- Call add_category function -->
-      <div class="col s6">
-        <h4 class="">Add Category</h4><a href="{{ url_for('add_category') }}"  class="btn-floating btn-large waves-effect waves-light azure pulse"><i class="fas fa-plus"></i></a>
-      </div>
-  
-    <div class="col s6">
-      <h4 class="">Add Set</h4><a href="{{ url_for('add_set') }}"  class="btn-floating btn-large waves-effect waves-light mango pulse"><i class="fas fa-plus"></i></a>
-  </div>
-</div>
+	<div class="row center-align">
+		<!-- Call add_category function -->
+		<div class="col s6">
+			<h4 class="">Add Category</h4>
+			<a
+				href="{{ url_for('add_category') }}"
+				class="btn-floating btn-large waves-effect waves-light azure pulse"
+				><i class="fas fa-plus"></i
+			></a>
+		</div>
 
-<div class="divider ma3"></div>
-    
-  <div class="row flow-text">
-      {% for category in categories %}
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-content white-text ttu little-boy-blue center-align">
-            <span class="card-title">{{ category.category_name }}</span>
-            <p></p>
-          </div>
-          <div class="card-action">
-            <!-- EDIT DELETE BUTTONS FOR ADMIN -->
-            <!-- Tooltips on buttons in cards -->
-            <div class="center-align"> 
-              {% if session.user|lower == "admin" %}          
-                  <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn-floating waves-effect waves-light neon-green tooltipped" data-position="left" data-tooltip="EDIT"><i class="material-icons">edit</i>
-                  </a>
-              {% endif %}     
-              
-              {% if session.user|lower == "admin" and not category.category_name == "Unassigned" %}
-                  <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn-floating waves-effect waves-light winter-sky  tooltipped" data-target="{{ category._id }}" data-position="top" data-tooltip="DELETE"><i class="material-icons">delete</i>
-                  </a>
-              {% endif %}              
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-  </div>
+		<div class="col s6">
+			<h4 class="">Add Set</h4>
+			<a
+				href="{{ url_for('add_set') }}"
+				class="btn-floating btn-large waves-effect waves-light mango pulse"
+				><i class="fas fa-plus"></i
+			></a>
+		</div>
+	</div>
 
+	<div class="divider ma3"></div>
 
+	{% for category in categories %}
+	<div class="row flow-text">
+		<div class="col s12 m6">
+			<div class="card">
+				<div class="card-content white-text ttu little-boy-blue center-align">
+					<span class="card-title">{{ category.category_name }}</span>
+					<p></p>
+				</div>
+				<div class="card-action">
+					<!-- EDIT DELETE BUTTONS FOR ADMIN -->
+					<!-- Tooltips on buttons in cards -->
+					<div class="center-align">
+						{% if session.user|lower == "admin" %}
+						<a
+							href="{{ url_for('edit_category', category_id=category._id) }}"
+							class="
+								btn-floating
+								waves-effect waves-light
+								neon-green
+								tooltipped
+							"
+							data-position="left"
+							data-tooltip="EDIT"
+							><i class="material-icons">edit</i>
+						</a>
+						{% endif %} {% if session.user|lower == "admin" and not
+						category.category_name == "Unassigned" %}
+						<a
+							href="{{ url_for('delete_category', category_id=category._id) }}"
+							class="
+								btn-floating
+								waves-effect waves-light
+								winter-sky
+								tooltipped
+                modal-trigger
+							"
+							data-target="{{ category._id }}"
+							data-position="top"
+							data-tooltip="DELETE"
+							><i class="material-icons">delete</i>
+						</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal - Confirm Deletion -->
+
+		<div id="{{ category._id }}" class="modal center-align">
+			<div class="modal-content">
+				<h5 class="winter-sky-text b">
+					Do you really want to delete this categpry:
+					<span class="azure-text">{{ category_name|upper }}</span>?
+				</h5>
+			</div>
+
+			<div class="modal-footer">
+				<div class="row">
+					<div class="col s6 right-align">
+						<a
+							href="#!"
+							class="btn modal-close azure b"
+							aria-label="do not delete"
+						>
+							<span class="f5 fw8 pa1">Cancel That</span>
+							<i class="fas fa-times-circle"></i>
+						</a>
+					</div>
+					<div class="col s6 left-align">
+						<a
+							href="{{ url_for('delete_category', category_id=category._id) }}"
+							class="btn modal-close winter-sky b"
+							aria-label="confirm delete"
+						>
+							<span class="f5 fw8 pa1">Goodbye Forever</span>
+							<i class="fas fa-trash-alt"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
 </div>
 {% endblock %}
