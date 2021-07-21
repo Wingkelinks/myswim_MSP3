@@ -274,7 +274,7 @@ def add_category():
         }
         # Add new CAT to DB
         mongo.db.categories.insert_one(category)
-        flash("New Category Added.")
+        flash("New Category Added")
         return redirect(url_for("get_categories"))
 
     return render_template("add_content.html")
