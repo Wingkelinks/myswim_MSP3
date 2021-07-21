@@ -82,7 +82,8 @@ As a swimmer, this site will provide personal value as a convenient means to sto
 
 - ### Wireframes
 
-  - Wireframes can be viewed [here]()
+  - Wireframes can be viewed [here](https://github.com/Wingkelinks/myswim_MSP3/blob/master/wireframes/myswim_wireframes.pdf)
+  - A site map can be viewed [here](https://github.com/Wingkelinks/myswim_MSP3/blob/master/wireframes/site_map.pdf)
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
