@@ -17,49 +17,90 @@ Back to [README.md](README.md)
 
 <span id="user-stories"></span>
 
-### Testing User Stories from User Experience Section
+### User Story Testing 
 
 - #### First Time Visitor Goals
 
-  1. To easily understand the main purpose of the site and learn more about what it offers.
+  1. Understand the purpose of the site
 
-     <!-- 1. Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar to go to the page of their choice. Underneath there is a Hero Image with Text and a "Learn More" Call to action button.
-     2. The main points are made immediately with the hero image
-     3. The user has two options, click the call to action buttons or scroll down, both of which will lead to the same place, to learn more about the organisation. -->
+     1. A first time visitor will experience a simple, but striking home page that contains a hero-image, title and slogan that indicate that the site is about swimming.  
+     2. The user is prompted to click an animated 'down arrow', which directs them to the about section, where they can learn about the full intention of the site. 
+     3. From there, they are invited to register by clicking on a registration button.
 
-  2. To see a large portion of the content without registering.
+  2. Easy Navigation
 
-     <!-- 1. The site has been designed to be fluid and never to entrap the user. At the top of each page there is a clean navigation bar, each link describes what the page they will end up at clearly.
-     2. At the bottom of the first 3 pages there is a redirection call to action to ensure the user always has somewhere to go and doesn't feel trapped as they get to the bottom of the page.
-     3. On the Contact Us Page, after a form response is submitted, the page refreshes and the user is brought to the top of the page where the navigation bar is. -->
+     1. The Navigation is clean, responsive and easy to understand. 
+     2. The Navbar and Footer are present on all pages, including Error pages. 
+     3. The Footer includes top-level navigation links, for when a user is near the bottom of the page. 
+     4. The title of each page is visible to the user in the browser window, which further indicates which page the user is on. 
+     
+  3. Responsiveness
 
-  3. To be able to search for swimming sets using appropriate keywords.
+     1. The site is fully responsive to different screen sizes. This is largely achieved by using the Materialize Front-end framework in conjunction with small components from Tachyons - a CSS Toolkit.
+  
+  4. Appealing Visual Design
 
-     <!-- 1. Once the new visitor has read the About Us and What We Do text, they will notice the Why We are Loved So Much section.
-     2. The user can also scroll to the bottom of any page on the site to locate social media links in the footer.
-     3. At the bottom of the Contact Us page, the user is told underneath the form, that alternatively they can contact the organisation on social media which highlights the links to them. -->
+    1. The site provides a good visual experience. 
+    2. This is achieved by using a bright and bold color scheme that is consistent across all pages. 
+    3. The page structure is kept clean and easily readable, by maintaining clear spacing and a simple layout. 
+    4. Two clean and modern font styles are present across the site. They provide further consistency to the overall appearance. 
+  
+  4. Intuitive UX Design
 
-  4. A convenient registration process.
+    1. Good UX ensures the user is not left guessing as to what to do, or where to go next. 
+    2. This is assisted by including recognisable icons where user action is required.
+    3. Alert messages are also present, to let the user know that an action has been performed. 
+    4. Confirmation modals are used to ensure that the user is aware they are about to make an important change to their stored data. 
+
+  4. A convenient and secure registration process.
+
+    1. The registration process for new users is straightforward as they are only required to enter a username and password. 
+    2. Security is ensured by Werkzeug Security for password hashing.  
 
 - #### Returning Visitor Goals
 
+As well as the above elements (with the exception of registration), returning visitors want the following: 
+
   1.  A convenient login and logout process.
+  
+    1. A returning visitor can easily re-enter the site, by simply entering their username and password. 
 
   2.  To be able to search for swimming sets using appropriate keywords.
+    
+    1. A search bar is present that allows users to filter search for swimming sets by category 
+    and stroke names. 
 
   3.  To have access to a personal profile.
+    
+    1. Registered users have access to a personalised profile page where they can view the swimming sets that they have created.  
 
-  4.  To be able to save 'favourite' swimming sets created by other users under my profile.
+  4.  To be able to add new swimming sets.
 
-  5.  To be able to add new swimming sets.
+    1. Users can add a new set by completing a form that is designed with the structure of  swimming programmes in mind. 
+  
+  5.  To be able to edit or delete swimming sets from my profile.
 
-  6.  To be able to edit or delete swimming sets from my profile.
+    1. Users also have the option of editing or deleting a set from their profile. 
+
+  6.  To be able to save 'favourite' swimming sets created by other users under my profile.
+    
+    1. Registered users can also save their 'favourite' swimming sets. These are stored on a seperate page that is connected to their profile page. 
+
+  7. To be able to print a swimming set. 
+
+    1. Registered users have the option of accessing a 'print friendly' version of any set of their choice. 
+
 
 - #### As the site owner/admin, I want...
 
-  1. To manage categories (add, edit or delete).
+  1. To manage all content (add, edit or delete).
 
-  2. To be able to edit or remove content submitted by users.
+    1. Admin access ensures nominated admin users have the ability to manage content across the site. 
+    2. They can choose to edit or delete content submitted by users, including sets and categories. 
+
+  2. Admin also have access to their own profile page, where they too can submit swimming sets that are visible for all registered users to see. 
+
+  3. Admin can add their own favourites and access the 'print a set' page too. 
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
@@ -72,6 +113,101 @@ Back to [README.md](README.md)
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
+Manual testing was performed throughout the building process. The following is a breakdown of the different areas/components that have successfully passed manual testing. 
+
+- #### Navigation
+
+  1. All links in navigation tested and direct users to the correct pages. 
+  2. Correct navigation options are visible to users in session:
+   - Logged in user: Home, Profile, My Profile, New Swim, Search Sets and Log Out
+   - Admin Logged in: All of the above including Manage Content
+   - User not logged in: Home, Register, Log In
+
+  3. The dropdown mobile menu displays links as above for different users. 
+
+- #### Footer
+
+  1. The footer displays essential navigation links for different users:
+   - Logged in user: Home, Log Out
+   - User not logged in: Home, Register, Log In
+
+  2. Social media links all in working order and direct user to external pages in a new browser window. 
+
+  - #### Home Page
+
+  1. The about section in the home page displays a different invitation for different users: 
+   - Logged in users: are invited to 'check out the collection of swim sets'
+   - Users not logged in: are invited to register before they have access to the swim sets  
+
+  - #### Registration and Log In Pages 
+
+  1. If a user accidentally navigates to the register page, from there they can click on a log in link and vice versa. 
+
+  2. The username and password validators are in place and check that users are meeting the requirements for both registration and log in processes. 
+  
+  3. Upon successful registration, a personalised welcome message is displayed to the new user. If unsuccessful, the user will be notified by a different alert letting them know that their username/password is incorrect. 
+
+  4. When a user successfully logs in, they are directed to their profile page and greeted by a personalised welcome message. 
+
+  - #### Search Sets Page 
+
+  1. The Search Sets page displays all available sets added by all users. 
+
+  2. The Search Bar allows users to filter the available sets by entering some text (it is suggested they search by category or stroke). When they hit 'search', relevant sets will be displayed. Below the search bar, a message is displayed that informs the user of their search results. At this stage, if no results are returned, nothing gets displayed. A message to direct the user to try something else or direct them elsewhere would be desirable. 
+
+  2. At this stage, pagination is not an included feature, but it is also a desirable one. 
+
+  - #### Add Set Page 
+
+  1. Users can add a new swim set by clicking on the 'new swim' link. There they will be directed to fill in a form that includes fields relevant to a swim programme. 
+
+  2. The input fields were developed from the Sets collection initially stored in MongoDB during the initial stages of development. 
+
+  3. The 'Select Category' field which is viewed as a dropdown menu, is connected to the Category collection stored in MongoDB. If an admin user makes adjustments to a category, this field gets updated accurately. 
+
+  4. The Pre Set and Main Set fields are stored as arrays in the database. This allows these fields to include additional entry fields that get added dynamically via some JQuery script. These are accurately rendered when a user submits the form. 
+
+  2. Upon submission, the set is added to collection on the site and in the database itself.The user is then redirected to the Search Sets page and an alert message is displayed notifying them of a successful submission. 
+
+  - #### Edit Set Page 
+
+  1. For general registered users, each set stored on their profile will display an edit button, that redirects them to a form for editing. 
+
+  2. Admin users are able to edit any set from the Search Sets page. For admin, an edit button will be visible on all sets. 
+
+  3. The form is prefilled based on the selected sets existing values/field entries. 
+
+  4. The edit button updates the set in the database and on the site. The user gets an alert message notifying them that their set was succesfully updated. They remain on the Edit Set page. 
+
+  5. The cancel button will redirect the user to the Search Sets page. 
+
+  - #### Profile Favourites and Print Pages
+
+  1. A user's profile page displays their name and provides them with additional options to add a new set or to navigate to their Favourites page. All of the users stored sets are displayed as cards similar to those on the Search Set page, with the addition of three buttons: favourite, edit and print. 
+
+  2. The Favourite page includes a user's selected favourites displayed alphabetically by set name in small cards. Each card contains a 'view' button which redirects the user to that set located on the Search Sets page. They can also choose to navigate back to their profile by clicking on a 'back to profile' button at the top of the page. 
+
+  3. When a user 'favourites' a set from the collection, a new favourite is added to the database stored in a Favourites collection. Each favourite gets populated with the associated values for the set (id and name) as well as the user id. 
+ 
+  4. When a user clicks on a print button, they are redirected to a page that renders their selected set in a print friendly manner. The name of the set gets displayed at the top of the page. They can choose to navigate back to their profile by clicking on a 'back to profile' button at the top of the page. The print function is initialised by some JQuery script, utilising the window.print() method. 
+
+  - #### Manage Content Page 
+
+  1. The Manage Content page can only be accessed by admin users in session. It gives admin users the options to add, edit and delete categories. They can also add new sets from the Manage Content page.
+
+  2. The Add Category button will direct users to a form that requires the input of a new category name. If they hit cancel, they will be redirected back to the Manage Content page. If they hit submit, they will receive an alert message notifying of a successful add. Categories are stored and added alphabetically. 
+
+  3. The delete button will trigger a modal asking the user for confirmation before going ahead and deleting the category permanently. If they confirm deletion, an alert message will be displayed confirming that the category has been deleted. 
+
+  - #### Deleting Content (Admin and Users)
+
+  1. The deletion process of sets is similar to that of category deletion mentioned above. If a user chooses to delete a set, a modal will be triggered that asks, "Do  you really want to delet your set {{ set.set_name }}? This cannot be undone!" If they choose to delete, the set is removed from the collection. If they select not to delete, they remain on their profile page. 
+
+  - #### Error Handler Pages
+
+  1. In the event of 404 and 500 errors, pages with appropriate messages will be displayed. Both pages include buttons to invite the user to return to the Home page. 
+
+
 <span id="testing-auto"></span>
 
 ## Automated testing
@@ -82,9 +218,21 @@ Back to [README.md](README.md)
 
 - ## [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
+No errors found, 15 warnings = PASS
+
+<img src="static/images/test_images/css-test.png" width="200">
+
 - ## [Python Validator](http://pep8online.com/)
 
+Initial Pep8 tests showed some refactoring was required, mainly removing whitespace and fixing some indenting issues. Everything was cleared apart from what is shown in the image below: 
+
+<img src="static/images/test_images/pep8-result1.png" width="200">
+
 - ## [JavaScript Validator](https://jshint.com/)
+
+1 undefined variable, 2 warnings = PASS  
+
+<img src="static/images/test_images/jshint-test.png" width="200">
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
@@ -147,6 +295,7 @@ Real world testing on:
 <img src="static/images/test_images/test3.png" width="200">
 <img src="static/images/test_images/test4.png" width="200">
 <img src="static/images/test_images/test5.png" width="200">
+
 
 
 ### Unresolved
