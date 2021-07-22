@@ -2,31 +2,33 @@
 
 <h1 align="center">MySwim</h1>
 
+###### Code Institute MS3 / Data-Centric Development
+
 <img src="static/images/test_images/amiresponsive-img.png" width="800">
 
 [View the live project here.](https://my-swim.herokuapp.com/)
 
 ---
 
-## Index
+## INDEX
 
 - <a href="#context">Context</a>
-- <a href="#ux">UX</a>
-  - <a href="#ux-overview">Overview</a>
-  - <a href="#ux-stories">User stories</a>
-  - <a href="#ux-wireframes">Wireframes</a>
-  - <a href="#ux-design">Design</a>
-- <a href="#database-model">Database Model</a>
-- <a href="#features">Features</a>
-  - <a href="#features-current">Existing</a>
-  - <a href="#features-future">Desirable/Future</a>
+  - <a href="#ux-overview">Project Overview/Strategy</a>
+  - <a href="#ux">User Experience</a>
+  - <a href="#ux-strategy">Strategy</a>
+  - <a href="#ux-scope">Scope</a>
+  - <a href="#ux-structure">Structure</a>
+- <a href="#skeleton">Skeleton</a>
+- <a href="#surface">Surface</a>
+  - <a href="#features-existing">Existing Features</a>
+  - <a href="#features-future">Desirable Features</a>
 - <a href="#technologies">Technologies Used</a>
 - <a href="#testing">Testing</a>
-- <a href="#deployment">Deployment</a>
+- <a href="#deployment">Development and Deployment</a>
 - <a href="#credits">Credits</a>
 
 ---
-## Context
+># **CONTEXT**
 
 <span id="context"></span>
 
@@ -34,26 +36,32 @@ Are you a swimmer looking for a convenient way to store and access your swim set
 
 MySwim allows you to create a free account where you can add and save as many of your own swim sets, that are then shared with the MySwim community. You can save some of your favourite sets to your profile for convenient access. You can also print sets straight from the website.
 
-
 <span id="ux-overview"></span>
+<span id="ux"></span>
 
-## User Experience (UX)
+># **PROJECT OVERVIEW/STRATEGY** 
+
+## USER EXPERIENCE (UX)
 
 MySwim is my third milestone project as a Code Institute student working towards a Diploma in Full Stack Software Development. It forms part of the Data Centric Development Module where the main aim is to "build a full-stack site that allows users to manage a common dataset about a particular domain."
 
 As a swimmer, this site will provide personal value as a convenient means to store and access swimming programmes or sets. Having always relied on bits of soggy paper, stored here-and-there, the website will aim to alleviate this. It will also be beneficial to me as a swimmmer to have access to a collection of swimming sets, submitted by other swimmers, rather than constantly having to cycle through the same sets, or come up with new ones at the last minute.
 
-<span id="ux-stories"></span>
+># **STRUCTURE**
 
-- ### User stories
+<span id="ux"></span>
+
+- ## USER STORIES
 
   - #### As a first time visitor, I want...
 
     1. To easily understand the main purpose of the site and learn more about what it offers.
-    2. To see a large portion of the content without registering.
-    3. To be able to search for swimming sets using appropriate keywords.
-    4. A convenient registration process.
-
+    2. Access to easy and clear navigation.
+    3. To experience a responsive site.
+    4. To experience appealing visuals and design.
+    4. To experience intuitive UX Design.
+    5. A convenient and secure registration process.
+  
   - #### As a returning visitor, I want...
 
     1. A convenient login and logout process.
@@ -62,108 +70,168 @@ As a swimmer, this site will provide personal value as a convenient means to sto
     4. To be able to save 'favourite' swimming sets created by other users under my profile.
     5. To be able to add new swimming sets.
     6. To be able to edit or delete swimming sets from my profile.
+    7. To be able to print out a selected set. 
 
   - #### As the site owner/admin, I want...
     1. To manage categories (add, edit or delete).
     2. To be able to edit or remove content submitted by users.
 
-<span id="ux-design"></span>
+># **SCOPE**
 
-- ### Design
+**Minimum Viable Product** for the website will include:
 
-  - #### Colour Scheme
+- responsive navigation on all pages
+- home page - featuring a hero image and call to action
+- about section - offering information about the site's purpose
+- error pages - in the event of 404 or 500 errors occuring
+- print page - gives users access to print friendly version of a set
 
-  - [Coolors](https://coolors.co/)
-  - [MySwim Color Scheme 1](https://coolors.co/ffbe0b-fb5607-ff006e-8338ec-3a86ff-4dec38-000000)
+**C.R.U.D Principle** to be met by incorporating the following functionality within respective pages:
+
+- Register (CREATE user instance in database)
+- Log In/Log Out
+- Search Sets (READ and RETRIEVE records in database)
+- Profile Page (READ records in database)
+- Add New Set & Add Favourite to Profile (UPDATE and add to data)
+- Manage Content for Admin:
+      - Add Category/Set (UPDATE records)
+      - Edit Category/Set (UPDATE records)
+      - Delete Category/Set (DELETE records)
+- Edit a Set (UPDATE existing data)
+- Delete a Set (DELETE to remove records from database)
+
+># **SKELETON**
+
+## WIREFRAMES
+<span id="ux-skeleton"></span>
+
+- Wireframes can be viewed [here](https://github.com/Wingkelinks/myswim_MSP3/blob/master/wireframes/myswim_wireframes.pdf)
+
+## SITE MAP
+
+- A site map can be viewed [here](https://github.com/Wingkelinks/myswim_MSP3/blob/master/wireframes/site_map.pdf)
+
+># **SURFACE**
+<span id="ux-surface"></span>
+
+## DESIGN
+
+  - #### Theme and Colour Scheme
+
+  The theme is inspired by swimming and is intended to appeal to all types of swimmers. A clean and modern colour scheme with contrasting and complementary colours was chosen to reflect a sense of simple energy. [Coolors](https://coolors.co/) was used to generate two colour palettes which were incorporated as utility classes in the CSS file, to be easily called upon directly from the HTML files. 
+
+  Take a closer look at the colour schemes:
+  - [MySwim Color Scheme 1](https://coolors.co/ffbe0b-fb5607-ff006e-8338ec-3a86ff-4dec38-000000)<img src="static/images/test_images/color-scheme1.png" width="200">
+
   - [MySwim Color Scheme 2](https://coolors.co/ffbe0b-fb5607-ff006e-8338ec-3a86ff-4c91ff-5c9bff-6ba4ff-78acff-84b4ff)
-
-  <img src="static/images/test_images/color-scheme1.png" width="200">
   <img src="static/images/test_images/color-scheme2.png" width="200">
 
   - #### Typography
+  
+  ##### [Google Fonts](https://fonts.google.com/)
 
-    - [Google Fonts](https://fonts.google.com/)
-    Tourney is a collaboration of tech and sport. At least, that is where the inspiration came from. Tourney would feel at home on a space ship or in a stadium. 
-    - [Tourney Text](https://fonts.google.com/specimen/Tourney)
-    At the same time, the font features friendly and open curves. While some grotesks distort their letterforms to force a rigid rhythm, Roboto doesn’t compromise, allowing letters to be settled into their natural width. This makes for a more natural reading rhythm more commonly found in humanist and serif types.
-    - [Roboto](https://fonts.google.com/specimen/Roboto)
-
+  - [Tourney Text](https://fonts.google.com/specimen/Tourney) was selected for the MySwim logo in the Navbar and makes an appearance in selected headings and messages throughout the site. 
+  I chose it for it's 'sporty, techy' vibe (to quote Google Fonts).
+    
+  - [Roboto](https://fonts.google.com/specimen/Roboto) was chosen for the body of the site. It has a modern and open appeal and pairs nicely with Tourney Text.
+    
   - #### Imagery
 
-    - Swimming, swimmers, water. 
-    - Images obtained from [Unsplash](https://unsplash.com/)
-
-<span id="ux-wireframes"></span>
-
-- ### Wireframes
-
-  - Wireframes can be viewed [here](https://github.com/Wingkelinks/myswim_MSP3/blob/master/wireframes/myswim_wireframes.pdf)
-  - A site map can be viewed [here](https://github.com/Wingkelinks/myswim_MSP3/blob/master/wireframes/site_map.pdf)
+    - Appropriate images related to swimming were selected for the site. 
+    - Images are all obtained from [Unsplash](https://unsplash.com/) and are free to use. 
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
-<span id="database-model"></span>
+## DATABASE MODEL
 
-## Database Model
+Please view the database model here !!!!
 
-## Features
+># **FEATURES**
 
-<!-- - Responsive on all device sizes
+## EXISTING 
 
-- Interactive elements -->
+**Register Account**
+**Log In to Account**
+**Log Out of Account**
+**View Swim Sets**
+**Search Sets**
+**Add a Set**
+**Edit a Set**
+**Delete a Set**
+**Add a Set to Favourites**
+**Print a Set** 
 
+In addition to the above, the *admin* user has the following features available:
+**Add a Category**
+**Edit a Category**
+**Delete a Category**
+**Edit any Set**
+**Delete any Set**
+
+*Defensive Programming* Features include Deletion Confirmation alerts that appear as a modal, when a user clicks on any 'delete' related button. 
+
+## DESIRABLE
+
+**Pagination**: I would have loved to have included pagination to the site, as I am fully aware that it contributes to a better user experience. Due to time constraints, it was necessary to prioritise other elements/features. 
+
+**Remove Set from Favourites**: Again, this is an important companion feature to the 'Add Favourites' feature, however I did not have the time to make it work. 
 ---
 <span id="technologies"></span>
 
-## Technologies Used
+># **TECHNOLOGIES USED**
 
-### Languages Used
+## LANGUAGES
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Python](https://www.python.org/)
-- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
 
-### Frameworks and Libraries
+## FRAMEWORKS AND LIBRARIES
 
 - [Materialize](https://materializecss.com/)
+- [Tachyons](https://tachyons.io/)
 - [Google Fonts:](https://fonts.google.com/)
+- [Material Icons by Google Fonts](https://fonts.google.com/icons)
 - [Font Awesome:](https://fontawesome.com/)
 - [jQuery:](https://jquery.com/)
-- [Icons8](https://icons8.com/) - for custom icons used on map.
-- [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/): used to create responsive layouts.
-- [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/): used to create responsive layouts.
+- [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
-### Extensions and kits
+## EXTENSIONS AND PACKAGES
 
-- [Flask Paginate](https://pythonhosted.org/Flask-paginate/)
+- [PIP](https://pypi.org/project/pip/)
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+- [Jinja Templating Engine](https://jinja.palletsprojects.com/en/3.0.x/)
 - [Werkzeug](https://palletsprojects.com/p/werkzeug/)
+- [PyMongo](https://pypi.org/project/pymongo/)
 
-### Project Management
+## PROJECT MANAGEMENT
 
-- [Git](https://git-scm.com/)
-- [GitHub:](https://github.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Heroku](https://www.heroku.com/about)
-- [Balsamiq:](https://balsamiq.com/)
-  - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
-
+- [Visual Studio Code](https://code.visualstudio.com/) - Coding Editor
+- [Git](https://git-scm.com/) - Version Control
+- [GitHub](https://github.com/) - Repository Storage
+- [Imgbot](https://github.com/marketplace/imgbot) 
+    - A Github app that optimizes images (free    for open source projects).
+    > Imgbot sends an auto pull request with images optimized. The pull request is merged and Imgbot keeps working as changes are made to the repository.
+- [MongoDB](https://www.mongodb.com/) - Database Management
+- [Heroku](https://www.heroku.com/about) - App Hosting 
+- [Balsamiq:](https://balsamiq.com/) - Wireframes, Site Map
+ 
 --
 <span id="testing"></span>
 
-## Testing
+># **TESTING**
 
 Full testing details can be found [here](TESTING.md)
 
 --
 <span id="deployment"></span>
 
-## Deployment
+># **DEVELOPMEMNT AND DEPLOYMENT**
 
-The deployed version has been created using the master branch.
+The deployed version of MySwim has been created using the master branch.
 
-### Local Deployment 
+## LOCAL DEPLOYMENT 
 
 The following is required to run this project in your local environment:
 
@@ -177,7 +245,7 @@ The following is required to run this project in your local environment:
 
 [Visual Studio Code](https://code.visualstudio.com/) - or your own choice of IDE 
 
-### Next you need to clone MySwim
+### First you need to clone MySwim
 
 To clone this project from its [GitHub repository](https://github.com/Wingkelinks/myswim_MSP3):
 
@@ -220,7 +288,6 @@ You can use a random key generator if you wish.
 | main_set      | []        | Array    |
 
 
-
 ### How to deploy to Heroku
 
 MySwim is deployed on Heroku from the master branch. To do this, the following steps were taken:
@@ -250,13 +317,12 @@ echo web: python app.py > Procfile
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
-
 --
 <span id="credits"></span>
 
-## Credits
+># **CREDITS**
 
-### Tutorials / Resources
+## TUTORIALS AND RESOURCES
 
 - Code Institute Task Manager Project ([Tim Nelson](https://github.com/TravelTimN))
 - MS3 Strategy and Tips ([Ed Bradley](https://github.com/Edb83))
@@ -268,25 +334,23 @@ echo web: python app.py > Procfile
 - [Stack Overflow](https://stackoverflow.com/) - general questions and problem solving.
 - [MDN Web Docs](https://developer.mozilla.org/en-US/) - general questions and problem solving.
 
-### Code Referenced/Snippets
+## REFERENCED AND MODIFIED CODE SOURCES
 
 - [CSS3 Animation Notification](https://codepen.io/sugimo/pen/DgLty) - referenced to create custom flash messages
 - [Print Page JQuery](https://www.geeksforgeeks.org/how-to-print-a-page-using-jquery/) - to initialise my print functionality
 - [Tutorial by Cody Mind](https://www.youtube.com/watch?v=jSSRMC0F6u8) - dynamically add and delete form input fields
 - [Dogfalo](https://github.com/Dogfalo/materialize/issues/192) - to customise the Materialize form input fields 
 
-### Content
+## CONTENT AND MEDIA
 
-- All content was written by the developer.
+- All initial site content is written by the developer. 
+- Images obtained from [Unsplash](https://unsplash.com/), an open source photography platform. 
 
-### Media
-
-- Images obtained from [Unsplash](https://unsplash.com/)
-
-### Acknowledgements
+## ACKNOWLEDGEMENTS 
 
 - Thanks to my Mentor, Sebastian Immel for his guidance and support.
-- Thank you to Ed Bradley, for his MS3 Tips and Strategies video. 
+- Thank you to Ed Bradley, for his MS3 Tips and Strategies video.
+- Thank you to the Code Institute and the top quality course content.
 - Thank you to the Code Institue Slack community - a great place to check in and learn from others.
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
