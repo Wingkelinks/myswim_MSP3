@@ -21,38 +21,38 @@ Back to [README.md](README.md)
 
 - #### First Time Visitor Goals
 
-  1. Understand the purpose of the site
+  - Understand the purpose of the site
 
      1. A first time visitor will experience a simple, but striking home page that contains a hero-image, title and slogan that indicate that the site is about swimming.  
      2. The user is prompted to click an animated 'down arrow', which directs them to the about section, where they can learn about the full intention of the site. 
      3. From there, they are invited to register by clicking on a registration button.
 
-  2. Easy Navigation
+  - Easy Navigation
 
      1. The Navigation is clean, responsive and easy to understand. 
      2. The Navbar and Footer are present on all pages, including Error pages. 
      3. The Footer includes top-level navigation links, for when a user is near the bottom of the page. 
      4. The title of each page is visible to the user in the browser window, which further indicates which page the user is on. 
      
-  3. Responsiveness
+  - Responsiveness
 
      1. The site is fully responsive to different screen sizes. This is largely achieved by using the Materialize Front-end framework in conjunction with small components from Tachyons - a CSS Toolkit.
   
-  4. Appealing Visual Design
+  - Appealing Visual Design
 
     1. The site provides a good visual experience. 
     2. This is achieved by using a bright and bold color scheme that is consistent across all pages. 
     3. The page structure is kept clean and easily readable, by maintaining clear spacing and a simple layout. 
     4. Two clean and modern font styles are present across the site. They provide further consistency to the overall appearance. 
   
-  4. Intuitive UX Design
+  - Intuitive UX Design
 
     1. Good UX ensures the user is not left guessing as to what to do, or where to go next. 
     2. This is assisted by including recognisable icons where user action is required.
     3. Alert messages are also present, to let the user know that an action has been performed. 
     4. Confirmation modals are used to ensure that the user is aware they are about to make an important change to their stored data. 
 
-  4. A convenient and secure registration process.
+  - A convenient and secure registration process.
 
     1. The registration process for new users is straightforward as they are only required to enter a username and password. 
     2. Security is ensured by Werkzeug Security for password hashing.  
@@ -61,50 +61,50 @@ Back to [README.md](README.md)
 
 As well as the above elements (with the exception of registration), returning visitors want the following: 
 
-  1.  A convenient login and logout process.
+  -  A convenient login and logout process.
   
     1. A returning visitor can easily re-enter the site, by simply entering their username and password. 
 
-  2.  To be able to search for swimming sets using appropriate keywords.
+  -  To be able to search for swimming sets using appropriate keywords.
     
     1. A search bar is present that allows users to filter search for swimming sets by category 
     and stroke names. 
 
-  3.  To have access to a personal profile.
+  -  To have access to a personal profile.
     
     1. Registered users have access to a personalised profile page where they can view the swimming sets that they have created.  
 
-  4.  To be able to add new swimming sets.
+  -  To be able to add new swimming sets.
 
     1. Users can add a new set by completing a form that is designed with the structure of  swimming programmes in mind. 
   
-  5.  To be able to edit or delete swimming sets from my profile.
+  -  To be able to edit or delete swimming sets from my profile.
 
     1. Users also have the option of editing or deleting a set from their profile. 
 
-  6.  To be able to save 'favourite' swimming sets created by other users under my profile.
+  -  To be able to save 'favourite' swimming sets created by other users under my profile.
     
     1. Registered users can also save their 'favourite' swimming sets. These are stored on a seperate page that is connected to their profile page. 
 
-  7. To be able to print a swimming set. 
+  - To be able to print a swimming set. 
 
     1. Registered users have the option of accessing a 'print friendly' version of any set of their choice. 
 
 
 - #### As the site owner/admin, I want...
 
-  1. To manage all content (add, edit or delete).
+  - To manage all content (add, edit or delete).
 
     1. Admin access ensures nominated admin users have the ability to manage content across the site. 
     2. They can choose to edit or delete content submitted by users, including sets and categories. 
 
-  2. Admin also have access to their own profile page, where they too can submit swimming sets that are visible for all registered users to see. 
+  - Admin also have access to their own profile page, where they too can submit swimming sets that are visible for all registered users to see. 
 
-  3. Admin can add their own favourites and access the 'print a set' page too. 
+  - Admin can add their own favourites and access the 'print a set' page too. 
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
---
+---
 <span id="testing-manual"></span>
 
 ## FURTHER TESTING
@@ -220,33 +220,33 @@ Manual testing was performed throughout the building process. The following is a
   ### [Lighthouse](https://developers.google.com/web/tools/lighthouse)
 
 - Used to check performance, accessibility and SEO potential on all pages of the website.
-*Across all pages, averages ranged from:*
-  - Performance: 75% - 95%
-  - Accessibility: 90% and above
-  - Best Practices: 90% and above
-  - SEO: 90% and above 
+*Across all pages:*
+  - Performance: 81%
+  - Accessibility: 80%
+  - Best Practices: 100%
+  - SEO: 90% 
 
 - ## [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
-
+No errors or warnings to show. 
 
 - ## [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
-No errors found, 15 warnings = PASS
+No errors found, 15 warnings 
 
-<img src="static/images/test_images/css-test.png" width="200">
+<img src="static/images/test_images/css-test.png" width="300">
 
 - ## [Python Validator](http://pep8online.com/)
 
 Initial Pep8 tests showed some refactoring was required, mainly removing whitespace and fixing some indenting issues. Everything was cleared apart from what is shown in the image below: 
 
-<img src="static/images/test_images/pep8-result1.png" width="200">
+<img src="static/images/test_images/pep8-result1.png" width="300">
 
 - ## [JavaScript Validator](https://jshint.com/)
 
-1 undefined variable, 2 warnings = PASS  
+1 undefined variable, 2 warnings  
 
-<img src="static/images/test_images/jshint-test.png" width="200">
+<img src="static/images/test_images/jshint-test.png" width="300">
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
@@ -288,14 +288,19 @@ Chrome DevTools used to test:
 
 ## RESOLVED
 
-<img src="static/images/test_images/test.png" width="200">
-<img src="static/images/test_images/test1.png" width="200">
-<img src="static/images/test_images/test2.png" width="200">
-<img src="static/images/test_images/test3.png" width="200">
-<img src="static/images/test_images/test4.png" width="200">
-<img src="static/images/test_images/test5.png" width="200">
+<img src="static/images/test_images/test.png" width="300">
+<img src="static/images/test_images/test1.png" width="300">
+<img src="static/images/test_images/test2.png" width="300">
+<img src="static/images/test_images/test3.png" width="300">
+<img src="static/images/test_images/test4.png" width="300">
+<img src="static/images/test_images/test5.png" width="300">
 
 
-### UNRESOLVED
+## UNRESOLVED
+
+- Unable to implement **Remove Favourites** function.
+- Was not able to fix sizing of buttons in form that get added dynamically through JQuery script when a user adds a new input field to the *pre_set* and *main_set* fields of the 'add set' form. 
+
+
 
 
