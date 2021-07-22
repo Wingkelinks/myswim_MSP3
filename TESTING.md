@@ -289,10 +289,28 @@ Chrome DevTools used to test:
 ># **RESOLVED ISSUES**
 
 - Initially I had trouble displaying the pre_set and main_set field values which are stored as arrays in the database. They kept on appearing as seen in the image below. I was able to fix this by incorporating dynamic form fields for additional values added to the arrays. These were then iterated over respectively using Jinja for loops. 
-<img src="static/images/test_images/test1.png" width="300">
+<img src="static/images/test_images/test1.png" width="400">
 
 - Initially tried to use Materialize *Parallax* effect on the Home Page, but image wouldn't appear. Resorted to more of a custom approach, combining *Tachyons* and *Materialize* classes for responsiveness.
-<img src="static/images/test_images/test5.png" width="300">
+<img src="static/images/test_images/test5.png" width="400">
+
+- The following screenshots were captured to address and debug a variety of issues relating to repsonsiveness, general layout issues, ensuring consistency throughout the site (mainly navigation) and general styling/design concerns.
+
+<img src="static/images/test_images/test6.png" width="400">
+
+<img src="static/images/test_images/test7.png" width="400">
+
+<img src="static/images/test_images/test8.png" width="400">
+
+<img src="static/images/test_images/test9.png" width="400">
+
+<img src="static/images/test_images/test10.png" width="400">
+
+<img src="static/images/test_images/test11.png" width="400">
+
+<img src="static/images/test_images/test12.png" width="400">
+
+<img src="static/images/test_images/test13.png" width="400">
 
 
 ># **UNRESOLVED ISSUES**
