@@ -11,5 +11,8 @@
         margin: 0;
 	}
  
+	.message {
+		margin-left: -90px;
+	}
     
 }
