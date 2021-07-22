@@ -8,8 +8,8 @@ Back to [README.md](README.md)
 - <a href="#testing-manual">Manual</a>
 - <a href="#testing-auto">Automated</a>
 - <a href="#testing-responsive">Responsiveness</a>
-- <a href="#testing-resolved">Resolved issues</a>
-- <a href="#testing-unresolved">Unresolved issues</a>
+- <a href="#testing-resolved">Resolved Issues</a>
+- <a href="#testing-unresolved">Unresolved Issues</a>
 
 ---
 
@@ -107,7 +107,6 @@ Back to [README.md](README.md)
 ---
 <span id="testing-manual"></span>
 
-## FURTHER TESTING
 
 ># **MANUAL TESTING**
 
@@ -287,21 +286,18 @@ Chrome DevTools used to test:
 <span id="testing-resolved"></span>
 
 
-## RESOLVED
+># **RESOLVED ISSUES**
 
-<img src="static/images/test_images/test.png" width="300">
+- Initially I had trouble displaying the pre_set and main_set field values which are stored as arrays in the database. They kept on appearing as seen in the image below. I was able to fix this by incorporating dynamic form fields for additional values added to the arrays. These were then iterated over respectively using Jinja for loops. 
 <img src="static/images/test_images/test1.png" width="300">
-<img src="static/images/test_images/test2.png" width="300">
-<img src="static/images/test_images/test3.png" width="300">
-<img src="static/images/test_images/test4.png" width="300">
+
+- Initially tried to use Materialize *Parallax* effect on the Home Page, but image wouldn't appear. Resorted to more of a custom approach, combining *Tachyons* and *Materialize* classes for responsiveness.
 <img src="static/images/test_images/test5.png" width="300">
 
 
-## UNRESOLVED
+># **UNRESOLVED ISSUES**
 
 - Unable to implement **Remove Favourites** function.
 - Was not able to fix sizing of buttons in form that get added dynamically through JQuery script when a user adds a new input field to the *pre_set* and *main_set* fields of the 'add set' form. 
-
-
-
-
+- Warnings reported by CSS validator 
+- Warnings reported by JSHint
