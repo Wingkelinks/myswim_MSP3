@@ -153,31 +153,33 @@ Please view the database model here !!!!
 
 ## EXISTING 
 
-**Register Account**
-**Log In to Account**
-**Log Out of Account**
-**View Swim Sets**
-**Search Sets**
-**Add a Set**
-**Edit a Set**
-**Delete a Set**
-**Add a Set to Favourites**
-**Print a Set** 
+-**Register Account**
+-**Log In to Account**
+-**Log Out of Account**
+-**View Swim Sets**
+-**Search Sets**
+-**Add a Set**
+-**Edit a Set**
+-**Delete a Set**
+-**Add a Set to Favourites**
+-**Print a Set** 
 
 In addition to the above, the *admin* user has the following features available:
-**Add a Category**
-**Edit a Category**
-**Delete a Category**
-**Edit any Set**
-**Delete any Set**
+-**Add a Category**
+-**Edit a Category**
+-**Delete a Category**
+-**Edit any Set**
+-**Delete any Set**
 
-*Defensive Programming* Features include Deletion Confirmation alerts that appear as a modal, when a user clicks on any 'delete' related button. 
+*Defensive Programming* Features include **Deletion Confirmation** alerts that appear as a modal, when a user clicks on any 'delete' related button. 
 
 ## DESIRABLE
 
-**Pagination**: I would have loved to have included pagination to the site, as I am fully aware that it contributes to a better user experience. Due to time constraints, it was necessary to prioritise other elements/features. 
+-**Pagination**: 
+  I would have loved to have included pagination to the site, as I am fully aware that it contributes to a better user experience. Due to time constraints, it was necessary to prioritise other elements/features. 
 
-**Remove Set from Favourites**: Again, this is an important companion feature to the 'Add Favourites' feature, however I did not have the time to make it work. 
+-**Remove Set from Favourites**: 
+  Again, this is an important companion feature to the 'Add Favourites' feature, however I did not have the time to make it work. 
 ---
 <span id="technologies"></span>
 
@@ -194,10 +196,10 @@ In addition to the above, the *admin* user has the following features available:
 
 - [Materialize](https://materializecss.com/)
 - [Tachyons](https://tachyons.io/)
-- [Google Fonts:](https://fonts.google.com/)
+- [Google Fonts](https://fonts.google.com/)
 - [Material Icons by Google Fonts](https://fonts.google.com/icons)
-- [Font Awesome:](https://fontawesome.com/)
-- [jQuery:](https://jquery.com/)
+- [Font Awesome](https://fontawesome.com/)
+- [jQuery](https://jquery.com/)
 - [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
 ## EXTENSIONS AND PACKAGES
@@ -218,16 +220,16 @@ In addition to the above, the *admin* user has the following features available:
     > Imgbot sends an auto pull request with images optimized. The pull request is merged and Imgbot keeps working as changes are made to the repository.
 - [MongoDB](https://www.mongodb.com/) - Database Management
 - [Heroku](https://www.heroku.com/about) - App Hosting 
-- [Balsamiq:](https://balsamiq.com/) - Wireframes, Site Map
+- [Balsamiq](https://balsamiq.com/) - Wireframes, Site Map
  
---
+---
 <span id="testing"></span>
 
 ># **TESTING**
 
 Full testing details can be found [here](TESTING.md)
 
---
+--- 
 <span id="deployment"></span>
 
 ># **DEVELOPMEMNT AND DEPLOYMENT**
@@ -259,13 +261,15 @@ To clone this project from its [GitHub repository](https://github.com/Wingkelink
 5. Then type **git clone** and paste the URL: https://github.com/Wingkelinks/myswim_MSP3.git
 6. From there create an env.py file to store your credentials as follows:
 
+```console 
       import os
 
       os.environ.setdefault("IP", "0.0.0.0")
       os.environ.setdefault("PORT", "5000") 
       os.environ.setdefault("SECRET_KEY", "") 
       os.environ.setdefault("MONGO_URI", "mongodb+srv://<username>:<password>@<cluster_name>-ofgqg.mongodb.net/<database_name>?retryWrites=true&w=majority") 
-      os.environ.setdefault("MONGO_DBNAME", "my_swim") 
+      os.environ.setdefault("MONGO_DBNAME", "my_swim")
+```
 
 You can use a random key generator if you wish. 
 
