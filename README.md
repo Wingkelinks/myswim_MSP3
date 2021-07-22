@@ -47,6 +47,8 @@ MySwim is my third milestone project as a Code Institute student working towards
 
 As a swimmer, this site will provide personal value as a convenient means to store and access swimming programmes or sets. Having always relied on bits of soggy paper, stored here-and-there, the website will aim to alleviate this. It will also be beneficial to me as a swimmmer to have access to a collection of swimming sets, submitted by other swimmers, rather than constantly having to cycle through the same sets, or come up with new ones at the last minute.
 
+<div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
+
 ># **STRUCTURE**
 
 <span id="ux"></span>
@@ -219,6 +221,7 @@ In addition to the above, the *admin* user has the following features available:
   Again, this is an important companion feature to the 'Add Favourites' feature, however I did not have the time to make it work. 
 
 ---
+<div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 <span id="technologies"></span>
 
 ># **TECHNOLOGIES USED**
@@ -268,6 +271,7 @@ In addition to the above, the *admin* user has the following features available:
 Full testing details can be found [here](TESTING.md)
 
 --- 
+<div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 <span id="deployment"></span>
 
 ># **DEVELOPMEMNT AND DEPLOYMENT**
@@ -362,7 +366,7 @@ echo web: python app.py > Procfile
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
---
+---
 <span id="credits"></span>
 
 ># **CREDITS**
