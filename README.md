@@ -147,8 +147,6 @@ As a swimmer, this site will provide personal value as a convenient means to sto
 
 ## DATABASE MODEL
 
-MongoDB's non-relational database structure makes sense for this type of site as there are only a few relationships between the various collections. Nevertheless, the ability to relate certain collections to one another was used to preserve key relationships which could have been lost due to users making changes to their content (e.g. activity_name).
-
 #### Sets Collection
 
 |**Key**|**Type**|**Notes**|
