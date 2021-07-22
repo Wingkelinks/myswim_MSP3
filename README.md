@@ -121,10 +121,13 @@ As a swimmer, this site will provide personal value as a convenient means to sto
   The theme is inspired by swimming and is intended to appeal to all types of swimmers. A clean and modern colour scheme with contrasting and complementary colours was chosen to reflect a sense of simple energy. [Coolors](https://coolors.co/) was used to generate two colour palettes which were incorporated as utility classes in the CSS file, to be easily called upon directly from the HTML files. 
 
   Take a closer look at the colour schemes:
-  - [MySwim Color Scheme 1](https://coolors.co/ffbe0b-fb5607-ff006e-8338ec-3a86ff-4dec38-000000)<img src="static/images/test_images/color-scheme1.png" width="200">
 
+  <img src="static/images/test_images/color-scheme2.png" width="400">
+  <img src="static/images/test_images/color-scheme1.png" width="400">
+
+  - [MySwim Color Scheme 1](https://coolors.co/ffbe0b-fb5607-ff006e-8338ec-3a86ff-4dec38-000000)
   - [MySwim Color Scheme 2](https://coolors.co/ffbe0b-fb5607-ff006e-8338ec-3a86ff-4c91ff-5c9bff-6ba4ff-78acff-84b4ff)
-  <img src="static/images/test_images/color-scheme2.png" width="200">
+
 
   - #### Typography
   
