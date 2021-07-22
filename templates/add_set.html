@@ -43,7 +43,7 @@
 						<!-- Iterate over categories in DB -->
 						{% for category in categories if not category.category_name == "Unassigned" %}
                             <option value="{{ category.category_name }}">
-                                {{ category.category_name|title }}
+                                {{- category.category_name|title -}}
                             </option>
 						{% endfor %}
 						<!-- // Iterate over categories in DB -->

@@ -49,11 +49,11 @@
 						{% for category in categories if not category.category_name == "Unassigned" %} 
                             {% if category.category_name == set.category_name %}
                                 <option value="{{ category.category_name }}" selected>
-                                    {{ category.category_name }}
+                                    {{- category.category_name -}}
                                 </option>
 						    {% else %}
                                 <option value="{{ category.category_name }}">
-                                    {{ category.category_name }}
+                                    {{- category.category_name -}}
                                 </option>
 						    {% endif %} 
                         {% endfor %}
