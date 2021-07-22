@@ -147,39 +147,79 @@ As a swimmer, this site will provide personal value as a convenient means to sto
 
 ## DATABASE MODEL
 
-Please view the database model here !!!!
+MongoDB's non-relational database structure makes sense for this type of site as there are only a few relationships between the various collections. Nevertheless, the ability to relate certain collections to one another was used to preserve key relationships which could have been lost due to users making changes to their content (e.g. activity_name).
+
+#### Sets Collection
+
+|**Key**|**Type**|**Notes**|
+|:-----|:-----|:-----|
+|_id|ObjectId||
+|category_name|string| Category Name |
+|set_name|string| Set Name |
+|warm_up|string| Warm up instructions |
+|pre_set|array| Array allows for dynamically added fields using JQuery script |
+|main_set|array| Array allows for dynamically added fields using JQuery script |
+|cool_down|string| Cool down instructions |
+|total_km|string| Set Distance |
+|created_by|string| Created when a session user submits a new set|
+
+
+#### Categories Collection
+
+|**Key**|**Type**|**Description**|
+|:-----|:-----|:-----|
+|_id|ObjectId||
+|category_name|string| Category Name provided by Admin |
+
+#### Users Collection
+
+|**Key**|**Type**|**Description**|
+|:-----|:-----|:-----|
+|_id|ObjectId||
+|username|string| User's username |
+|password|string| Password gets hashed when user creates an account |
+
+#### Favourites Collection
+
+|**Key**|**Type**|**Description**|
+|:-----|:-----|:-----|
+|_id|ObjectId| Created when a user saves a set as a favourite |
+|set_id|string| Associated set id |
+|set_name|string| Associated set name |
+|user|string| User id |
 
 ># **FEATURES**
 
 ## EXISTING 
 
--**Register Account**
--**Log In to Account**
--**Log Out of Account**
--**View Swim Sets**
--**Search Sets**
--**Add a Set**
--**Edit a Set**
--**Delete a Set**
--**Add a Set to Favourites**
--**Print a Set** 
+- **Register Account**
+- **Log In to Account**
+- **Log Out of Account**
+- **View Swim Sets**
+- **Search Sets**
+- **Add a Set**
+- **Edit a Set**
+- **Delete a Set**
+- **Add a Set to Favourites**
+- **Print a Set** 
 
 In addition to the above, the *admin* user has the following features available:
--**Add a Category**
--**Edit a Category**
--**Delete a Category**
--**Edit any Set**
--**Delete any Set**
+- **Add a Category**
+- **Edit a Category**
+- **Delete a Category**
+- **Edit any Set**
+- **Delete any Set**
 
 *Defensive Programming* Features include **Deletion Confirmation** alerts that appear as a modal, when a user clicks on any 'delete' related button. 
 
 ## DESIRABLE
 
--**Pagination**: 
+- **Pagination**: 
   I would have loved to have included pagination to the site, as I am fully aware that it contributes to a better user experience. Due to time constraints, it was necessary to prioritise other elements/features. 
 
--**Remove Set from Favourites**: 
+- **Remove Set from Favourites**: 
   Again, this is an important companion feature to the 'Add Favourites' feature, however I did not have the time to make it work. 
+
 ---
 <span id="technologies"></span>
 
