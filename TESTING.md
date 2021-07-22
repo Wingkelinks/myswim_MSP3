@@ -2,7 +2,7 @@
 
 Back to [README.md](README.md)
 
-## Index
+## INDEX
 
 - <a href="#user-stories">Testing User Stories from User Experience Section</a>
 - <a href="#testing-manual">Manual</a>
@@ -13,11 +13,11 @@ Back to [README.md](README.md)
 
 ---
 
-## Testing
+># **TESTING**
 
 <span id="user-stories"></span>
 
-### User Story Testing 
+## USER STORY TESTING 
 
 - #### First Time Visitor Goals
 
@@ -107,9 +107,9 @@ As well as the above elements (with the exception of registration), returning vi
 --
 <span id="testing-manual"></span>
 
-## Further Testing
+## FURTHER TESTING
 
-### Manual Testing
+># **MANUAL TESTING**
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
@@ -141,7 +141,7 @@ Manual testing was performed throughout the building process. The following is a
 
   - #### Registration and Log In Pages 
 
-  1. If a user accidentally navigates to the register page, from there they can click on a log in link and vice versa. 
+  1. Anybody can register for free. Passwords are hashed for using [Werkzeug Security](https://werkzeug.palletsprojects.com/en/2.0.x/utils/). If a user accidentally navigates to the register page, from there they can click on a log in link and vice versa. 
 
   2. The username and password validators are in place and check that users are meeting the requirements for both registration and log in processes. 
   
@@ -210,11 +210,25 @@ Manual testing was performed throughout the building process. The following is a
 
 <span id="testing-auto"></span>
 
-## Automated testing
+># **AUTOMATED TESTING**
 
 - ## [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
 
+  - Throughout the development process, DevTools was used for testing responsive behaviour on   small, medium and large screen sizes.
+  - It was also consistently used to debug and prototype CSS.
+
+  ### [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+
+- Used to check performance, accessibility and SEO potential on all pages of the website.
+*Across all pages, averages ranged from:*
+  - Performance: 75% - 95%
+  - Accessibility: 90% and above
+  - Best Practices: 90% and above
+  - SEO: 90% and above 
+
 - ## [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
+
 
 - ## [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
@@ -238,22 +252,23 @@ Initial Pep8 tests showed some refactoring was required, mainly removing whitesp
 
 ## <span id="testing-responsive"></span>
 
-## Responsiveness
+># **RESPONSIVENESS**
 
-### Browser Compatibility
+## CROSS BROWSER COMPATIBILITY
 
-<!-- Tested on:
+Browsers tested:
 
-- Chrome
-- Edge
-- Firefox
-- Safari (iOS) -->
+- Chrome *v.90*
+- Microsoft Edge *v.90*
+- Firefox *v.88*
+- Safari *v.14*
 
-### Screen sizes
+## VARIED SCREEN SIZES
 
-<!-- Tested with Chrome DevTools using profiles for:
+Chrome DevTools used to test: 
 
 - Moto G4
+- iPhone 4 
 - Galaxy S5
 - Pixel 2
 - Pixel 2 XL
@@ -262,32 +277,16 @@ Initial Pep8 tests showed some refactoring was required, mainly removing whitesp
 - iPhone 6/7/8 Plus
 - iPhone X
 - iPad
-- iPad Pro -->
-
-<!-- ... and also using the responsive profiles of:
-
-- Mobile S (320px)
-- Mobile M (375px)
-- Mobile L (425px)
-- Tablet (768px)
-- Laptop (1024px)
-- Laptop L (1440px)
-
-Real world testing on:
-
-- iPhone 6S
-- iPhone SE
-- iPhone 11 Pro
-- Asus ZenBook
-- Dell XPS 7590 -->
+- iPad Pro
+- Surface Duo 
+- Galaxy Fold 
 
 <div align="right"><a style="text-align:right" href="#top">Back to index	:point_up_2:</a></div>
 
 <span id="testing-resolved"></span>
 
-## Issues and bugs
 
-### Resolved
+## RESOLVED
 
 <img src="static/images/test_images/test.png" width="200">
 <img src="static/images/test_images/test1.png" width="200">
@@ -297,7 +296,6 @@ Real world testing on:
 <img src="static/images/test_images/test5.png" width="200">
 
 
-
-### Unresolved
+### UNRESOLVED
 
 
