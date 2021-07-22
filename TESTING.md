@@ -59,30 +59,30 @@ Back to [README.md](README.md)
 
 - #### Returning Visitor Goals
 
-As well as the above elements (with the exception of registration), returning visitors want the following: 
+    As well as the above elements (with the exception of registration), returning visitors want the following: 
 
-  -  A convenient login and logout process.
+  - A convenient login and logout process.
   
     1. A returning visitor can easily re-enter the site, by simply entering their username and password. 
 
-  -  To be able to search for swimming sets using appropriate keywords.
+  - To be able to search for swimming sets using appropriate keywords.
     
     1. A search bar is present that allows users to filter search for swimming sets by category 
     and stroke names. 
 
-  -  To have access to a personal profile.
+  - To have access to a personal profile.
     
     1. Registered users have access to a personalised profile page where they can view the swimming sets that they have created.  
 
-  -  To be able to add new swimming sets.
+  - To be able to add new swimming sets.
 
     1. Users can add a new set by completing a form that is designed with the structure of  swimming programmes in mind. 
   
-  -  To be able to edit or delete swimming sets from my profile.
+  - To be able to edit or delete swimming sets from my profile.
 
     1. Users also have the option of editing or deleting a set from their profile. 
 
-  -  To be able to save 'favourite' swimming sets created by other users under my profile.
+  - To be able to save 'favourite' swimming sets created by other users under my profile.
     
     1. Registered users can also save their 'favourite' swimming sets. These are stored on a seperate page that is connected to their profile page. 
 
@@ -133,13 +133,13 @@ Manual testing was performed throughout the building process. The following is a
 
   2. Social media links all in working order and direct user to external pages in a new browser window. 
 
-  - #### Home Page
+- #### Home Page
 
   1. The about section in the home page displays a different invitation for different users: 
    - Logged in users: are invited to 'check out the collection of swim sets'
    - Users not logged in: are invited to register before they have access to the swim sets  
 
-  - #### Registration and Log In Pages 
+- #### Registration and Log In Pages 
 
   1. Anybody can register for free. Passwords are hashed for using [Werkzeug Security](https://werkzeug.palletsprojects.com/en/2.0.x/utils/). If a user accidentally navigates to the register page, from there they can click on a log in link and vice versa. 
 
@@ -149,7 +149,7 @@ Manual testing was performed throughout the building process. The following is a
 
   4. When a user successfully logs in, they are directed to their profile page and greeted by a personalised welcome message. 
 
-  - #### Search Sets Page 
+- #### Search Sets Page 
 
   1. The Search Sets page displays all available sets added by all users. 
 
@@ -157,7 +157,7 @@ Manual testing was performed throughout the building process. The following is a
 
   2. At this stage, pagination is not an included feature, but it is also a desirable one. 
 
-  - #### Add Set Page 
+- #### Add Set Page 
 
   1. Users can add a new swim set by clicking on the 'new swim' link. There they will be directed to fill in a form that includes fields relevant to a swim programme. 
 
@@ -169,7 +169,7 @@ Manual testing was performed throughout the building process. The following is a
 
   2. Upon submission, the set is added to collection on the site and in the database itself.The user is then redirected to the Search Sets page and an alert message is displayed notifying them of a successful submission. 
 
-  - #### Edit Set Page 
+- #### Edit Set Page 
 
   1. For general registered users, each set stored on their profile will display an edit button, that redirects them to a form for editing. 
 
@@ -181,7 +181,7 @@ Manual testing was performed throughout the building process. The following is a
 
   5. The cancel button will redirect the user to the Search Sets page. 
 
-  - #### Profile Favourites and Print Pages
+- #### Profile Favourites and Print Pages
 
   1. A user's profile page displays their name and provides them with additional options to add a new set or to navigate to their Favourites page. All of the users stored sets are displayed as cards similar to those on the Search Set page, with the addition of three buttons: favourite, edit and print. 
 
@@ -191,7 +191,7 @@ Manual testing was performed throughout the building process. The following is a
  
   4. When a user clicks on a print button, they are redirected to a page that renders their selected set in a print friendly manner. The name of the set gets displayed at the top of the page. They can choose to navigate back to their profile by clicking on a 'back to profile' button at the top of the page. The print function is initialised by some JQuery script, utilising the window.print() method. 
 
-  - #### Manage Content Page 
+- #### Manage Content Page 
 
   1. The Manage Content page can only be accessed by admin users in session. It gives admin users the options to add, edit and delete categories. They can also add new sets from the Manage Content page.
 
@@ -199,14 +199,15 @@ Manual testing was performed throughout the building process. The following is a
 
   3. The delete button will trigger a modal asking the user for confirmation before going ahead and deleting the category permanently. If they confirm deletion, an alert message will be displayed confirming that the category has been deleted. 
 
-  - #### Deleting Content (Admin and Users)
+- #### Deleting Content (Admin and Users)
 
   1. The deletion process of sets is similar to that of category deletion mentioned above. If a user chooses to delete a set, a modal will be triggered that asks, "Do  you really want to delet your set {{ set.set_name }}? This cannot be undone!" If they choose to delete, the set is removed from the collection. If they select not to delete, they remain on their profile page. 
 
-  - #### Error Handler Pages
+- #### Error Handler Pages
 
   1. In the event of 404 and 500 errors, pages with appropriate messages will be displayed. Both pages include buttons to invite the user to return to the Home page. 
 
+---
 
 <span id="testing-auto"></span>
 
